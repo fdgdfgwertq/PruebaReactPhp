@@ -6,15 +6,16 @@ use Illuminate\Contracts\Validation\Rule;
 
 class ConfirmPassword implements Rule
 {   
-    public $password;
+    protected $password;
+    protected $textMessage = 'La clave no cumple las politicas';
     /**
      * Create a new rule instance.
      *
      * @return void
      */
-    public function __construct($var1)
+    public function __construct($password)
     {
-        $this->password = $var1;
+        $this->password = $password;
     }
 
     /**
@@ -26,9 +27,14 @@ class ConfirmPassword implements Rule
      */
     public function passes($attribute, $value)
     {
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-        $out->writeln($this->password);
-        return false;
+        if(is_null($this->password)) return false;
+        if($this->password!=$value){
+            $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+            $out->writeln($this->password);
+            $this->textMessage = 'Las contraseñas no coinciden';
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -38,6 +44,6 @@ class ConfirmPassword implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return $this->textMessage;
     }
 }

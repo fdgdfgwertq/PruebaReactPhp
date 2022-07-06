@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use App\Rules\ConfirmPassword;
+use App\Rules\ValidateUserRegex;
+use App\Rules\ValidatePasswordRegex;
+use Illuminate\Support\Facades\Hash;
 
-class UsuarioController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +19,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return response()->json(Usuario::all());
+        return response()->json(User::all());
     }
 
     /**
@@ -36,7 +39,7 @@ class UsuarioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {  
+    {
         $out = new \Symfony\Component\Console\Output\ConsoleOutput();
         $rules = [
             'id_tipo_usuario'=>'required',
@@ -44,19 +47,25 @@ class UsuarioController extends Controller
             'segundo_nombre'=>'alpha|max:50',
             'primer_apellido'=>'required|alpha|max:50',
             'segundo_apellido'=>'required|alpha|max:50',
-            'usuario'=>'required|unique:Usuario,usuario|max:50',
-            'correo'=>'required|email|unique:Usuario,correo|max:100',
-            'password'=>'required|max:16',
-            'confirmPassword'=>['required',new ConfirmPassword('algo')]
+            'usuario'=>['required',new ValidateUserRegex(),'unique:usuario,usuario'],
+            'correo'=>'required|email|unique:usuario,correo|max:100',
+            'clave'=>['required',new ValidatePasswordRegex()],
+            'confirmar_clave'=>['required',new ConfirmPassword($request->input('clave'))]
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return response()->json([
-                'estado' => false,
-                'errores' => $validator->errors()
+                'state' => false,
+                'errors' => $validator->errors()
             ]);
         }
-        return response("algo");
+        $dataForm = $request->all();
+        $dataForm['clave'] = Hash::make($dataForm['clave']);
+        unset($dataForm['confirmar_clave']);
+        User::create($dataForm);
+        return response()->json([
+            'state' => true
+        ]);
     }
 
     /**

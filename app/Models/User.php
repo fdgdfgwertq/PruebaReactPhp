@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usuario extends Model
+class User extends Model
 {
     protected $table = "usuario";
+    public $timestamps = false;
     protected $fillable = [
         'id_tipo_usuario',
         'primer_nombre',
@@ -16,7 +17,6 @@ class Usuario extends Model
         'segundo_apellido',
         'usuario',
         'correo',
-        'password',
-        'confirmPassword'
+        'clave'
     ];
 }
