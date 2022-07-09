@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const ButtonStyle = styled(motion.button)`
   border: 2px solid;
   padding: 10px 20px;
-  color: ${(props) => props['color-button']};
+  color: ${(props) => props["color-button"]};
   background-color: transparent;
   border-radius: 10px;
   font-size: 1.1rem;
@@ -13,7 +13,7 @@ const ButtonStyle = styled(motion.button)`
   font-weight: 700;
 `;
 
-const ButtonPage = ({ children, colorButton }) => {
+const ButtonPage = ({ children, colorButton,type }) => {
   return (
     <ButtonStyle
       whileHover={{
@@ -22,6 +22,7 @@ const ButtonPage = ({ children, colorButton }) => {
       }}
       whileTap={{ scale: 0.9 }}
       color-button={colorButton}
+      type={type||null}
     >
       {children}
     </ButtonStyle>

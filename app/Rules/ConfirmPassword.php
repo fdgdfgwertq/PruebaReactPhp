@@ -29,8 +29,6 @@ class ConfirmPassword implements Rule
     {
         if(is_null($this->password)) return false;
         if($this->password!=$value){
-            $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-            $out->writeln($this->password);
             $this->textMessage = 'Las contraseñas no coinciden';
             return false;
         }

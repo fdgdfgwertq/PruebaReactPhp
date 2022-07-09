@@ -1,22 +1,24 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import LoaderMain from "../common/LoaderMain";
 import { HOME, LOGIN } from "./paths";
-import { useSelector } from "react-redux";
 
 const PrivateRouteHome = ({ children }) => {
-  const auth = useSelector((state) => state.session);
-  if (!auth) {
-    return <Navigate to={LOGIN} replace={true} />;
-  }
+  const {state} = useAuth();
+
+  if (state === 0) return <LoaderMain/>;
+  if (state === 1) return <Navigate to={LOGIN} replace={true} />;
 
   return children;
 };
 
 const PrivateRouteLogin = ({ children }) => {
-  const auth = useSelector((state) => state.session);
-  if (auth) {
-    return <Navigate to={HOME} replace={true} />;
-  }
+  const { state } = useAuth();
+
+  if (state === 0) return <LoaderMain />;
+  if (state === 2) return <Navigate to={HOME} replace={true} />;
+
   return children;
 };
 
