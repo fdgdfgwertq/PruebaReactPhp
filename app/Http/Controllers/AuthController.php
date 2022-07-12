@@ -16,15 +16,15 @@ class AuthController extends Controller
     public function register(Request $request) {
         $out = new \Symfony\Component\Console\Output\ConsoleOutput();
         $rules = [
-            'id_tipo_usuario'=>'required',
-            'primer_nombre'=>'required|alpha|max:50',
-            'segundo_nombre'=>'alpha|max:50',
-            'primer_apellido'=>'required|alpha|max:50',
-            'segundo_apellido'=>'required|alpha|max:50',
-            'usuario'=>['required',new ValidateUserRegex(),'unique:usuario,USUARIO'],
-            'correo'=>'required|email|unique:usuario,CORREO|max:100',
-            'clave'=>['required',new ValidatePasswordRegex()],
-            'confirmar_clave'=>['required',new ConfirmPassword($request->input('clave'))]
+            'ID_TIPO_USUARIO'=>'required',
+            'PRIMER_NOMBRE'=>'required|alpha|max:50',
+            'SEGUNDO_NOMBRE'=>'alpha|max:50',
+            'PRIMER_APELLIDO'=>'required|alpha|max:50',
+            'SEGUNDO_APELLIDO'=>'required|alpha|max:50',
+            'USUARIO'=>['required',new ValidateUserRegex(),'unique:usuario,USUARIO'],
+            'CORREO'=>'required|email|unique:usuario,CORREO|max:100',
+            'CLAVE'=>['required',new ValidatePasswordRegex()],
+            'CONFIRMAR_CLAVE'=>['required',new ConfirmPassword($request->input('CLAVE'))]
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
@@ -34,8 +34,8 @@ class AuthController extends Controller
             ]);
         }
         $dataForm = $request->all();
-        $dataForm['clave'] = Hash::make($dataForm['clave']);
-        unset($dataForm['confirmar_clave']);
+        $dataForm['CLAVE'] = Hash::make($dataForm['CLAVE']);
+        unset($dataForm['CONFIRMAR_CLAVE']);
         User::create($dataForm);
         return response()->json([
             'state' => true

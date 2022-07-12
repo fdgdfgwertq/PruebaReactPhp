@@ -1,13 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
-import { openModalLayoutState } from '../../../../../features/modalsSlice';
 
 const OptionMenuStyle = styled.li`
   display: block;
   width: 100%;
-  ${(props) => props.who} {
+  a {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -16,7 +14,7 @@ const OptionMenuStyle = styled.li`
     box-sizing: border-box;
     width: 100%;
   }
-  ${(props) => props.who}:hover {
+  a:hover {
     background-color: rgba(255, 255, 255, 0.08);
   }
   img {
@@ -24,6 +22,8 @@ const OptionMenuStyle = styled.li`
     height: 30px;
   }
   .linkName {
+    font-weight: 100;
+    font-size: 0.8rem;
     color: white;
   }
 `;
@@ -32,27 +32,19 @@ const ContainOption = ({ linkName, srcImg }) => {
   return (
     <>
       <span className="iconOption">
-        <img src={`/img/${srcImg}.svg`} alt="icon" />
+        <img src={`/img/iconsMenu/${srcImg}.svg`} alt="icon" />
       </span>
       <span className="linkName">{linkName}</span>
     </>
   );
 };
 
-const OptionMenuNavbar = ({linkDirection,linkName,srcImg,logoutButton}) => {
-  const dispatch = useDispatch();
-
+const OptionMenuNavbar = ({linkDirection,linkName,srcImg}) => {
   return (
-    <OptionMenuStyle who={logoutButton ? "button" : "a"}>
-      {logoutButton ? (
-        <button onClick={() => dispatch(openModalLayoutState())}>
-          <ContainOption linkName={linkName} srcImg={srcImg} />
-        </button>
-      ) : (
-        <NavLink to={linkDirection}>
-          <ContainOption linkName={linkName} srcImg={srcImg} />
-        </NavLink>
-      )}
+    <OptionMenuStyle>
+      <NavLink to={linkDirection}>
+        <ContainOption linkName={linkName} srcImg={srcImg} />
+      </NavLink>
     </OptionMenuStyle>
   );
 }

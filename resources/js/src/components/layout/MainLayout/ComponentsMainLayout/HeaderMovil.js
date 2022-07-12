@@ -3,20 +3,28 @@ import { useDispatch } from "react-redux";
 import styled from 'styled-components';
 import { openMenu } from '../../../../features/mainLayoutSlice';
 import { openModalLayoutState } from '../../../../features/modalsSlice';
+import SvgHamburgerMenu from '../SvgComponents/SvgHamburgerMenu';
+import SvgLogout from '../SvgComponents/SvgLogout';
+import SearchBar from "./SearchBar";
 
 const StyleHeaderMovil = styled.header`
   display: flex;
   padding: 15px;
-  border-bottom: 1px solid #80808059;
-  .MainHeaderMovil {
+  background-color: #220646;
+  .ContainerSearchBar {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 10px;
     flex-grow: 1;
   }
-  img {
-    width: 50px;
-    height: 50px;
+  .FormSearchBar {
+    max-width: 320px;
+  }
+  .ContainerButtonMenu,
+  .ContainerButtonSesion {
+    display: grid;
+    place-items: center center;
   }
   button {
     cursor: pointer;
@@ -30,13 +38,13 @@ const HeaderMovil = () => {
     <StyleHeaderMovil>
       <div className="ContainerButtonMenu">
         <button onClick={() => dispatch(openMenu())}>
-          <img src="/img/HamburgerMenuIcon.svg" alt="HamburgerMenuIcon" />
+          <SvgHamburgerMenu size={40}/>
         </button>
       </div>
-      <div className="MainHeaderMovil">Nose</div>
+      <SearchBar movile={true}/>
       <div className="ContainerButtonSesion">
         <button onClick={() => dispatch(openModalLayoutState())}>
-          <img src="/img/LogoutIcon.svg" alt="LogoutIcon" />
+          <SvgLogout size={40}/>
         </button>
       </div>
     </StyleHeaderMovil>

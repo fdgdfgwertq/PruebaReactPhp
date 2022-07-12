@@ -8,12 +8,24 @@ const styleNavResize = ({movile}) => {
     left: 0;
     z-index: 50;
     width: 85%;
-    max-width: 425px;
+    max-width: 283px;
+    .ContainerCloseMenu {
+      display: flex;
+      padding: 10px;
+      justify-content: flex-end;
+      button {
+        cursor: pointer;
+      }
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
   `;
 }
 
 const Nav = styled(motion.nav)`
-  background-color: rgb(30 31 33);
+  background-color: #220646;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -22,21 +34,37 @@ const Nav = styled(motion.nav)`
     display: grid;
     padding: 15px;
     place-items: center center;
-    font-family: ${(props) => props.theme.fonts.secondary};
-    font-size: 2rem;
-    color: #f06a6a;
-  }
-  .ContainerCloseMenu {
-    display: flex;
-    padding: 10px;
-    justify-content: flex-end;
-    button {
-      cursor: pointer;
-    }
     img {
-      width: 30px;
-      height: 30px;
+      width: 100px;
+      height: 100px;
     }
+  }
+  .ContainerMenuNavbar {
+    flex-grow: 1;
+  }
+  .ContainerLogoutNavbar {
+    background-color: #15012e;
+  }
+  .ContainerLogoutNavbar > button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 10px 10px 20px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .ContainerLogoutNavbar > button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  .ContainerLogoutNavbar > button img {
+    width: 30px;
+    height: 30px;
+  }
+  .ContainerLogoutNavbar > button .linkName {
+    font-weight: 100;
+    font-size: 0.8rem;
+    color: white;
   }
 `;
 

@@ -10,7 +10,7 @@ const ContainerLogin = styled.div`
 `;
 
 const LoginStyle = styled(motion.div)`
-  background-color: rgb(42 59 113);
+  background-color: #483ba8;
   box-shadow: rgb(0 0 0 / 58%) 0px 2px 18px 0px;
   margin: 0 auto;
   width: 95%;

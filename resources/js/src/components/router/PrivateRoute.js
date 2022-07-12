@@ -5,16 +5,19 @@ import LoaderMain from "../common/LoaderMain";
 import { HOME, LOGIN } from "./paths";
 
 const PrivateRouteHome = ({ children }) => {
-  const {state} = useAuth();
+  const { state, message } = useAuth();
 
   if (state === 0) return <LoaderMain/>;
-  if (state === 1) return <Navigate to={LOGIN} replace={true} />;
+  if (state === 1) {
+    console.log(message);
+    return <Navigate to={LOGIN} replace={true} />;
+  };
 
   return children;
 };
 
 const PrivateRouteLogin = ({ children }) => {
-  const { state } = useAuth();
+  const { state, message } = useAuth();
 
   if (state === 0) return <LoaderMain />;
   if (state === 2) return <Navigate to={HOME} replace={true} />;

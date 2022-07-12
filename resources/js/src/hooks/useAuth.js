@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import Cookies from 'universal-cookie';
+import { storeDataProfile } from "../features/dataProfileSlice";
+import { helpDropCookies } from "../helpers/helpDropCookies";
+import { helpHttp } from "../helpers/helpHttp";
 
 const initialAuth = {
   state: 0,
@@ -7,6 +11,7 @@ const initialAuth = {
 }
 
 const useAuth = () => {
+  const dispatch = useDispatch();
   const [auth, setAuth] = useState(initialAuth);
 
   useEffect(() => {
@@ -14,24 +19,25 @@ const useAuth = () => {
     const token = cookies.get('accecs_token');
     (async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/profile", {
+        const data = await helpHttp().post("profile", {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
-          method: 'POST',
         });
-        if(!response.ok) throw response;
-        const data = await response.json();
+        if (data.status) throw data;
         if (!data.state) setAuth({ state: 1, message: data.message });
-        else setAuth({ state: 2, message: "" });
+        else {
+          const { PRIMER_NOMBRE, PRIMER_APELLIDO } = data.data;
+          dispatch(storeDataProfile({ PRIMER_NOMBRE, PRIMER_APELLIDO }));
+          setAuth({ state: 2, message: "" });
+        };
       } catch (error) {
         if (token) {
-          cookies.remove("accecs_token");
-          cookies.remove("user_role");
+          helpDropCookies();
         }
-        setAuth({ state: 1, message: "Error inesperado" });
+        setAuth({ state: 1, message: error.statusText });
       }
     })();
   }, []);

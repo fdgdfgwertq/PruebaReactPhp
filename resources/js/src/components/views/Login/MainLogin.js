@@ -11,7 +11,7 @@ const MainLogin = () => {
       <LoginStyle animate={{ y: [100, 0] }} transition={{ duration: 0.5 }}>
         <div className="MainContent">
           <div className="ContainerImage">
-            <img src="/img/LogoLogin.svg" alt="login" />
+            <img src="/img/logos/LogoLogin.svg" alt="login" />
           </div>
           <h2>Login</h2>
           <FormLogin />

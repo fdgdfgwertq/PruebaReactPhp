@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { closeModalLayoutState } from '../../features/modalsSlice';
-import { LogoutFetch } from '../../helpers/LogoutFetch';
+import { helpLogout } from "../../helpers/helpLogout";
 import { LOGIN } from '../router/paths';
 import ButtonPage from './ButtonPage';
 
@@ -45,7 +45,7 @@ const ModalLogout = () => {
   const dispatch = useDispatch();
 
   const handleClickLogout = async () => {
-    await LogoutFetch();
+    await helpLogout();
     navigate(LOGIN, { replace: true });
   }
 

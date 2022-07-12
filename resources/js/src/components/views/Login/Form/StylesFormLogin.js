@@ -16,8 +16,8 @@ const ContainerForm = styled.form`
     border-bottom: 1px solid white;
   }
   input.errorInput {
-    color: rgb(226 55 56);
-    border-bottom: 1px solid rgb(226 55 56);
+    color: rgb(217 58 89);
+    border-bottom: 1px solid rgb(217 58 89);
   }
   input::placeholder {
     color: #ffffffa6;
@@ -29,9 +29,10 @@ const ContainerForm = styled.form`
   .errorMessage {
     text-align: center;
     align-self: center;
-    color: rgb(226 55 56);
+    color: rgb(217 58 89);
   }
-  button,.LoaderForm {
+  button,
+  .LoaderForm {
     margin-top: 10px;
     align-self: center;
     width: max-content;

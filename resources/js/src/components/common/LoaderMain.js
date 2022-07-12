@@ -16,7 +16,7 @@ const ContainerLoaderMain = styled.div`
 const LoaderMain = () => {
   return (
     <ContainerLoaderMain>
-      <img src="/img/LoaderMainGif.webp" alt="load" />
+      <img src="/img/loaders/LoaderMainGif.webp" alt="load" />
     </ContainerLoaderMain>
   );
 }

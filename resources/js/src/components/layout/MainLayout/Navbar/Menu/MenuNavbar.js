@@ -14,42 +14,37 @@ const MenuNavbar = () => {
       <OptionMenuNavbar
         linkDirection="/"
         linkName="Listado preliminar"
-        srcImg="iconGeneral"
+        srcImg="IconListaPreliminar"
       />
       <OptionMenuNavbar
         linkDirection="/"
         linkName="Clasificacion recursos y atractivos"
-        srcImg="iconGeneral"
+        srcImg="IconClasificacionRecursos"
       />
       <OptionMenuNavbar
         linkDirection="/"
         linkName="Patrimonio material"
-        srcImg="iconGeneral"
+        srcImg="IconPatrimonioMaterial"
       />
       <OptionMenuNavbar
         linkDirection="/"
         linkName="Patrimonio inmaterial"
-        srcImg="iconGeneral"
+        srcImg="IconPatrimonioInmaterial"
       />
       <OptionMenuNavbar
         linkDirection="/"
         linkName="Festividades y eventos"
-        srcImg="iconGeneral"
+        srcImg="IconFestividades"
       />
       <OptionMenuNavbar
         linkDirection="/"
         linkName="Grupos especial interes"
-        srcImg="iconGeneral"
+        srcImg="IconGruposInteres"
       />
       <OptionMenuNavbar
         linkDirection="/"
         linkName="Sitios naturales"
-        srcImg="iconGeneral"
-      />
-      <OptionMenuNavbar
-        linkName="Cerrar sesion"
-        srcImg="LogoutIcon"
-        logoutButton={true}
+        srcImg="IconSitiosNaturales"
       />
     </MenuStyle>
   );

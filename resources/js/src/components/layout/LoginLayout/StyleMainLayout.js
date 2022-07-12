@@ -2,17 +2,16 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const MainDiv = styled.div`
-  background-image: url("/img/BackgroungLogin.jpg");
-  background-position: center;
-  background-size: cover;
   position: relative;
+  min-height: 100vh;
   & > * {
     position: relative;
     z-index: 3;
   }
   &::before {
     content: "";
-    background-color: #00000082;
+    background-color: #28254e;
+    clip-path: circle(120.8% at 0 100%);
     position: absolute;
     z-index: 2;
     inset: 0;
@@ -37,25 +36,15 @@ const MainDiv = styled.div`
       overflow-y: auto;
     }
   }
-  @media (min-width: 1080px) {
+`;
+
+const ImgAnimation = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  img {
+    width: 95%;
+    max-width: 500px;
   }
 `;
 
-const H1Animation = styled(motion.h1)`
-  font-family: "Rubik", sans-serif;
-  color: white;
-  .TextNuestraColor {
-    color: #02bd04;
-  }
-  .TextAppColor {
-    color: #3299bd;
-  }
-  @media (min-width: 768px) {
-    font-size: 1.8rem;
-  }
-  @media (min-width: 1080px) {
-    font-size: 2.5rem;
-  }
-`;
-
-export { H1Animation, MainDiv };
+export { ImgAnimation, MainDiv };

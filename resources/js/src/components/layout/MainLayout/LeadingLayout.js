@@ -8,6 +8,7 @@ import { StyleLeandingLayout } from './StyleLeadingLayout';
 import { closeMenu } from '../../../features/mainLayoutSlice';
 import ModalLogout from '../../common/ModalLogout';
 import { AnimatePresence } from 'framer-motion';
+import HeaderDesktop from './ComponentsMainLayout/HeaderDesktop';
 
 const MovileLeandingLayout = () => {
   const menuState = useSelector((state) => state.mainLayoutSlice.menuState);
@@ -28,8 +29,8 @@ const MovileLeandingLayout = () => {
 }
 
 const LeadingLayout = () => {
-  const movile = useResponsive(0,1080);
-  const desktop = useResponsive(1080);
+  const movile = useResponsive(0,783);
+  const desktop = useResponsive(783);
   const modalLayoutState = useSelector(
     (state) => state.modalsSlice.modalLayoutState
   );
@@ -38,10 +39,11 @@ const LeadingLayout = () => {
     <StyleLeandingLayout resize={{ movile: movile, desktop: desktop }}>
       {movile && <MovileLeandingLayout />}
       {desktop && <Navbar desktop={true} />}
+      {desktop && <HeaderDesktop />}
       <main>
         <Outlet />
       </main>
-      {modalLayoutState&&<ModalLogout/>}
+      {modalLayoutState && <ModalLogout />}
     </StyleLeandingLayout>
   );
 }

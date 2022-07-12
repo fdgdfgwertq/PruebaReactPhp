@@ -1,28 +1,25 @@
 import Cookies from "universal-cookie";
+import { helpDropCookies } from "./helpDropCookies";
+import { helpHttp } from "./helpHttp";
 
-const LogoutFetch = async () => {
+const helpLogout = async () => {
   const cookies = new Cookies();
   const token = cookies.get("accecs_token");
   try {
-    const response = await fetch("http://127.0.0.1:8000/api/logout", {
+    const data = await helpHttp().post("logout", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      method: "POST",
     });
-    if (!response.ok) throw response;
-    const data = await response.json();
+    if (!data.status) throw data;
     console.log(data);
   } catch (error) {
     console.log(error);
   } finally {
-    if (token) {
-      cookies.remove("accecs_token");
-      cookies.remove("user_role");
-    }
+    if (token) helpDropCookies();
   }
 }
 
-export {LogoutFetch};
+export { helpLogout };

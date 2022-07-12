@@ -19,10 +19,10 @@ const FormLogin = () => {
       validationSchema={schemaErrorsFormLogin}
       onSubmit={async (values, { setErrors, setSubmitting, resetForm }) => {
         setLoad(true);
-        const DATA = await fetchLogin(values);
+        const data = await fetchLogin(values);
         setLoad(false);
-        if (!DATA.state) return setErrors(DATA.errors);
-        saveCookies(DATA);
+        if (!data.state) return setErrors(data.errors);
+        saveCookies(data);
         setSubmitting(false);
         resetForm();
         navigate(HOME, { replace: true });
@@ -45,7 +45,6 @@ const FormLogin = () => {
               id="correo"
               placeholder="Example@gmail.com"
               autoComplete="off"
-              required
               value={values.correo}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -62,7 +61,6 @@ const FormLogin = () => {
               name="clave"
               id="clave"
               placeholder="Tu contraseña"
-              required
               value={values.clave}
               onChange={handleChange}
               onBlur={handleBlur}
