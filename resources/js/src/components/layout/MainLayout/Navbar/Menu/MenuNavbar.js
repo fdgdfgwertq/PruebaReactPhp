@@ -12,7 +12,7 @@ const MenuNavbar = () => {
   return (
     <MenuStyle>
       <OptionMenuNavbar
-        linkDirection="/"
+        linkDirection="/listado-preliminar"
         linkName="Listado preliminar"
         srcImg="IconListaPreliminar"
       />

@@ -54,7 +54,7 @@ class AuthController extends Controller
                 'errors' => $validator->errors()
             ]);
         }
-        $user = User::where('correo','=',$request->correo)->first();
+        $user = User::where('correo','=',$request->correo)->where('id_estado','1')->first();
         if(!isset($user)) return response()->json([
             'state' => false,
             'errors' => [

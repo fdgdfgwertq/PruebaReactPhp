@@ -15,22 +15,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="*"
-          element={
-            <PrivateRouteHome>
-              <Home />
-            </PrivateRouteHome>
-          }
-        />
-        <Route
-          path={LOGIN}
-          element={
-            <PrivateRouteLogin>
-              <Login />
-            </PrivateRouteLogin>
-          }
-        />
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

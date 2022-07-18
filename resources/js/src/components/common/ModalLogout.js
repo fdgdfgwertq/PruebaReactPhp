@@ -56,6 +56,7 @@ const ModalLogout = () => {
         onClick={() => dispatch(closeModalLayoutState())}
       />
       <MainModalLogout
+        initial={{scale:0.8}}
         animate={{ scale: [0.8, 1] }}
         transition={{ duration: 0.3 }}
       >

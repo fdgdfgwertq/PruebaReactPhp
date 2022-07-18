@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ListadosPreliminaresController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,6 @@ Route::post("login",[AuthController::class,'login']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::post("profile",[AuthController::class,'profile']);
     Route::post("logout",[AuthController::class,'logout']);
+    Route::post("/listados-preliminares/create",[ListadosPreliminaresController::class,'create']);
+    Route::put("/listados-preliminares/update",[ListadosPreliminaresController::class,'update']);
 });
