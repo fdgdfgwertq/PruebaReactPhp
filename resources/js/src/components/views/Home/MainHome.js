@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import useTittle from '../../../hooks/useTittle'
 import { StyleMainHome } from './StylesMainHome';
 import { useSelector } from 'react-redux';
@@ -8,6 +8,7 @@ const MainHome = () => {
   const { PRIMER_NOMBRE } = useSelector(
     (state) => state.dataProfileSlice.dataProfile
   );
+  
   return (
     <StyleMainHome>
       <div className="ContainerImageHome">
