@@ -17,7 +17,7 @@ const MenuNavbar = () => {
         srcImg="IconListaPreliminar"
       />
       <OptionMenuNavbar
-        linkDirection="/"
+        linkDirection="/clasificacion-recursos-atractivos"
         linkName="Clasificacion recursos y atractivos"
         srcImg="IconClasificacionRecursos"
       />

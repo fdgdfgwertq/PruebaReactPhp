@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authReducer from "../features/auth/authSlice";
 import dataProfileSlice from "../features/dataProfileSlice";
 import mainLayoutSlice from "../features/mainLayoutSlice";
 import modalsSlice from "../features/modalsSlice";
+import updateRecordSlice from "../features/updateRecorSlice";
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
     mainLayoutSlice : mainLayoutSlice,
     modalsSlice : modalsSlice,
-    dataProfileSlice : dataProfileSlice
+    dataProfileSlice : dataProfileSlice,
+    updateRecordSlice : updateRecordSlice
   },
 });

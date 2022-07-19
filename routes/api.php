@@ -16,6 +16,8 @@ use App\Http\Controllers\ListadosPreliminaresController;
 |
 */
 
+Broadcast::routes(['middleware' => ['auth:sanctum']]);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -28,4 +30,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post("logout",[AuthController::class,'logout']);
     Route::post("/listados-preliminares/create",[ListadosPreliminaresController::class,'create']);
     Route::put("/listados-preliminares/update",[ListadosPreliminaresController::class,'update']);
+    Route::get("/listados-preliminares/",[ListadosPreliminaresController::class,'getData']);
 });

@@ -129,7 +129,27 @@ class ListadosPreliminaresController extends Controller
         }
     }
 
-    public function getData(Request $request) {
-        
+    public function getData() {
+        try {
+            $queryData = ListadosPreliminares::join("codigos","codigos.ID_CODIGO","=","listados_preliminares.ID_CODIGO")
+            ->join('municipios', function ($join) {
+                $join->on(function($query){
+                    $query->on('codigos.ID_MUNICIPIOS', '=', 'municipios.ID_MUNICIPIOS')
+                    ->on("codigos.ID_DEPARTAMENTOS",'municipios.ID_DEPARTAMENTOS');
+            });})
+            ->join("departamentos","municipios.ID_DEPARTAMENTOS","=","departamentos.ID_DEPARTAMENTOS")
+            ->select("listados_preliminares.ID_LISTADO","listados_preliminares.ID_FUENTE","codigos.ID_MUNICIPIOS","codigos.ID_DEPARTAMENTOS","departamentos.DEPARTAMENTO","municipios.MUNICIPIO","listados_preliminares.NOMBRE","listados_preliminares.UBICACION")
+            ->get();
+            return response()->json([
+                "state" => true,
+                "data" => $queryData->toArray()
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                "state" => false,
+                "message" => "Error en la base de datos",
+                'phpMessage' => $th->getMessage()
+            ]);
+        }
     }
 }
