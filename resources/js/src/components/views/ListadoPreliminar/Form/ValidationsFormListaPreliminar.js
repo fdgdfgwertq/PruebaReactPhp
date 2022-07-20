@@ -1,11 +1,18 @@
 import * as yup from "yup";
+const messageRequire = "El campo es obligatorio";
 
 let schema = yup.object({
-  ID_DEPARTAMENTOS: yup.string().required("valor requerido"),
-  ID_MUNICIPIOS: yup.string().required("valor requerido"),
-  NOMBRE: yup.string().required("valor requerido"),
-  UBICACION: yup.string().required("valor requerido"),
-  ID_FUENTES: yup.string().required("valor requerido"),
+  ID_DEPARTAMENTOS: yup.string().required(messageRequire),
+  ID_MUNICIPIOS: yup.string().required(messageRequire),
+  NOMBRE: yup
+    .string()
+    .required(messageRequire)
+    .max(200, "No puede superar 200 caracteres"),
+  UBICACION: yup
+    .string()
+    .required(messageRequire)
+    .max(200, "No puede superar 200 caracteres"),
+  ID_FUENTE: yup.string().required(messageRequire),
 });
 
 export const ValidationsFormListaPreliminar = async (values) => {

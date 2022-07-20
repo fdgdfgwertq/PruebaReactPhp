@@ -6,8 +6,13 @@ const ListadoPreliminar = () => {
   return (
     <Routes>
       <Route path="/">
-        <Route index element={<div>Hola</div>} />
-        <Route path="crear" element={<MainListadoPreliminar />} />
+        <Route index element={<MainListadoPreliminar who={1} />} />
+        <Route
+          path=":idListado"
+          element={<MainListadoPreliminar who={2} />}
+        />
+        <Route path="crear" element={<MainListadoPreliminar who={3} />} />
+        <Route path="actualizar/:idListado" element={<MainListadoPreliminar who={4} />} />
       </Route>
     </Routes>
   );

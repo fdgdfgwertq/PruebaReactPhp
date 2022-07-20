@@ -15,9 +15,9 @@ class ListadosPreliminares extends Model
     protected $fillable = [
         'ID_FUENTE',
         'ID_TIPO_BIEN',
-        'ID_USUARIO',
         'ID_CODIGO',
         'NOMBRE',
-        'UBICACION'
+        'UBICACION',
+        'ACTUALIZANDO'
     ];
 }

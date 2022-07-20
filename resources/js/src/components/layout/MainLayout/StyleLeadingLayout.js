@@ -36,6 +36,10 @@ const styleLeandingLayoutResize = ({movile,desktop}) => {
 
 const StyleLeandingLayout = styled.div`
   ${(props) => styleLeandingLayoutResize(props.resize)}
+  main {
+    width: 100%;
+    overflow-x: hidden;
+  }
 `;
 
 export { StyleLeandingLayout };

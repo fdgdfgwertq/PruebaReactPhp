@@ -22,7 +22,6 @@ class User extends Authenticatable
         'SEGUNDO_APELLIDO',
         'USUARIO',
         'CORREO',
-        'CLAVE',
-        'ID_CREADOR'
+        'CLAVE'
     ];
 }

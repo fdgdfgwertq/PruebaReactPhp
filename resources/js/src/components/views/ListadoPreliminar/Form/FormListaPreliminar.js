@@ -3,25 +3,25 @@ import Departamentos from './DataJson/DataDepartamentos.json';
 import Municipios from './DataJson/DataMunicipio.json';
 import Fuentes from './DataJson/DataFuentes.json';
 import { handleFunctions } from './handleFunctions';
-import { initialValues } from './initialValuesFormListaPreliminar';
+import { initialErrors } from './initialValuesFormListaPreliminar';
 import { StyleFormListaPreliminar } from './StyleFormListaPreliminar';
 import ButtonPage from '../../../common/ButtonPage';
+import LoaderForm from '../../../common/LoaderForm';
+import { useNavigate } from 'react-router-dom';
 
-const FormListaPreliminar = () => {
+const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
   const [values, setValues] = useState(initialValues);
-  const [errors, setErrors] = useState(initialValues);
-  const { handleBlur, handleChange, handleSubmit } = handleFunctions(
-    values,
-    setValues,
-    errors,
-    setErrors
-  );
+  const [errors, setErrors] = useState(initialErrors);
+  const [load, setLoad] = useState(false);
+  const navigate = useNavigate();
+  const { handleBlur, handleChange, handleSubmitCreate, handleSubmitUpdate } =
+    handleFunctions(values, setValues, errors, setErrors, setLoad, navigate);
 
   return (
     <StyleFormListaPreliminar
       onSubmit={(e) => {
         e.preventDefault();
-        handleSubmit(e);
+        who === 3 ? handleSubmitCreate(e) : handleSubmitUpdate(e);
       }}
     >
       <div className="ContainerFields">
@@ -115,12 +115,12 @@ const FormListaPreliminar = () => {
             <small className="errorMessage">{errors.UBICACION}</small>
           )}
         </label>
-        <label htmlFor="ID_FUENTES">
+        <label htmlFor="ID_FUENTE">
           <span className="NameField">Fuente</span>
           <select
-            name="ID_FUENTES"
-            id="ID_FUENTES"
-            value={values.ID_FUENTES}
+            name="ID_FUENTE"
+            id="ID_FUENTE"
+            value={values.ID_FUENTE}
             onBlur={(e) => handleBlur(e)}
             onChange={(e) => handleChange(e)}
           >
@@ -139,16 +139,20 @@ const FormListaPreliminar = () => {
               );
             })}
           </select>
-          {errors.ID_FUENTES && (
-            <small className="errorMessage">{errors.ID_FUENTES}</small>
+          {errors.ID_FUENTE && (
+            <small className="errorMessage">{errors.ID_FUENTE}</small>
           )}
         </label>
       </div>
-      <ButtonPage type="submit" colorButton="#15012e">
-        Enviar
-      </ButtonPage>
+      {load ? (
+        <LoaderForm colorLoad="#15012e" />
+      ) : (
+        <ButtonPage type="submit" colorButton="#15012e">
+          {nameButton}
+        </ButtonPage>
+      )}
     </StyleFormListaPreliminar>
   );
-}
+};
 
 export default FormListaPreliminar

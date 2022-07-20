@@ -1,5 +1,6 @@
 import Cookies from "universal-cookie";
 import { helpHttp } from "../../../../helpers/helpHttp";
+import { helpErrors } from "../../../../helpers/helpErrors";
 
 const fetchLogin = async (values) => {
   const data = await helpHttp().post("login", {
@@ -10,9 +11,7 @@ const fetchLogin = async (values) => {
     body: values,
   });
   if (!data.state) {
-    Object.entries(data.errors).forEach(
-      (val) => (data.errors[val[0]] = val[1].join(""))
-    );
+    helpErrors(data);
     return data;
   }
   return data;

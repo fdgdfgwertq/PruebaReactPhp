@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import dataListaPreliminarSlice from "../features/dataListaPreliminarSlice";
 import dataProfileSlice from "../features/dataProfileSlice";
 import mainLayoutSlice from "../features/mainLayoutSlice";
 import modalsSlice from "../features/modalsSlice";
@@ -9,6 +10,7 @@ export const store = configureStore({
     mainLayoutSlice : mainLayoutSlice,
     modalsSlice : modalsSlice,
     dataProfileSlice : dataProfileSlice,
-    updateRecordSlice : updateRecordSlice
+    updateRecordSlice : updateRecordSlice,
+    dataListaPreliminarSlice : dataListaPreliminarSlice,
   },
 });

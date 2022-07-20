@@ -56,7 +56,8 @@ const StyleFormListaPreliminar = styled.form`
     color: red;
     text-align: center;
   }
-  button {
+  button,
+  .LoaderForm {
     align-self: center;
     width: max-content;
   }

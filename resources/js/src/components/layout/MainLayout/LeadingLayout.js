@@ -9,6 +9,7 @@ import { closeMenu } from '../../../features/mainLayoutSlice';
 import ModalLogout from '../../common/ModalLogout';
 import { AnimatePresence } from 'framer-motion';
 import HeaderDesktop from './ComponentsMainLayout/HeaderDesktop';
+import { Toaster } from "react-hot-toast";
 
 const MovileLeandingLayout = () => {
   const menuState = useSelector((state) => state.mainLayoutSlice.menuState);
@@ -44,6 +45,7 @@ const LeadingLayout = () => {
         <Outlet />
       </main>
       {modalLayoutState && <ModalLogout />}
+      <Toaster/>
     </StyleLeandingLayout>
   );
 }
