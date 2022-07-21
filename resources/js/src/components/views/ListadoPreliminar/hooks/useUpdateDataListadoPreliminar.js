@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Cookies from 'universal-cookie';
 import { helpHttp } from '../../../../helpers/helpHttp';
 
 const useUpdateDataListadoPreliminar = (idListado) => {
@@ -11,20 +10,9 @@ const useUpdateDataListadoPreliminar = (idListado) => {
     let isMounted = true;
 
     (async () => {
-      const cookies = new Cookies();
-      const token = cookies.get("accecs_token");
       try {
-        const response = await helpHttp().post("listados-preliminares/update", {
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          signal,
-          body: {
-            ID_LISTADO: idListado,
-          },
-        });
+        const body = { ID_LISTADO: idListado };
+        const response = await helpHttp().post("listados-preliminares/update", {signal,body});
         console.log(response);
         if (!response.state) throw response;
         if (isMounted) setData(response);

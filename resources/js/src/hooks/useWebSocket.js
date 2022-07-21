@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Echo from "laravel-echo";
 import { helpHttp } from "../helpers/helpHttp";
-import Cookies from "universal-cookie";
 import { useDispatch } from "react-redux";
 import Pusher from "pusher-js";
 import { storeDataPrueba } from "../features/updateRecorSlice";
@@ -16,8 +15,6 @@ const useWebsocket = () => {
   const [connect, setConnect] = useState(initialConnect);
 
   useEffect(() => {
-    const cookies = new Cookies();
-    const token = cookies.get("accecs_token");
     let echo = new Echo({
       broadcaster: "pusher",
       wsHost: window.location.hostname,
@@ -35,11 +32,6 @@ const useWebsocket = () => {
             (async () => {
               try {
                 const response = await helpHttp().post("broadcasting/auth", {
-                  headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                  },
                   body: {
                     socket_id: socketId,
                     channel_name: channel.name,

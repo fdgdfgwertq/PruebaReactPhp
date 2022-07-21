@@ -1,10 +1,18 @@
+import Cookies from "universal-cookie";
 import { API } from "../components/router/paths";
 
-export const helpHttp = () => {
+export const helpHttp = (login) => {
   const customFetch = (endpoint, options) => {
     const defaultHeader = {
-      accept: "application/json",
+      Accept: "application/json",
+      "Content-Type": "application/json",
     };
+
+    if(!login) {
+      const cookies = new Cookies();
+      const token = cookies.get("accecs_token");
+      defaultHeader.Authorization = `Bearer ${token}`;
+    }    
 
     options.method = options.method || "GET";
     options.headers = options.headers
@@ -13,6 +21,12 @@ export const helpHttp = () => {
 
     options.body = JSON.stringify(options.body) || false;
     if (!options.body) delete options.body;
+
+    if(!options.signal) {
+      const controller = new AbortController();
+      options.signal = controller.signal;
+      setTimeout(() => controller.abort(), 3000);
+    }
 
     return fetch(API+endpoint, options)
       .then((res) =>

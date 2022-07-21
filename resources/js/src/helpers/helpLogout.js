@@ -6,13 +6,7 @@ const helpLogout = async () => {
   const cookies = new Cookies();
   const token = cookies.get("accecs_token");
   try {
-    const data = await helpHttp().post("logout", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const data = await helpHttp().post("logout");
     if (!data.status) throw data;
     console.log(data);
   } catch (error) {

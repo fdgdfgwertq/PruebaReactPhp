@@ -14,14 +14,14 @@ const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
   const [errors, setErrors] = useState(initialErrors);
   const [load, setLoad] = useState(false);
   const navigate = useNavigate();
-  const { handleBlur, handleChange, handleSubmitCreate, handleSubmitUpdate } =
+  const { handleBlur, handleChange, handleSubmit } =
     handleFunctions(values, setValues, errors, setErrors, setLoad, navigate);
 
   return (
     <StyleFormListaPreliminar
       onSubmit={(e) => {
         e.preventDefault();
-        who === 3 ? handleSubmitCreate(e) : handleSubmitUpdate(e);
+        handleSubmit(who);
       }}
     >
       <div className="ContainerFields">

@@ -19,13 +19,7 @@ const useAuth = () => {
     const token = cookies.get('accecs_token');
     (async () => {
       try {
-        const data = await helpHttp().post("profile", {
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const data = await helpHttp().post("profile");
         if (data.status) throw data;
         if (!data.state) setAuth({ state: 1, message: data.message });
         else {
@@ -37,7 +31,7 @@ const useAuth = () => {
         if (token) {
           helpDropCookies();
         }
-        setAuth({ state: 1, message: error.statusText });
+        setAuth({ state: 1, message: error.message });
       }
     })();
   }, []);

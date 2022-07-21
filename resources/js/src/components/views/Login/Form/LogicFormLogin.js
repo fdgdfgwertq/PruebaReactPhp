@@ -3,13 +3,7 @@ import { helpHttp } from "../../../../helpers/helpHttp";
 import { helpErrors } from "../../../../helpers/helpErrors";
 
 const fetchLogin = async (values) => {
-  const data = await helpHttp().post("login", {
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: values,
-  });
+  const data = await helpHttp(true).post("login", {body: values,});
   if (!data.state) {
     helpErrors(data);
     return data;

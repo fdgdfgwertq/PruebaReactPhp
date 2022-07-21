@@ -1,5 +1,5 @@
 import { initialErrors, initialValues } from "./initialValuesFormListaPreliminar";
-import { fetchCreateListaPreliminar, fetchUpdateListaPreliminar } from "./logicFormListaPreliminar";
+import { fetchFormListaPreliminar } from "./logicFormListaPreliminar";
 import { UnitValidationsListaPreliminar, ValidationsFormListaPreliminar } from "./ValidationsFormListaPreliminar";
 import toast from "react-hot-toast";
 
@@ -32,14 +32,19 @@ export const handleFunctions = (
     if (response.state) setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  const handleSubmitCreate = async () => {
+  const handleSubmit = async (who) => {
     setLoad(true);
     const response = await ValidationsFormListaPreliminar(values);
     if (!response.state) {
       setLoad(false);
       return setErrors({ ...initialErrors, ...response.errors });
     }
-    const responseServe = await fetchCreateListaPreliminar(values);
+    const method = who === 3 ? "post" : "put";
+    const url =
+      who === 3
+        ? "listados-preliminares/create"
+        : "listados-preliminares/update";
+    const responseServe = await fetchFormListaPreliminar(values, method, url);
     if (!responseServe.state) {
       if (responseServe.errors)
         setErrors({ ...initialErrors, ...responseServe.errors });
@@ -47,33 +52,19 @@ export const handleFunctions = (
       return setLoad(false);
     }
     setLoad(false);
-    setValues({ ...initialValues });
-    toast.success("El resgistro se almaceno correctamente");
-  };
-
-  const handleSubmitUpdate = async () => {
-    setLoad(true);
-    const response = await ValidationsFormListaPreliminar(values);
-    if (!response.state) {
-      setLoad(false);
-      return setErrors({ ...initialErrors, ...response.errors });
+    if(who===3){
+      setValues({ ...initialValues });
+      toast.success("El resgistro se almaceno correctamente");
+    }else{
+      toast.success("El resgistro se actualizo correctamente");
+      navigate("/listado-preliminar", { replace: true });
     }
-    const responseServe = await fetchUpdateListaPreliminar(values);
-    if (!responseServe.state) {
-      if (responseServe.errors)
-        setErrors({ ...initialErrors, ...responseServe.errors });
-      if (responseServe.message) toast.error(responseServe.message);
-      return setLoad(false);
-    }
-    setLoad(false);
-    toast.success("El resgistro se actualizo correctamente");
-    navigate('/listado-preliminar',{replace:true});
-  };
+  }
 
   const handleBlur = async (e) => {
     const response = await ValidateField(e.target.name, e.target.value);
     if (!response.state) return setErrors({ ...errors, ...response.errors });
   };
 
-  return { handleSubmitCreate, handleBlur, handleChange, handleSubmitUpdate };
+  return { handleSubmit, handleBlur, handleChange };
 };

@@ -9607,7 +9607,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
 /* harmony import */ var _helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpHttp */ "./resources/js/src/helpers/helpHttp.js");
 /* harmony import */ var _Form_FormListaPreliminar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Form/FormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/FormListaPreliminar.js");
 /* harmony import */ var _hooks_useUpdateDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useUpdateDataListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useUpdateDataListadoPreliminar.js");
@@ -9631,7 +9630,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-
 var UpdateListadoPreliminar = function UpdateListadoPreliminar() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useParams)(),
       idListado = _useParams.idListado;
@@ -9642,53 +9640,47 @@ var UpdateListadoPreliminar = function UpdateListadoPreliminar() {
       if (!response) return false;
       if (!response.state) return false;
       setTimeout( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var cookies, token, _response;
+        var body, _response;
 
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_7__["default"]();
-                token = cookies.get("accecs_token");
-                _context.prev = 2;
-                _context.next = 5;
+                _context.prev = 0;
+                body = {
+                  ID_LISTADO: idListado
+                };
+                _context.next = 4;
                 return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__.helpHttp)().del("listados-preliminares/update", {
-                  headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                    Authorization: "Bearer ".concat(token)
-                  },
-                  body: {
-                    ID_LISTADO: idListado
-                  }
+                  body: body
                 });
 
-              case 5:
+              case 4:
                 _response = _context.sent;
-                console.log(_response);
+                console.log(_response, "del");
 
                 if (_response.state) {
-                  _context.next = 9;
+                  _context.next = 8;
                   break;
                 }
 
                 throw _response;
 
-              case 9:
-                _context.next = 14;
+              case 8:
+                _context.next = 13;
                 break;
 
-              case 11:
-                _context.prev = 11;
-                _context.t0 = _context["catch"](2);
+              case 10:
+                _context.prev = 10;
+                _context.t0 = _context["catch"](0);
                 console.log(_context.t0);
 
-              case 14:
+              case 13:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[2, 11]]);
+        }, _callee, null, [[0, 10]]);
       })), 500);
     };
   });
@@ -9785,13 +9777,12 @@ var FormListaPreliminar = function FormListaPreliminar(_ref) {
   var _handleFunctions = (0,_handleFunctions__WEBPACK_IMPORTED_MODULE_4__.handleFunctions)(values, setValues, errors, setErrors, setLoad, navigate),
       handleBlur = _handleFunctions.handleBlur,
       handleChange = _handleFunctions.handleChange,
-      handleSubmitCreate = _handleFunctions.handleSubmitCreate,
-      handleSubmitUpdate = _handleFunctions.handleSubmitUpdate;
+      handleSubmit = _handleFunctions.handleSubmit;
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_StyleFormListaPreliminar__WEBPACK_IMPORTED_MODULE_6__.StyleFormListaPreliminar, {
     onSubmit: function onSubmit(e) {
       e.preventDefault();
-      who === 3 ? handleSubmitCreate(e) : handleSubmitUpdate(e);
+      handleSubmit(who);
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
       className: "ContainerFields",
@@ -10174,9 +10165,9 @@ var handleFunctions = function handleFunctions(values, setValues, errors, setErr
     };
   }();
 
-  var handleSubmitCreate = /*#__PURE__*/function () {
-    var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-      var response, responseServe;
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(who) {
+      var response, method, url, responseServe;
       return _regeneratorRuntime().wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
@@ -10197,14 +10188,16 @@ var handleFunctions = function handleFunctions(values, setValues, errors, setErr
               return _context3.abrupt("return", setErrors(_objectSpread(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_0__.initialErrors), response.errors)));
 
             case 7:
-              _context3.next = 9;
-              return (0,_logicFormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__.fetchCreateListaPreliminar)(values);
+              method = who === 3 ? "post" : "put";
+              url = who === 3 ? "listados-preliminares/create" : "listados-preliminares/update";
+              _context3.next = 11;
+              return (0,_logicFormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__.fetchFormListaPreliminar)(values, method, url);
 
-            case 9:
+            case 11:
               responseServe = _context3.sent;
 
               if (responseServe.state) {
-                _context3.next = 14;
+                _context3.next = 16;
                 break;
               }
 
@@ -10212,12 +10205,20 @@ var handleFunctions = function handleFunctions(values, setValues, errors, setErr
               if (responseServe.message) react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].error(responseServe.message);
               return _context3.abrupt("return", setLoad(false));
 
-            case 14:
+            case 16:
               setLoad(false);
-              setValues(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_0__.initialValues));
-              react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].success("El resgistro se almaceno correctamente");
 
-            case 17:
+              if (who === 3) {
+                setValues(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_0__.initialValues));
+                react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].success("El resgistro se almaceno correctamente");
+              } else {
+                react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].success("El resgistro se actualizo correctamente");
+                navigate("/listado-preliminar", {
+                  replace: true
+                });
+              }
+
+            case 18:
             case "end":
               return _context3.stop();
           }
@@ -10225,57 +10226,32 @@ var handleFunctions = function handleFunctions(values, setValues, errors, setErr
       }, _callee3);
     }));
 
-    return function handleSubmitCreate() {
+    return function handleSubmit(_x4) {
       return _ref3.apply(this, arguments);
     };
   }();
 
-  var handleSubmitUpdate = /*#__PURE__*/function () {
-    var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
-      var response, responseServe;
+  var handleBlur = /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(e) {
+      var response;
       return _regeneratorRuntime().wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
-              setLoad(true);
-              _context4.next = 3;
-              return (0,_ValidationsFormListaPreliminar__WEBPACK_IMPORTED_MODULE_2__.ValidationsFormListaPreliminar)(values);
+              _context4.next = 2;
+              return ValidateField(e.target.name, e.target.value);
 
-            case 3:
+            case 2:
               response = _context4.sent;
 
               if (response.state) {
-                _context4.next = 7;
+                _context4.next = 5;
                 break;
               }
 
-              setLoad(false);
-              return _context4.abrupt("return", setErrors(_objectSpread(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_0__.initialErrors), response.errors)));
+              return _context4.abrupt("return", setErrors(_objectSpread(_objectSpread({}, errors), response.errors)));
 
-            case 7:
-              _context4.next = 9;
-              return (0,_logicFormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__.fetchUpdateListaPreliminar)(values);
-
-            case 9:
-              responseServe = _context4.sent;
-
-              if (responseServe.state) {
-                _context4.next = 14;
-                break;
-              }
-
-              if (responseServe.errors) setErrors(_objectSpread(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_0__.initialErrors), responseServe.errors));
-              if (responseServe.message) react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].error(responseServe.message);
-              return _context4.abrupt("return", setLoad(false));
-
-            case 14:
-              setLoad(false);
-              react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].success("El resgistro se actualizo correctamente");
-              navigate('/listado-preliminar', {
-                replace: true
-              });
-
-            case 17:
+            case 5:
             case "end":
               return _context4.stop();
           }
@@ -10283,49 +10259,15 @@ var handleFunctions = function handleFunctions(values, setValues, errors, setErr
       }, _callee4);
     }));
 
-    return function handleSubmitUpdate() {
+    return function handleBlur(_x5) {
       return _ref4.apply(this, arguments);
     };
   }();
 
-  var handleBlur = /*#__PURE__*/function () {
-    var _ref5 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(e) {
-      var response;
-      return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-        while (1) {
-          switch (_context5.prev = _context5.next) {
-            case 0:
-              _context5.next = 2;
-              return ValidateField(e.target.name, e.target.value);
-
-            case 2:
-              response = _context5.sent;
-
-              if (response.state) {
-                _context5.next = 5;
-                break;
-              }
-
-              return _context5.abrupt("return", setErrors(_objectSpread(_objectSpread({}, errors), response.errors)));
-
-            case 5:
-            case "end":
-              return _context5.stop();
-          }
-        }
-      }, _callee5);
-    }));
-
-    return function handleBlur(_x4) {
-      return _ref5.apply(this, arguments);
-    };
-  }();
-
   return {
-    handleSubmitCreate: handleSubmitCreate,
+    handleSubmit: handleSubmit,
     handleBlur: handleBlur,
-    handleChange: handleChange,
-    handleSubmitUpdate: handleSubmitUpdate
+    handleChange: handleChange
   };
 };
 
@@ -10369,10 +10311,8 @@ var initialErrors = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "fetchCreateListaPreliminar": () => (/* binding */ fetchCreateListaPreliminar),
-/* harmony export */   "fetchUpdateListaPreliminar": () => (/* binding */ fetchUpdateListaPreliminar)
+/* harmony export */   "fetchFormListaPreliminar": () => (/* binding */ fetchFormListaPreliminar)
 /* harmony export */ });
-/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
 /* harmony import */ var _helpers_helpErrors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../helpers/helpErrors */ "./resources/js/src/helpers/helpErrors.js");
 /* harmony import */ var _helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpHttp */ "./resources/js/src/helpers/helpHttp.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -10386,50 +10326,42 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-
-var fetchCreateListaPreliminar = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(values) {
-    var cookies, token, response;
+var fetchFormListaPreliminar = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(values, method, url) {
+    var response;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             values.ID_FUENTE = parseInt(values.ID_FUENTE);
-            cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_2__["default"]();
-            token = cookies.get("accecs_token");
-            _context.next = 5;
-            return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__.helpHttp)().post("listados-preliminares/create", {
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                Authorization: "Bearer ".concat(token)
-              },
+            _context.next = 3;
+            return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__.helpHttp)()[method](url, {
               body: values
             });
 
-          case 5:
+          case 3:
             response = _context.sent;
 
             if (response.state) {
-              _context.next = 11;
+              _context.next = 9;
               break;
             }
 
             if (!response.errors) {
-              _context.next = 10;
+              _context.next = 8;
               break;
             }
 
             (0,_helpers_helpErrors__WEBPACK_IMPORTED_MODULE_0__.helpErrors)(response);
             return _context.abrupt("return", response);
 
+          case 8:
+            return _context.abrupt("return", response);
+
+          case 9:
+            return _context.abrupt("return", response);
+
           case 10:
-            return _context.abrupt("return", response);
-
-          case 11:
-            return _context.abrupt("return", response);
-
-          case 12:
           case "end":
             return _context.stop();
         }
@@ -10437,63 +10369,8 @@ var fetchCreateListaPreliminar = /*#__PURE__*/function () {
     }, _callee);
   }));
 
-  return function fetchCreateListaPreliminar(_x) {
+  return function fetchFormListaPreliminar(_x, _x2, _x3) {
     return _ref.apply(this, arguments);
-  };
-}();
-
-var fetchUpdateListaPreliminar = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(values) {
-    var cookies, token, response;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            values.ID_FUENTE = parseInt(values.ID_FUENTE);
-            cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_2__["default"]();
-            token = cookies.get("accecs_token");
-            _context2.next = 5;
-            return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__.helpHttp)().put("listados-preliminares/update", {
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                Authorization: "Bearer ".concat(token)
-              },
-              body: values
-            });
-
-          case 5:
-            response = _context2.sent;
-
-            if (response.state) {
-              _context2.next = 11;
-              break;
-            }
-
-            if (!response.errors) {
-              _context2.next = 10;
-              break;
-            }
-
-            (0,_helpers_helpErrors__WEBPACK_IMPORTED_MODULE_0__.helpErrors)(response);
-            return _context2.abrupt("return", response);
-
-          case 10:
-            return _context2.abrupt("return", response);
-
-          case 11:
-            return _context2.abrupt("return", response);
-
-          case 12:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    }, _callee2);
-  }));
-
-  return function fetchUpdateListaPreliminar(_x2) {
-    return _ref2.apply(this, arguments);
   };
 }();
 
@@ -10695,7 +10572,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpHttp */ "./resources/js/src/helpers/helpHttp.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _features_dataListaPreliminarSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../features/dataListaPreliminarSlice */ "./resources/js/src/features/dataListaPreliminarSlice.js");
-/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
@@ -10721,7 +10597,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var useDataListadoPreliminar = function useDataListadoPreliminar() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -10735,58 +10610,51 @@ var useDataListadoPreliminar = function useDataListadoPreliminar() {
     var isMounted = true;
 
     _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var cookies, token, _response;
+      var _response;
 
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_4__["default"]();
-              token = cookies.get("accecs_token");
-              _context.prev = 2;
-              _context.next = 5;
+              _context.prev = 0;
+              _context.next = 3;
               return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__.helpHttp)().get("listados-preliminares", {
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                  Authorization: "Bearer ".concat(token)
-                },
                 signal: signal
               });
 
-            case 5:
+            case 3:
               _response = _context.sent;
               console.log(_response);
 
               if (_response.state) {
-                _context.next = 9;
+                _context.next = 7;
                 break;
               }
 
               throw _response;
 
-            case 9:
+            case 7:
               if (isMounted) dispatch((0,_features_dataListaPreliminarSlice__WEBPACK_IMPORTED_MODULE_3__.setDataLista)(_response.data));
-              _context.next = 16;
+              _context.next = 14;
               break;
 
-            case 12:
-              _context.prev = 12;
-              _context.t0 = _context["catch"](2);
+            case 10:
+              _context.prev = 10;
+              _context.t0 = _context["catch"](0);
               console.log(_context.t0);
               if (isMounted) dispatch((0,_features_dataListaPreliminarSlice__WEBPACK_IMPORTED_MODULE_3__.setMessageLista)(response.message));
 
-            case 16:
-              _context.prev = 16;
+            case 14:
+              _context.prev = 14;
               if (isMounted) setResponse(true);
-              return _context.finish(16);
+              return _context.finish(14);
 
-            case 19:
+            case 17:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[2, 12, 16, 19]]);
+      }, _callee, null, [[0, 10, 14, 17]]);
     }))();
 
     return function () {
@@ -10813,7 +10681,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
 /* harmony import */ var _helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpHttp */ "./resources/js/src/helpers/helpHttp.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
@@ -10838,7 +10705,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var useRecordListadoPreliminar = function useRecordListadoPreliminar(idListado) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -10851,55 +10717,49 @@ var useRecordListadoPreliminar = function useRecordListadoPreliminar(idListado) 
     var isMounted = true;
 
     _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var cookies, token, response;
+      var body, response;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_2__["default"]();
-              token = cookies.get("accecs_token");
-              _context.prev = 2;
-              _context.next = 5;
+              _context.prev = 0;
+              body = {
+                ID_LISTADO: idListado
+              };
+              _context.next = 4;
               return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__.helpHttp)().post("listados-preliminares", {
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                  Authorization: "Bearer ".concat(token)
-                },
                 signal: signal,
-                body: {
-                  ID_LISTADO: idListado
-                }
+                body: body
               });
 
-            case 5:
+            case 4:
               response = _context.sent;
               console.log(response);
 
               if (response.state) {
-                _context.next = 9;
+                _context.next = 8;
                 break;
               }
 
               throw response;
 
-            case 9:
+            case 8:
               if (isMounted) setData(response);
-              _context.next = 16;
+              _context.next = 15;
               break;
 
-            case 12:
-              _context.prev = 12;
-              _context.t0 = _context["catch"](2);
+            case 11:
+              _context.prev = 11;
+              _context.t0 = _context["catch"](0);
               console.log(_context.t0);
               if (isMounted) setData(_context.t0);
 
-            case 16:
+            case 15:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[2, 12]]);
+      }, _callee, null, [[0, 11]]);
     }))();
 
     return function () {
@@ -10926,7 +10786,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
 /* harmony import */ var _helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpHttp */ "./resources/js/src/helpers/helpHttp.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
@@ -10951,7 +10810,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var useUpdateDataListadoPreliminar = function useUpdateDataListadoPreliminar(idListado) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -10964,55 +10822,49 @@ var useUpdateDataListadoPreliminar = function useUpdateDataListadoPreliminar(idL
     var isMounted = true;
 
     _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var cookies, token, response;
+      var body, response;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_2__["default"]();
-              token = cookies.get("accecs_token");
-              _context.prev = 2;
-              _context.next = 5;
+              _context.prev = 0;
+              body = {
+                ID_LISTADO: idListado
+              };
+              _context.next = 4;
               return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__.helpHttp)().post("listados-preliminares/update", {
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                  Authorization: "Bearer ".concat(token)
-                },
                 signal: signal,
-                body: {
-                  ID_LISTADO: idListado
-                }
+                body: body
               });
 
-            case 5:
+            case 4:
               response = _context.sent;
               console.log(response);
 
               if (response.state) {
-                _context.next = 9;
+                _context.next = 8;
                 break;
               }
 
               throw response;
 
-            case 9:
+            case 8:
               if (isMounted) setData(response);
-              _context.next = 16;
+              _context.next = 15;
               break;
 
-            case 12:
-              _context.prev = 12;
-              _context.t0 = _context["catch"](2);
+            case 11:
+              _context.prev = 11;
+              _context.t0 = _context["catch"](0);
               console.log(_context.t0);
               if (isMounted) setData(_context.t0);
 
-            case 16:
+            case 15:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[2, 12]]);
+      }, _callee, null, [[0, 11]]);
     }))();
 
     return function () {
@@ -11231,11 +11083,7 @@ var fetchLogin = /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_0__.helpHttp)().post("login", {
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
-              },
+            return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_0__.helpHttp)(true).post("login", {
               body: values
             });
 
@@ -11671,6 +11519,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "helpHttp": () => (/* binding */ helpHttp)
 /* harmony export */ });
+/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
 /* harmony import */ var _components_router_paths__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/router/paths */ "./resources/js/src/components/router/paths.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -11679,15 +11528,33 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-var helpHttp = function helpHttp() {
+
+var helpHttp = function helpHttp(login) {
   var customFetch = function customFetch(endpoint, options) {
     var defaultHeader = {
-      accept: "application/json"
+      Accept: "application/json",
+      "Content-Type": "application/json"
     };
+
+    if (!login) {
+      var cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_1__["default"]();
+      var token = cookies.get("accecs_token");
+      defaultHeader.Authorization = "Bearer ".concat(token);
+    }
+
     options.method = options.method || "GET";
     options.headers = options.headers ? _objectSpread(_objectSpread({}, defaultHeader), options.headers) : defaultHeader;
     options.body = JSON.stringify(options.body) || false;
     if (!options.body) delete options.body;
+
+    if (!options.signal) {
+      var controller = new AbortController();
+      options.signal = controller.signal;
+      setTimeout(function () {
+        return controller.abort();
+      }, 3000);
+    }
+
     return fetch(_components_router_paths__WEBPACK_IMPORTED_MODULE_0__.API + endpoint, options).then(function (res) {
       return res.ok ? res.json() : Promise.reject({
         state: false,
@@ -11769,13 +11636,7 @@ var helpLogout = /*#__PURE__*/function () {
             token = cookies.get("accecs_token");
             _context.prev = 2;
             _context.next = 5;
-            return (0,_helpHttp__WEBPACK_IMPORTED_MODULE_1__.helpHttp)().post("logout", {
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                Authorization: "Bearer ".concat(token)
-              }
-            });
+            return (0,_helpHttp__WEBPACK_IMPORTED_MODULE_1__.helpHttp)().post("logout");
 
           case 5:
             data = _context.sent;
@@ -11888,13 +11749,7 @@ var useAuth = function useAuth() {
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_4__.helpHttp)().post("profile", {
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                  Authorization: "Bearer ".concat(token)
-                }
-              });
+              return (0,_helpers_helpHttp__WEBPACK_IMPORTED_MODULE_4__.helpHttp)().post("profile");
 
             case 3:
               data = _context.sent;
@@ -11935,7 +11790,7 @@ var useAuth = function useAuth() {
 
               setAuth({
                 state: 1,
-                message: _context.t0.statusText
+                message: _context.t0.message
               });
 
             case 14:

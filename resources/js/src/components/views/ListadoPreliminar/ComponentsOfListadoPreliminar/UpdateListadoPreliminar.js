@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Cookies from 'universal-cookie';
 import { helpHttp } from '../../../../helpers/helpHttp';
 import FormListaPreliminar from '../Form/FormListaPreliminar';
 import useUpdateDataListadoPreliminar from '../hooks/useUpdateDataListadoPreliminar';
@@ -15,23 +14,10 @@ const UpdateListadoPreliminar = () => {
       if (!response) return false;
       if(!response.state) return false;
       setTimeout(async () => {
-        const cookies = new Cookies();
-        const token = cookies.get("accecs_token");
         try {
-          const response = await helpHttp().del(
-            "listados-preliminares/update",
-            {
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-              },
-              body: {
-                ID_LISTADO: idListado,
-              },
-            }
-          );
-          console.log(response);
+          const body = { ID_LISTADO: idListado };
+          const response = await helpHttp().del("listados-preliminares/update",{body});
+          console.log(response,"del");
           if (!response.state) throw response;
         } catch (error) {
           console.log(error);

@@ -5,7 +5,6 @@ import {
   setDataLista,
   setMessageLista,
 } from "../../../../features/dataListaPreliminarSlice";
-import Cookies from "universal-cookie";
 
 const useDataListadoPreliminar = () => {
   const [response, setResponse] = useState(false);
@@ -17,17 +16,8 @@ const useDataListadoPreliminar = () => {
     let isMounted = true;
 
     (async () => {
-      const cookies = new Cookies();
-      const token = cookies.get("accecs_token");
       try {
-        const response = await helpHttp().get("listados-preliminares", {
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          signal,
-        });
+        const response = await helpHttp().get("listados-preliminares", {signal});
         console.log(response);
         if (!response.state) throw response;
         if (isMounted) dispatch(setDataLista(response.data));
