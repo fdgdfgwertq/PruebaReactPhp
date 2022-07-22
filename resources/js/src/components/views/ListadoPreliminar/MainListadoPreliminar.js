@@ -9,21 +9,21 @@ import ActionBackListaPreliminar from "./ComponentsOfListadoPreliminar/ActionBac
 
 const CreateListadoPreliminar = () => {
   return (
-    <>
-      <ActionBackListaPreliminar />
+    <div className="CreateListadoPreliminar">
+      <ActionBackListaPreliminar to="/listado-preliminar" />
       <h2>Crear un listado preliminar</h2>
       <FormListaPreliminar
         initialValues={initialValues}
         nameButton="Enviar"
         who={3}
       />
-    </>
+    </div>
   );
 }
 
 const MainListadoPreliminar = ({who}) => {
   return (
-    <StyleMainListadoPreliminar who={who}>
+    <StyleMainListadoPreliminar>
       {who === 1 && <GetListadoPreliminar />}
       {who === 2 && <GetRecordListadoPreliminar />}
       {who === 3 && <CreateListadoPreliminar />}

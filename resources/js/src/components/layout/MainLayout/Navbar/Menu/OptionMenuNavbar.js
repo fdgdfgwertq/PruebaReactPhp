@@ -42,7 +42,10 @@ const ContainOption = ({ linkName, srcImg }) => {
 const OptionMenuNavbar = ({linkDirection,linkName,srcImg}) => {
   return (
     <OptionMenuStyle>
-      <NavLink to={linkDirection}>
+      <NavLink
+        to={linkDirection}
+        className={({ isActive }) => (isActive ? 'decorationActive' : undefined)}
+      >
         <ContainOption linkName={linkName} srcImg={srcImg} />
       </NavLink>
     </OptionMenuStyle>

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { helpHttp } from '../../../../helpers/helpHttp';
+import ErrorComponent from '../../../common/ErrorComponent';
+import GeneralLoader from '../../../common/GeneralLoader';
 import FormListaPreliminar from '../Form/FormListaPreliminar';
 import useUpdateDataListadoPreliminar from '../hooks/useUpdateDataListadoPreliminar';
 import ActionBackListaPreliminar from './ActionBackListaPreliminar';
@@ -26,20 +28,22 @@ const UpdateListadoPreliminar = () => {
     };
   });
 
-  if (!response) return <div>Cargando...</div>;
+  if (!response) return <GeneralLoader />;
 
-  if (!response.state) return <div>{response.message}</div>;
+  if (!response.state) return <ErrorComponent message={response.message}/>;
 
   return (
-    <>
-      <ActionBackListaPreliminar/>
+    <div className="UpdateListadoPreliminar">
+      <ActionBackListaPreliminar
+        to={`/listado-preliminar/${response.data.ID_LISTADO}`}
+      />
       <h2>Actulizar un listado preliminar</h2>
       <FormListaPreliminar
         initialValues={response.data}
         nameButton="Actualizar"
         who={4}
       />
-    </>
+    </div>
   );
 };
 

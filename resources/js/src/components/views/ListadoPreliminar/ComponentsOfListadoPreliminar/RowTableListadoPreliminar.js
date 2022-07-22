@@ -1,9 +1,29 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { helpCapitalize } from '../../../../helpers/helpCapitalize';
 
 const Row = styled.tr`
   cursor: pointer;
+  height: 50px;
+  font-size: 1rem;
+  &:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  &:hover {
+    background-color: #f5f5f5;
+  }
+  td {
+    padding-left: 8px;
+    color: #15012e;
+  }
+  td:first-child {
+    font-weight: 900;
+    padding-left: 15px;
+  }
+  td:last-child {
+    padding-right: 15px;
+  }
 `;
 
 const RowTableListadoPreliminar = ({
@@ -23,22 +43,22 @@ const RowTableListadoPreliminar = ({
   return (
     <Row onClick={handleClick}>
       <td>
-        <span title={ID_LISTADO}>{ID_LISTADO}</span>
+        <span>{ID_LISTADO}</span>
       </td>
       <td>
-        <span title={NOMBRE}>{NOMBRE}</span>
+        <span title={NOMBRE}>{helpCapitalize(NOMBRE)}</span>
       </td>
       <td>
-        <span title={DEPARTAMENTO}>{DEPARTAMENTO}</span>
+        <span title={DEPARTAMENTO}>{helpCapitalize(DEPARTAMENTO)}</span>
       </td>
       <td>
-        <span title={MUNICIPIO}>{MUNICIPIO}</span>
+        <span title={MUNICIPIO}>{helpCapitalize(MUNICIPIO)}</span>
       </td>
       <td>
-        <span title={UBICACION}>{UBICACION}</span>
+        <span title={UBICACION}>{helpCapitalize(UBICACION)}</span>
       </td>
       <td>
-        <span title={FUENTE}>{FUENTE}</span>
+        <span title={FUENTE}>{helpCapitalize(FUENTE)}</span>
       </td>
     </Row>
   );

@@ -5,11 +5,11 @@ import styled from 'styled-components';
 const StyleHeaderGetListadoPreliminar = styled.div`
   display: flex;
   justify-content: flex-start;
-  padding: 10px 15px;
-  .ButtonNew{
+  padding: 10px 0;
+  .ButtonNew {
     padding: 8px 10px;
     border-radius: 8px;
-    background-color: blue;
+    background-color: #36304a;
     color: white;
     cursor: pointer;
   }

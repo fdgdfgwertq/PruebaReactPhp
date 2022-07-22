@@ -22,27 +22,27 @@ const MenuNavbar = () => {
         srcImg="IconClasificacionRecursos"
       />
       <OptionMenuNavbar
-        linkDirection="/"
+        linkDirection="/patrimonio-material"
         linkName="Patrimonio material"
         srcImg="IconPatrimonioMaterial"
       />
       <OptionMenuNavbar
-        linkDirection="/"
+        linkDirection="/patrimonio-inmaterial"
         linkName="Patrimonio inmaterial"
         srcImg="IconPatrimonioInmaterial"
       />
       <OptionMenuNavbar
-        linkDirection="/"
+        linkDirection="/festividades-eventos"
         linkName="Festividades y eventos"
         srcImg="IconFestividades"
       />
       <OptionMenuNavbar
-        linkDirection="/"
+        linkDirection="/grupos-especial-interes"
         linkName="Grupos especial interes"
         srcImg="IconGruposInteres"
       />
       <OptionMenuNavbar
-        linkDirection="/"
+        linkDirection="/sitios-naturales"
         linkName="Sitios naturales"
         srcImg="IconSitiosNaturales"
       />

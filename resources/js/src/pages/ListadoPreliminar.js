@@ -1,8 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import MainListadoPreliminar from "../components/views/ListadoPreliminar/MainListadoPreliminar";
+import useTittle from '../hooks/useTittle';
 
 const ListadoPreliminar = () => {
+  useTittle('Listado preliminar');
   return (
     <Routes>
       <Route path="/">

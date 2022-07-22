@@ -1,7 +1,7 @@
+import { toastMs } from "../../../../helpers/helpToastMessage";
 import { initialErrors, initialValues } from "./initialValuesFormListaPreliminar";
 import { fetchFormListaPreliminar } from "./logicFormListaPreliminar";
 import { UnitValidationsListaPreliminar, ValidationsFormListaPreliminar } from "./ValidationsFormListaPreliminar";
-import toast from "react-hot-toast";
 
 export const handleFunctions = (
   values,
@@ -48,16 +48,16 @@ export const handleFunctions = (
     if (!responseServe.state) {
       if (responseServe.errors)
         setErrors({ ...initialErrors, ...responseServe.errors });
-      if (responseServe.message) toast.error(responseServe.message);
+      if (responseServe.message) toastMs().error(responseServe.message);
       return setLoad(false);
     }
     setLoad(false);
     if(who===3){
       setValues({ ...initialValues });
-      toast.success("El resgistro se almaceno correctamente");
+      toastMs().success("El resgistro se almaceno correctamente");
     }else{
-      toast.success("El resgistro se actualizo correctamente");
-      navigate("/listado-preliminar", { replace: true });
+      toastMs().success("El resgistro se actualizo correctamente");
+      navigate(`/listado-preliminar/${values.ID_LISTADO}`, { replace: true });
     }
   }
 

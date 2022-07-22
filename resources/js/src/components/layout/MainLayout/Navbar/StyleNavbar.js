@@ -66,6 +66,9 @@ const Nav = styled(motion.nav)`
     font-size: 0.8rem;
     color: white;
   }
+  .decorationActive {
+    border-right: 3px solid #e4cbff;
+  }
 `;
 
 export {Nav};

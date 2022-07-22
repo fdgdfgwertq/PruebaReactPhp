@@ -8104,24 +8104,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "store": () => (/* binding */ store)
 /* harmony export */ });
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 /* harmony import */ var _features_dataListaPreliminarSlice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../features/dataListaPreliminarSlice */ "./resources/js/src/features/dataListaPreliminarSlice.js");
 /* harmony import */ var _features_dataProfileSlice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../features/dataProfileSlice */ "./resources/js/src/features/dataProfileSlice.js");
 /* harmony import */ var _features_mainLayoutSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../features/mainLayoutSlice */ "./resources/js/src/features/mainLayoutSlice.js");
 /* harmony import */ var _features_modalsSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../features/modalsSlice */ "./resources/js/src/features/modalsSlice.js");
-/* harmony import */ var _features_updateRecorSlice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../features/updateRecorSlice */ "./resources/js/src/features/updateRecorSlice.js");
 
 
 
 
 
-
-var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_5__.configureStore)({
+var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_4__.configureStore)({
   reducer: {
     mainLayoutSlice: _features_mainLayoutSlice__WEBPACK_IMPORTED_MODULE_2__["default"],
     modalsSlice: _features_modalsSlice__WEBPACK_IMPORTED_MODULE_3__["default"],
     dataProfileSlice: _features_dataProfileSlice__WEBPACK_IMPORTED_MODULE_1__["default"],
-    updateRecordSlice: _features_updateRecorSlice__WEBPACK_IMPORTED_MODULE_4__["default"],
     dataListaPreliminarSlice: _features_dataListaPreliminarSlice__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
@@ -8176,6 +8173,83 @@ var ButtonPage = function ButtonPage(_ref) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ButtonPage);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/common/ErrorComponent.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/src/components/common/ErrorComponent.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var StyleErrorComponent = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  justify-content: center;\n  align-items: center;\n  padding: 15px;\n  h2 {\n    font-size: 2.2rem;\n    font-family: ", ";\n    text-align: center;\n  }\n  img{\n    width: 150px;\n    height: 150px;\n  }\n"])), function (props) {
+  return props.theme.fonts.secondary;
+});
+
+var ErrorComponent = function ErrorComponent(_ref) {
+  var message = _ref.message;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(StyleErrorComponent, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+      src: "/img/vectores/ImgError.svg",
+      alt: "error"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+      children: message
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ErrorComponent);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/common/GeneralLoader.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/src/components/common/GeneralLoader.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var StyleGeneralLoader = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: grid;\n  height: 100%;\n  place-items: center center;\n  .loader {\n    width: 64px;\n    height: 64px;\n    position: relative;\n    animation: rotate 1.5s ease-in infinite alternate;\n  }\n  .loader::before {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    color: #220646;\n    background: currentColor;\n    width: 64px;\n    height: 32px;\n    border-radius: 0 0 50px 50px;\n  }\n  .loader::after {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: 10%;\n    background: #000;\n    width: 8px;\n    height: 64px;\n    animation: rotate 1.2s linear infinite alternate-reverse;\n  }\n\n  @keyframes rotate {\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n"])));
+
+var GeneralLoader = function GeneralLoader() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyleGeneralLoader, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      className: "loader"
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GeneralLoader);
 
 /***/ }),
 
@@ -8761,23 +8835,23 @@ var MenuNavbar = function MenuNavbar() {
       linkName: "Clasificacion recursos y atractivos",
       srcImg: "IconClasificacionRecursos"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_OptionMenuNavbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      linkDirection: "/",
+      linkDirection: "/patrimonio-material",
       linkName: "Patrimonio material",
       srcImg: "IconPatrimonioMaterial"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_OptionMenuNavbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      linkDirection: "/",
+      linkDirection: "/patrimonio-inmaterial",
       linkName: "Patrimonio inmaterial",
       srcImg: "IconPatrimonioInmaterial"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_OptionMenuNavbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      linkDirection: "/",
+      linkDirection: "/festividades-eventos",
       linkName: "Festividades y eventos",
       srcImg: "IconFestividades"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_OptionMenuNavbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      linkDirection: "/",
+      linkDirection: "/grupos-especial-interes",
       linkName: "Grupos especial interes",
       srcImg: "IconGruposInteres"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_OptionMenuNavbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      linkDirection: "/",
+      linkDirection: "/sitios-naturales",
       linkName: "Sitios naturales",
       srcImg: "IconSitiosNaturales"
     })]
@@ -8839,6 +8913,10 @@ var OptionMenuNavbar = function OptionMenuNavbar(_ref2) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(OptionMenuStyle, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.NavLink, {
       to: linkDirection,
+      className: function className(_ref3) {
+        var isActive = _ref3.isActive;
+        return isActive ? 'decorationActive' : undefined;
+      },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ContainOption, {
         linkName: linkName,
         srcImg: srcImg
@@ -8983,7 +9061,7 @@ var styleNavResize = function styleNavResize(_ref) {
   if (movile) return "\n    position : fixed;\n    top: 0;\n    left: 0;\n    z-index: 50;\n    width: 85%;\n    max-width: 283px;\n    .ContainerCloseMenu {\n      display: flex;\n      padding: 10px;\n      justify-content: flex-end;\n      button {\n        cursor: pointer;\n      }\n      img {\n        width: 30px;\n        height: 30px;\n      }\n    }\n  ";
 };
 
-var Nav = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.nav)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background-color: #220646;\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  ", "\n  .HeaderNav {\n    display: grid;\n    padding: 15px;\n    place-items: center center;\n    img {\n      width: 100px;\n      height: 100px;\n    }\n  }\n  .ContainerMenuNavbar {\n    flex-grow: 1;\n  }\n  .ContainerLogoutNavbar {\n    background-color: #15012e;\n  }\n  .ContainerLogoutNavbar > button {\n    display: flex;\n    gap: 10px;\n    align-items: center;\n    cursor: pointer;\n    padding: 10px 10px 10px 20px;\n    box-sizing: border-box;\n    width: 100%;\n  }\n  .ContainerLogoutNavbar > button:hover {\n    background-color: rgba(255, 255, 255, 0.08);\n  }\n  .ContainerLogoutNavbar > button img {\n    width: 30px;\n    height: 30px;\n  }\n  .ContainerLogoutNavbar > button .linkName {\n    font-weight: 100;\n    font-size: 0.8rem;\n    color: white;\n  }\n"])), function (props) {
+var Nav = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.nav)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background-color: #220646;\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  ", "\n  .HeaderNav {\n    display: grid;\n    padding: 15px;\n    place-items: center center;\n    img {\n      width: 100px;\n      height: 100px;\n    }\n  }\n  .ContainerMenuNavbar {\n    flex-grow: 1;\n  }\n  .ContainerLogoutNavbar {\n    background-color: #15012e;\n  }\n  .ContainerLogoutNavbar > button {\n    display: flex;\n    gap: 10px;\n    align-items: center;\n    cursor: pointer;\n    padding: 10px 10px 10px 20px;\n    box-sizing: border-box;\n    width: 100%;\n  }\n  .ContainerLogoutNavbar > button:hover {\n    background-color: rgba(255, 255, 255, 0.08);\n  }\n  .ContainerLogoutNavbar > button img {\n    width: 30px;\n    height: 30px;\n  }\n  .ContainerLogoutNavbar > button .linkName {\n    font-weight: 100;\n    font-size: 0.8rem;\n    color: white;\n  }\n  .decorationActive {\n    border-right: 3px solid #e4cbff;\n  }\n"])), function (props) {
   return styleNavResize(props.resize);
 });
 
@@ -9332,12 +9410,13 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var StyleActionBackListaPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  padding: 5px 15px;\n  justify-content: flex-start;\n  .ButtonBack {\n    background-color: blue;\n    padding: 10px 15px;\n    color: white;\n    border-radius: 8px;\n    cursor: pointer;\n  }\n"])));
+var StyleActionBackListaPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  padding: 10px 0;\n  justify-content: flex-start;\n  .ButtonBack {\n    background-color: #36304a;\n    padding: 10px 15px;\n    color: white;\n    border-radius: 8px;\n    cursor: pointer;\n  }\n"])));
 
-var ActionBackListaPreliminar = function ActionBackListaPreliminar() {
+var ActionBackListaPreliminar = function ActionBackListaPreliminar(_ref) {
+  var to = _ref.to;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyleActionBackListaPreliminar, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-      to: "/listado-preliminar",
+      to: to,
       className: "ButtonBack",
       children: "Atras"
     })
@@ -9360,10 +9439,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _hooks_useDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/useDataListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useDataListadoPreliminar.js");
-/* harmony import */ var _Table_TableListadoPreliminar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Table/TableListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Table/TableListadoPreliminar.js");
-/* harmony import */ var _HeaderGetListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./HeaderGetListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/HeaderGetListadoPreliminar.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _common_GeneralLoader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common/GeneralLoader */ "./resources/js/src/components/common/GeneralLoader.js");
+/* harmony import */ var _hooks_useDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useDataListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useDataListadoPreliminar.js");
+/* harmony import */ var _Table_TableListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Table/TableListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Table/TableListadoPreliminar.js");
+/* harmony import */ var _HeaderGetListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./HeaderGetListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/HeaderGetListadoPreliminar.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -9373,17 +9453,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var GetListadoPreliminar = function GetListadoPreliminar() {
-  var response = (0,_hooks_useDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  console.log(response);
-  if (!response) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    children: "Cargando..."
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+  var response = (0,_hooks_useDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  if (!response) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_common_GeneralLoader__WEBPACK_IMPORTED_MODULE_1__["default"], {});
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    className: "GetListadoPreliminar",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
       children: "Listado Preliminar"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "ContainerMainGetListadoPreliminar",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_HeaderGetListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Table_TableListadoPreliminar__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_HeaderGetListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Table_TableListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
     })]
   });
 };
@@ -9404,28 +9482,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _hooks_useRecordListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/useRecordListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useRecordListadoPreliminar.js");
-/* harmony import */ var _ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ActionBackListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/ActionBackListaPreliminar.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpCapitalize */ "./resources/js/src/helpers/helpCapitalize.js");
+/* harmony import */ var _common_ErrorComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/ErrorComponent */ "./resources/js/src/components/common/ErrorComponent.js");
+/* harmony import */ var _common_GeneralLoader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/GeneralLoader */ "./resources/js/src/components/common/GeneralLoader.js");
+/* harmony import */ var _hooks_useRecordListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hooks/useRecordListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useRecordListadoPreliminar.js");
+/* harmony import */ var _ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ActionBackListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/ActionBackListaPreliminar.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
 
 
 
+
+
+
+
+
+var ContainerInformation = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  width: 95%;\n  max-width: 740px;\n  margin: 0 auto;\n  .MainInformation {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n    gap: 15px;\n  }\n  p {\n    display: flex;\n    flex-direction: column;\n    gap: 5px;\n  }\n  .titleInformation {\n    font-family: ", ";\n    font-weight: 600;\n    color: #15012e;\n    font-size: 1.4rem;\n  }\n  .information {\n    font-size: 1.2rem;\n  }\n  .ContainerButtons {\n    margin-top: 20px;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-around;\n    gap: 10px;\n  }\n  button {\n    padding: 10px 15px;\n    color: white;\n    border-radius: 8px;\n    cursor: pointer;\n  }\n  .delete {\n    background-color: red;\n  }\n  .update {\n    background-color: blue;\n  }\n"])), function (props) {
+  return props.theme.fonts.secondary;
+});
 
 var GetRecordListadoPreliminar = function GetRecordListadoPreliminar() {
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)(),
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useParams)(),
       idListado = _useParams.idListado;
 
-  var response = (0,_hooks_useRecordListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"])(idListado);
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
-  if (!response) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    children: "Cargando..."
-  });
-  if (!response.state) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    children: response.message
+  var response = (0,_hooks_useRecordListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__["default"])(idListado);
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useNavigate)();
+  if (!response) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_GeneralLoader__WEBPACK_IMPORTED_MODULE_3__["default"], {});
+  if (!response.state) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_ErrorComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    message: response.message
   });
 
   var handleClick = function handleClick() {
@@ -9434,38 +9525,59 @@ var GetRecordListadoPreliminar = function GetRecordListadoPreliminar() {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    className: "GetRecordListadoPreliminar",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      to: "/listado-preliminar"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
       children: response.data["NOMBRE"]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        children: "Municipio: "
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        children: response.data["MUNICIPIO"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(ContainerInformation, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "MainInformation",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "titleInformation",
+            children: "Municipio: "
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "information",
+            children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(response.data["MUNICIPIO"])
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "titleInformation",
+            children: "Departamento: "
+          }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "information",
+            children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(response.data["DEPARTAMENTO"])
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "titleInformation",
+            children: "Ubicaci\xF3n: "
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "information",
+            children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(response.data["UBICACION"])
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "titleInformation",
+            children: "Fuente: "
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "information",
+            children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(response.data["FUENTE"])
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        className: "ContainerButtons",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+          onClick: handleClick,
+          className: "update",
+          children: "Actualizar"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+          className: "delete",
+          children: "Eliminar"
+        })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        children: "Departamento: "
-      }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        children: response.data["DEPARTAMENTO"]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        children: "Ubicaci\xF3n: "
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        children: response.data["UBICACION"]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        children: "Fuente: "
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        children: response.data["FUENTE"]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-      onClick: handleClick,
-      children: "Actualizar"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-      children: "Eliminar"
     })]
   });
 };
@@ -9497,7 +9609,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var StyleHeaderGetListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-start;\n  padding: 10px 15px;\n  .ButtonNew{\n    padding: 8px 10px;\n    border-radius: 8px;\n    background-color: blue;\n    color: white;\n    cursor: pointer;\n  }\n"])));
+var StyleHeaderGetListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-start;\n  padding: 10px 0;\n  .ButtonNew {\n    padding: 8px 10px;\n    border-radius: 8px;\n    background-color: #36304a;\n    color: white;\n    cursor: pointer;\n  }\n"])));
 
 var HeaderGetListadoPreliminar = function HeaderGetListadoPreliminar() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyleHeaderGetListadoPreliminar, {
@@ -9525,9 +9637,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpCapitalize */ "./resources/js/src/helpers/helpCapitalize.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -9537,7 +9650,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Row = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].tr(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  cursor: pointer;\n"])));
+
+var Row = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].tr(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  cursor: pointer;\n  height: 50px;\n  font-size: 1rem;\n  &:nth-child(even) {\n    background-color: #f5f5f5;\n  }\n  &:hover {\n    background-color: #f5f5f5;\n  }\n  td {\n    padding-left: 8px;\n    color: #15012e;\n  }\n  td:first-child {\n    font-weight: 900;\n    padding-left: 15px;\n  }\n  td:last-child {\n    padding-right: 15px;\n  }\n"])));
 
 var RowTableListadoPreliminar = function RowTableListadoPreliminar(_ref) {
   var ID_LISTADO = _ref.ID_LISTADO,
@@ -9546,7 +9660,7 @@ var RowTableListadoPreliminar = function RowTableListadoPreliminar(_ref) {
       MUNICIPIO = _ref.MUNICIPIO,
       NOMBRE = _ref.NOMBRE,
       UBICACION = _ref.UBICACION;
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
 
   var handleClick = function handleClick(e) {
     navigate("./".concat(ID_LISTADO), {
@@ -9554,37 +9668,36 @@ var RowTableListadoPreliminar = function RowTableListadoPreliminar(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Row, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Row, {
     onClick: handleClick,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        title: ID_LISTADO,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
         children: ID_LISTADO
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
         title: NOMBRE,
-        children: NOMBRE
+        children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(NOMBRE)
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
         title: DEPARTAMENTO,
-        children: DEPARTAMENTO
+        children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(DEPARTAMENTO)
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
         title: MUNICIPIO,
-        children: MUNICIPIO
+        children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(MUNICIPIO)
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
         title: UBICACION,
-        children: UBICACION
+        children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(UBICACION)
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
         title: FUENTE,
-        children: FUENTE
+        children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(FUENTE)
       })
     })]
   });
@@ -9606,12 +9719,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpHttp */ "./resources/js/src/helpers/helpHttp.js");
-/* harmony import */ var _Form_FormListaPreliminar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Form/FormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/FormListaPreliminar.js");
-/* harmony import */ var _hooks_useUpdateDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useUpdateDataListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useUpdateDataListadoPreliminar.js");
-/* harmony import */ var _ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ActionBackListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/ActionBackListaPreliminar.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _common_ErrorComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/ErrorComponent */ "./resources/js/src/components/common/ErrorComponent.js");
+/* harmony import */ var _common_GeneralLoader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/GeneralLoader */ "./resources/js/src/components/common/GeneralLoader.js");
+/* harmony import */ var _Form_FormListaPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Form/FormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/FormListaPreliminar.js");
+/* harmony import */ var _hooks_useUpdateDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hooks/useUpdateDataListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useUpdateDataListadoPreliminar.js");
+/* harmony import */ var _ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ActionBackListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/ActionBackListaPreliminar.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
@@ -9630,11 +9745,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 var UpdateListadoPreliminar = function UpdateListadoPreliminar() {
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useParams)(),
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useParams)(),
       idListado = _useParams.idListado;
 
-  var response = (0,_hooks_useUpdateDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__["default"])(idListado);
+  var response = (0,_hooks_useUpdateDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_5__["default"])(idListado);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     return function () {
       if (!response) return false;
@@ -9684,16 +9800,17 @@ var UpdateListadoPreliminar = function UpdateListadoPreliminar() {
       })), 500);
     };
   });
-  if (!response) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    children: "Cargando..."
+  if (!response) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_common_GeneralLoader__WEBPACK_IMPORTED_MODULE_3__["default"], {});
+  if (!response.state) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_common_ErrorComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    message: response.message
   });
-  if (!response.state) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    children: response.message
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    className: "UpdateListadoPreliminar",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      to: "/listado-preliminar/".concat(response.data.ID_LISTADO)
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
       children: "Actulizar un listado preliminar"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Form_FormListaPreliminar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Form_FormListaPreliminar__WEBPACK_IMPORTED_MODULE_4__["default"], {
       initialValues: response.data,
       nameButton: "Actualizar",
       who: 4
@@ -10080,10 +10197,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "handleFunctions": () => (/* binding */ handleFunctions)
 /* harmony export */ });
-/* harmony import */ var _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./initialValuesFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/initialValuesFormListaPreliminar.js");
-/* harmony import */ var _logicFormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logicFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/logicFormListaPreliminar.js");
-/* harmony import */ var _ValidationsFormListaPreliminar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ValidationsFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/ValidationsFormListaPreliminar.js");
-/* harmony import */ var react_hot_toast__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-hot-toast */ "./node_modules/react-hot-toast/dist/index.mjs");
+/* harmony import */ var _helpers_helpToastMessage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../helpers/helpToastMessage */ "./resources/js/src/helpers/helpToastMessage.js");
+/* harmony import */ var _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./initialValuesFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/initialValuesFormListaPreliminar.js");
+/* harmony import */ var _logicFormListaPreliminar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logicFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/logicFormListaPreliminar.js");
+/* harmony import */ var _ValidationsFormListaPreliminar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ValidationsFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/ValidationsFormListaPreliminar.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -10112,7 +10229,7 @@ var handleFunctions = function handleFunctions(values, setValues, errors, setErr
             case 0:
               FieldValue = _defineProperty({}, name, value);
               _context.next = 3;
-              return (0,_ValidationsFormListaPreliminar__WEBPACK_IMPORTED_MODULE_2__.UnitValidationsListaPreliminar)(FieldValue);
+              return (0,_ValidationsFormListaPreliminar__WEBPACK_IMPORTED_MODULE_3__.UnitValidationsListaPreliminar)(FieldValue);
 
             case 3:
               response = _context.sent;
@@ -10174,7 +10291,7 @@ var handleFunctions = function handleFunctions(values, setValues, errors, setErr
             case 0:
               setLoad(true);
               _context3.next = 3;
-              return (0,_ValidationsFormListaPreliminar__WEBPACK_IMPORTED_MODULE_2__.ValidationsFormListaPreliminar)(values);
+              return (0,_ValidationsFormListaPreliminar__WEBPACK_IMPORTED_MODULE_3__.ValidationsFormListaPreliminar)(values);
 
             case 3:
               response = _context3.sent;
@@ -10185,13 +10302,13 @@ var handleFunctions = function handleFunctions(values, setValues, errors, setErr
               }
 
               setLoad(false);
-              return _context3.abrupt("return", setErrors(_objectSpread(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_0__.initialErrors), response.errors)));
+              return _context3.abrupt("return", setErrors(_objectSpread(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__.initialErrors), response.errors)));
 
             case 7:
               method = who === 3 ? "post" : "put";
               url = who === 3 ? "listados-preliminares/create" : "listados-preliminares/update";
               _context3.next = 11;
-              return (0,_logicFormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__.fetchFormListaPreliminar)(values, method, url);
+              return (0,_logicFormListaPreliminar__WEBPACK_IMPORTED_MODULE_2__.fetchFormListaPreliminar)(values, method, url);
 
             case 11:
               responseServe = _context3.sent;
@@ -10201,19 +10318,19 @@ var handleFunctions = function handleFunctions(values, setValues, errors, setErr
                 break;
               }
 
-              if (responseServe.errors) setErrors(_objectSpread(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_0__.initialErrors), responseServe.errors));
-              if (responseServe.message) react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].error(responseServe.message);
+              if (responseServe.errors) setErrors(_objectSpread(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__.initialErrors), responseServe.errors));
+              if (responseServe.message) (0,_helpers_helpToastMessage__WEBPACK_IMPORTED_MODULE_0__.toastMs)().error(responseServe.message);
               return _context3.abrupt("return", setLoad(false));
 
             case 16:
               setLoad(false);
 
               if (who === 3) {
-                setValues(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_0__.initialValues));
-                react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].success("El resgistro se almaceno correctamente");
+                setValues(_objectSpread({}, _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__.initialValues));
+                (0,_helpers_helpToastMessage__WEBPACK_IMPORTED_MODULE_0__.toastMs)().success("El resgistro se almaceno correctamente");
               } else {
-                react_hot_toast__WEBPACK_IMPORTED_MODULE_3__["default"].success("El resgistro se actualizo correctamente");
-                navigate("/listado-preliminar", {
+                (0,_helpers_helpToastMessage__WEBPACK_IMPORTED_MODULE_0__.toastMs)().success("El resgistro se actualizo correctamente");
+                navigate("/listado-preliminar/".concat(values.ID_LISTADO), {
                   replace: true
                 });
               }
@@ -10409,10 +10526,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var CreateListadoPreliminar = function CreateListadoPreliminar() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_ComponentsOfListadoPreliminar_ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    className: "CreateListadoPreliminar",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_ComponentsOfListadoPreliminar_ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      to: "/listado-preliminar"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
       children: "Crear un listado preliminar"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Form_FormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       initialValues: _Form_initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_4__.initialValues,
@@ -10425,7 +10544,6 @@ var CreateListadoPreliminar = function CreateListadoPreliminar() {
 var MainListadoPreliminar = function MainListadoPreliminar(_ref) {
   var who = _ref.who;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_StyleMainListadoPreliminar__WEBPACK_IMPORTED_MODULE_2__.StyleMainListadoPreliminar, {
-    who: who,
     children: [who === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_ComponentsOfListadoPreliminar_GetListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), who === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_ComponentsOfListadoPreliminar_GetRecordListadoPreliminar__WEBPACK_IMPORTED_MODULE_5__["default"], {}), who === 3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(CreateListadoPreliminar, {}), who === 4 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_ComponentsOfListadoPreliminar_UpdateListadoPreliminar__WEBPACK_IMPORTED_MODULE_6__["default"], {})]
   });
 };
@@ -10451,19 +10569,8 @@ var _templateObject;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-
-var StyleOption = function StyleOption(_ref) {
-  var who = _ref.who;
-
-  if (who === 3 || who === 4) {
-    return "\n      display: flex;\n      flex-direction: column;\n      gap: 20px;\n      padding: 30px 10px;\n      h2 {\n        text-align: center;\n        font-size: 2.3rem;\n        font-family: ".concat(function (props) {
-      return props.theme.fonts.secondary;
-    }, ";\n      }\n    ");
-  }
-};
-
-var StyleMainListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  ", "\n"])), function (props) {
-  return StyleOption(props);
+var StyleMainListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: grid;\n  min-height: 100%;\n  .GetListadoPreliminar {\n    overflow: hidden;\n  }\n  .GetRecordListadoPreliminar {\n    h2 {\n      width: fit-content;\n      margin: 0 auto 10px;\n      padding-bottom: 5px;\n      border-bottom: 3px solid #2206467a;\n      text-transform: uppercase;\n    }\n  }\n  .CreateListadoPreliminar,\n  .UpdateListadoPreliminar,\n  .GetListadoPreliminar,\n  .GetRecordListadoPreliminar {\n    display: flex;\n    flex-direction: column;\n    gap: 20px;\n    padding: 30px 10px;\n    h2 {\n      text-align: center;\n      font-size: 2.3rem;\n      font-family: ", ";\n    }\n  }\n"])), function (props) {
+  return props.theme.fonts.secondary;
 });
 
 
@@ -10487,8 +10594,10 @@ var _templateObject, _templateObject2;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var StyleTableListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].table(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  width: 1029px;\n  margin: 0 auto;\n  thead {\n    background-color: aqua;\n  }\n"])));
-var ContainerTableListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  padding: 15px 10px;\n  width: 100%;\n  overflow-x: auto;\n"])));
+var StyleTableListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].table(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  width: 1029px;\n  margin: 0 auto;\n  border-collapse: collapse;\n  border-radius: 10px;\n  overflow: hidden;\n  thead {\n    height: 60px;\n    background-color: #2c1742eb;\n    color: white;\n    font-family: ", ";\n  }\n  th {\n    font-weight: 100;\n    font-size: 1.2rem;\n    padding-left: 8px;\n  }\n  th:first-child {\n    padding-left: 15px;\n  }\n  th:last-child {\n    padding-right: 15px;\n  }\n"])), function (props) {
+  return props.theme.fonts.secondary;
+});
+var ContainerTableListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  padding-bottom: 15px;\n  width: 100%;\n  overflow-x: auto;\n"])));
 
 
 /***/ }),
@@ -11430,39 +11539,20 @@ var _modalsSlice$actions = modalsSlice.actions,
 
 /***/ }),
 
-/***/ "./resources/js/src/features/updateRecorSlice.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/src/features/updateRecorSlice.js ***!
-  \*******************************************************/
+/***/ "./resources/js/src/helpers/helpCapitalize.js":
+/*!****************************************************!*\
+  !*** ./resources/js/src/helpers/helpCapitalize.js ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "storeDataPrueba": () => (/* binding */ storeDataPrueba),
-/* harmony export */   "updateRecordSlice": () => (/* binding */ updateRecordSlice)
+/* harmony export */   "helpCapitalize": () => (/* binding */ helpCapitalize)
 /* harmony export */ });
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-
-var initialState = {
-  prueba: {
-    msg: 'a'
-  }
+var helpCapitalize = function helpCapitalize(text) {
+  return text[0].toUpperCase() + text.slice(1).toLocaleLowerCase();
 };
-var updateRecordSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
-  name: "updateRecordSlice",
-  initialState: initialState,
-  reducers: {
-    storeDataPrueba: function storeDataPrueba(state, action) {
-      console.log(action.payload);
-      state.prueba = action.payload;
-    }
-  }
-});
-var storeDataPrueba = updateRecordSlice.actions.storeDataPrueba;
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (updateRecordSlice.reducer);
 
 /***/ }),
 
@@ -11677,6 +11767,47 @@ var helpLogout = /*#__PURE__*/function () {
 }();
 
 
+
+/***/ }),
+
+/***/ "./resources/js/src/helpers/helpToastMessage.js":
+/*!******************************************************!*\
+  !*** ./resources/js/src/helpers/helpToastMessage.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "toastMs": () => (/* binding */ toastMs)
+/* harmony export */ });
+/* harmony import */ var react_hot_toast__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-hot-toast */ "./node_modules/react-hot-toast/dist/index.mjs");
+
+var toastMs = function toastMs() {
+  var settings = {
+    position: "bottom-right",
+    reverseOrder: false,
+    style: {
+      borderRadius: '5px',
+      background: '#333',
+      color: '#fff',
+      textAlign: 'center'
+    }
+  };
+
+  var success = function success(message) {
+    return react_hot_toast__WEBPACK_IMPORTED_MODULE_0__["default"].success(message, settings);
+  };
+
+  var error = function error(message) {
+    return react_hot_toast__WEBPACK_IMPORTED_MODULE_0__["default"].error(message, settings);
+  };
+
+  return {
+    success: success,
+    error: error
+  };
+};
 
 /***/ }),
 
@@ -11926,10 +12057,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _components_layout_MainLayout_LeadingLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layout/MainLayout/LeadingLayout */ "./resources/js/src/components/layout/MainLayout/LeadingLayout.js");
-/* harmony import */ var _components_views_Home_MainHome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/views/Home/MainHome */ "./resources/js/src/components/views/Home/MainHome.js");
+/* harmony import */ var _components_layout_MainLayout_LeadingLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout/MainLayout/LeadingLayout */ "./resources/js/src/components/layout/MainLayout/LeadingLayout.js");
+/* harmony import */ var _components_views_Home_MainHome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/views/Home/MainHome */ "./resources/js/src/components/views/Home/MainHome.js");
+/* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
 /* harmony import */ var _ListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ListadoPreliminar */ "./resources/js/src/pages/ListadoPreliminar.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -11942,25 +12073,46 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Home = function Home() {
-  var _useSelector = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
-    return state.updateRecordSlice.prueba;
-  }),
-      msg = _useSelector.msg;
-
+  (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_3__["default"])('Inicio');
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
       path: "/",
-      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_layout_MainLayout_LeadingLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {}),
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_layout_MainLayout_LeadingLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {}),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
         index: true,
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_views_Home_MainHome__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_views_Home_MainHome__WEBPACK_IMPORTED_MODULE_2__["default"], {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
         path: "listado-preliminar/*",
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__["default"], {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
         path: "clasificacion-recursos-atractivos",
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          children: msg
+          children: "clasificacion recursos y actractivos"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+        path: "patrimonio-material",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          children: "patrimonio material"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+        path: "patrimonio-inmaterial",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          children: "patrimonio inmaterial"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+        path: "festividades-eventos",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          children: "festividades y eventos"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+        path: "grupos-especial-interes",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          children: "grupos especial interes"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+        path: "sitios-naturales",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          children: "sitios naturales"
         })
       })]
     })
@@ -11983,9 +12135,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/views/ListadoPreliminar/MainListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/MainListadoPreliminar.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -11993,27 +12147,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ListadoPreliminar = function ListadoPreliminar() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Routes, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
+  (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__["default"])('Listado preliminar');
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Routes, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
       path: "/",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
         index: true,
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
           who: 1
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
         path: ":idListado",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
           who: 2
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
         path: "crear",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
           who: 3
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
         path: "actualizar/:idListado",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
           who: 4
         })
       })]

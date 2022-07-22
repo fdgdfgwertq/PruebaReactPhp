@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 const StyleActionBackListaPreliminar = styled.div`
   display: flex;
-  padding: 5px 15px;
+  padding: 10px 0;
   justify-content: flex-start;
   .ButtonBack {
-    background-color: blue;
+    background-color: #36304a;
     padding: 10px 15px;
     color: white;
     border-radius: 8px;
@@ -15,10 +15,10 @@ const StyleActionBackListaPreliminar = styled.div`
   }
 `;
 
-const ActionBackListaPreliminar = () => {
+const ActionBackListaPreliminar = ({to}) => {
   return (
     <StyleActionBackListaPreliminar>
-      <Link to="/listado-preliminar" className='ButtonBack'>Atras</Link>
+      <Link to={to} className='ButtonBack'>Atras</Link>
     </StyleActionBackListaPreliminar>
   )
 }
