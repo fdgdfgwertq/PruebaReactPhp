@@ -3,7 +3,7 @@ import { initialErrors, initialValues } from "./initialValuesFormListaPreliminar
 import { fetchFormListaPreliminar } from "./logicFormListaPreliminar";
 import { UnitValidationsListaPreliminar, ValidationsFormListaPreliminar } from "./ValidationsFormListaPreliminar";
 
-export const handleFunctions = (
+export const handleFunctionsLP = (
   values,
   setValues,
   errors,
@@ -52,14 +52,14 @@ export const handleFunctions = (
       return setLoad(false);
     }
     setLoad(false);
-    if(who===3){
+    if (who === 3) {
       setValues({ ...initialValues });
       toastMs().success("El resgistro se almaceno correctamente");
-    }else{
+    } else {
       toastMs().success("El resgistro se actualizo correctamente");
       navigate(`/listado-preliminar/${values.ID_LISTADO}`, { replace: true });
     }
-  }
+  };
 
   const handleBlur = async (e) => {
     const response = await ValidateField(e.target.name, e.target.value);

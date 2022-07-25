@@ -5,12 +5,12 @@ import GetListadoPreliminar from "./ComponentsOfListadoPreliminar/GetListadoPrel
 import { initialValues } from './Form/initialValuesFormListaPreliminar';
 import GetRecordListadoPreliminar from './ComponentsOfListadoPreliminar/GetRecordListadoPreliminar';
 import UpdateListadoPreliminar from './ComponentsOfListadoPreliminar/UpdateListadoPreliminar';
-import ActionBackListaPreliminar from "./ComponentsOfListadoPreliminar/ActionBackListaPreliminar";
+import ActionBack from '../ComponentsOfViews/ActionBack';
 
 const CreateListadoPreliminar = () => {
   return (
     <div className="CreateListadoPreliminar">
-      <ActionBackListaPreliminar to="/listado-preliminar" />
+      <ActionBack to="/listado-preliminar" />
       <h2>Crear un listado preliminar</h2>
       <FormListaPreliminar
         initialValues={initialValues}

@@ -3,7 +3,14 @@ import { Route,Routes } from "react-router-dom";
 import LeadingLayout from '../components/layout/MainLayout/LeadingLayout';
 import MainHome from '../components/views/Home/MainHome';
 import useTittle from '../hooks/useTittle';
+import ClasificacionRecursosAtractivos from './ClasificacionRecursosAtractivos';
+import Error404 from './Error404';
+import FestividadesEventos from './FestividadesEventos';
+import GruposEspecialInteres from './GruposEspecialInteres';
 import ListadoPreliminar from './ListadoPreliminar';
+import PatrimonioInmaterial from './PatrimonioInmaterial';
+import PatrimonioMaterial from './PatrimonioMaterial';
+import SitiosNaturales from './SitiosNaturales';
 
 const Home = () => {
   useTittle('Inicio');
@@ -14,29 +21,27 @@ const Home = () => {
         <Route index element={<MainHome />} />
         <Route path="listado-preliminar/*" element={<ListadoPreliminar />} />
         <Route
-          path="clasificacion-recursos-atractivos"
-          element={<div>clasificacion recursos y actractivos</div>}
+          path="clasificacion-recursos-atractivos/*"
+          element={<ClasificacionRecursosAtractivos />}
         />
         <Route
-          path="patrimonio-material"
-          element={<div>patrimonio material</div>}
+          path="patrimonio-material/*"
+          element={<PatrimonioMaterial/>}
         />
         <Route
-          path="patrimonio-inmaterial"
-          element={<div>patrimonio inmaterial</div>}
+          path="patrimonio-inmaterial/*"
+          element={<PatrimonioInmaterial/>}
         />
         <Route
-          path="festividades-eventos"
-          element={<div>festividades y eventos</div>}
+          path="festividades-eventos/*"
+          element={<FestividadesEventos/>}
         />
         <Route
-          path="grupos-especial-interes"
-          element={<div>grupos especial interes</div>}
+          path="grupos-especial-interes/*"
+          element={<GruposEspecialInteres/>}
         />
-        <Route
-          path="sitios-naturales"
-          element={<div>sitios naturales</div>}
-        />
+        <Route path="sitios-naturales/*" element={<SitiosNaturales/>} />
+        <Route path="*" element={<Error404 />} />
       </Route>
     </Routes>
   );

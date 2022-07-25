@@ -1,7 +1,7 @@
 import React from 'react'
 import GeneralLoader from '../../../common/GeneralLoader';
 import useDataListadoPreliminar from '../hooks/useDataListadoPreliminar';
-import TableListadoPreliminar from '../Table/TableListadoPreliminar';
+import TableListadoPreliminar from './TableListadoPreliminar';
 import HeaderGetListadoPreliminar from './HeaderGetListadoPreliminar';
 
 const GetListadoPreliminar = () => {

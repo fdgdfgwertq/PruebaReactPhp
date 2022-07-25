@@ -1,10 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import RowTableListadoPreliminar from '../ComponentsOfListadoPreliminar/RowTableListadoPreliminar';
-import {
-  StyleTableListadoPreliminar,
-  ContainerTableListadoPreliminar,
-} from "./StyleTableListadoPreliminar";
+import RowTableListadoPreliminar from './RowTableListadoPreliminar';
 
 const TableListadoPreliminar = () => {
   const data = useSelector(
@@ -12,11 +8,11 @@ const TableListadoPreliminar = () => {
   );
 
   return (
-    <ContainerTableListadoPreliminar>
-      <StyleTableListadoPreliminar>
+    <div className='ContainerTable'>
+      <table className='StyleTable'>
         <thead>
           <tr>
-            <th>N°</th>
+            <th>#</th>
             <th>Nombre</th>
             <th>Departamento</th>
             <th>Municipio</th>
@@ -29,8 +25,8 @@ const TableListadoPreliminar = () => {
             return <RowTableListadoPreliminar key={'RowListadoPreliminar'+key} {...val}/>;
           })}
         </tbody>
-      </StyleTableListadoPreliminar>
-    </ContainerTableListadoPreliminar>
+      </table>
+    </div>
   );
 }
 

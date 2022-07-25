@@ -1,0 +1,18 @@
+[
+	{
+    "ID_TIPO_ESTADO": 1,
+    "TIPO_ESTADO": "Satisfactorio"
+	},
+	{
+	"ID_TIPO_ESTADO": 2,
+	"TIPO_ESTADO": "Bueno"
+	},
+	{
+	"ID_TIPO_ESTADO": 3,
+	"TIPO_ESTADO": "Regular"
+	},
+	{
+	"ID_TIPO_ESTADO": 4,
+	"TIPO_ESTADO": "Malo o ruinoso"
+	}
+]

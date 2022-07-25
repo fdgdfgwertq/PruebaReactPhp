@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const styleNavResize = ({movile}) => {
+const styleNavResize = ({movile,desktop}) => {
   if(movile) return `
     position : fixed;
     top: 0;
     left: 0;
     z-index: 50;
     width: 85%;
-    max-width: 283px;
+    max-width: 286px;
     .ContainerCloseMenu {
       display: flex;
       padding: 10px;
@@ -21,6 +21,9 @@ const styleNavResize = ({movile}) => {
         height: 30px;
       }
     }
+  `;
+  if(desktop) return `
+    width: 286px;
   `;
 }
 
@@ -68,6 +71,7 @@ const Nav = styled(motion.nav)`
   }
   .decorationActive {
     border-right: 3px solid #e4cbff;
+    background-color: rgba(255, 255, 255, 0.08);
   }
 `;
 

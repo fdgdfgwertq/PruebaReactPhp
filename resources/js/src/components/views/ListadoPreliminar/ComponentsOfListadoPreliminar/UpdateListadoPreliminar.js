@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import { helpHttp } from '../../../../helpers/helpHttp';
 import ErrorComponent from '../../../common/ErrorComponent';
 import GeneralLoader from '../../../common/GeneralLoader';
+import ActionBack from '../../ComponentsOfViews/ActionBack';
 import FormListaPreliminar from '../Form/FormListaPreliminar';
 import useUpdateDataListadoPreliminar from '../hooks/useUpdateDataListadoPreliminar';
-import ActionBackListaPreliminar from './ActionBackListaPreliminar';
 
 const UpdateListadoPreliminar = () => {
   const { idListado } = useParams();
@@ -34,7 +34,7 @@ const UpdateListadoPreliminar = () => {
 
   return (
     <div className="UpdateListadoPreliminar">
-      <ActionBackListaPreliminar
+      <ActionBack
         to={`/listado-preliminar/${response.data.ID_LISTADO}`}
       />
       <h2>Actulizar un listado preliminar</h2>

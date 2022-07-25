@@ -6,6 +6,7 @@ import {
   PrivateRouteLogin,
 } from "./components/router/PrivateRoute";
 import useTittle from "./hooks/useTittle";
+import Error404 from "./pages/Error404";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 
@@ -16,7 +17,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route
-          path="*"
+          path="/*"
           element={
             <PrivateRouteHome>
               <Home />
@@ -31,6 +32,7 @@ const App = () => {
             </PrivateRouteLogin>
           }
         />
+        <Route path="*" element={<Error404/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { helpCapitalize } from '../../../../helpers/helpCapitalize';
 import ErrorComponent from '../../../common/ErrorComponent';
 import GeneralLoader from '../../../common/GeneralLoader';
+import ActionBack from '../../ComponentsOfViews/ActionBack';
 import useRecordListadoPreliminar from '../hooks/useRecordListadoPreliminar';
-import ActionBackListaPreliminar from './ActionBackListaPreliminar';
 
 const ContainerInformation = styled.div`
   display: flex;
@@ -71,20 +71,20 @@ const GetRecordListadoPreliminar = () => {
 
   return (
     <div className="GetRecordListadoPreliminar">
-      <ActionBackListaPreliminar to="/listado-preliminar" />
+      <ActionBack to="/listado-preliminar" />
       <h2>{response.data["NOMBRE"]}</h2>
       <ContainerInformation>
         <div className='MainInformation'>
           <p>
-            <span className="titleInformation">Municipio: </span>
-            <span className="information">
-              {helpCapitalize(response.data["MUNICIPIO"])}
-            </span>
-          </p>
-          <p>
             <span className="titleInformation">Departamento: </span>{" "}
             <span className="information">
               {helpCapitalize(response.data["DEPARTAMENTO"])}
+            </span>
+          </p>
+          <p>
+            <span className="titleInformation">Municipio: </span>
+            <span className="information">
+              {helpCapitalize(response.data["MUNICIPIO"])}
             </span>
           </p>
           <p>

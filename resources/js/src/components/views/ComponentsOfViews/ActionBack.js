@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyleActionBackListaPreliminar = styled.div`
+const StyleActionBack = styled.div`
   display: flex;
   padding: 10px 0;
   justify-content: flex-start;
@@ -15,12 +15,12 @@ const StyleActionBackListaPreliminar = styled.div`
   }
 `;
 
-const ActionBackListaPreliminar = ({to}) => {
+const ActionBack = ({to}) => {
   return (
-    <StyleActionBackListaPreliminar>
+    <StyleActionBack>
       <Link to={to} className='ButtonBack'>Atras</Link>
-    </StyleActionBackListaPreliminar>
+    </StyleActionBack>
   )
 }
 
-export default ActionBackListaPreliminar;
+export default ActionBack;

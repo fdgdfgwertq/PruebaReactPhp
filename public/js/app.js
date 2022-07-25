@@ -8016,14 +8016,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _components_router_paths__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/router/paths */ "./resources/js/src/components/router/paths.js");
 /* harmony import */ var _components_router_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/router/PrivateRoute */ "./resources/js/src/components/router/PrivateRoute.js");
 /* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
-/* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/src/pages/Home.js");
-/* harmony import */ var _pages_Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Login */ "./resources/js/src/pages/Login.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_Error404__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Error404 */ "./resources/js/src/pages/Error404.js");
+/* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/src/pages/Home.js");
+/* harmony import */ var _pages_Login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Login */ "./resources/js/src/pages/Login.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -8036,18 +8038,21 @@ __webpack_require__.r(__webpack_exports__);
 
 var App = function App() {
   (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_3__["default"])("Cargando");
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
-        path: "*",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_router_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.PrivateRouteHome, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_pages_Home__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Routes, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        path: "/*",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_router_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.PrivateRouteHome, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_Home__WEBPACK_IMPORTED_MODULE_5__["default"], {})
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
         path: _components_router_paths__WEBPACK_IMPORTED_MODULE_1__.LOGIN,
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_router_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.PrivateRouteLogin, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_pages_Login__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_router_PrivateRoute__WEBPACK_IMPORTED_MODULE_2__.PrivateRouteLogin, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_Login__WEBPACK_IMPORTED_MODULE_6__["default"], {})
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        path: "*",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_pages_Error404__WEBPACK_IMPORTED_MODULE_4__["default"], {})
       })]
     })
   });
@@ -8076,19 +8081,19 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var theme = {
-  colors: {
-    primary: "#7286A0",
-    accent: "#BE6E46",
-    dark: "#CDE7B0",
-    background: "#59594A"
-  },
   fonts: {
     primary: "'Montserrat', sans-serif",
     secondary: "\"Rubik\", sans-serif"
   }
 };
-var GlobalStyles = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  *{\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n  }\n  body {\n    font-family: ", ";\n  }\n  button,a,input[type=\"submit\"],input[type=\"text\"],input[type=\"password\"],input[type=\"email\"]{\n    all: unset;\n  }\n"])), function (props) {
+var GlobalStyles = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__.createGlobalStyle)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  *{\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n  }\n  body {\n    font-family: ", ";\n  }\n  button,a,input[type=\"submit\"],input[type=\"text\"],input[type=\"password\"],input[type=\"email\"]{\n    all: unset;\n  }\n  .ContainerMainGeneral{\n    display: grid;\n    min-height: 100%;\n  }\n  .GeneralGet{\n    overflow: hidden;\n  }\n  .GeneralGet {\n    display: flex;\n    flex-direction: column;\n    gap: 20px;\n    padding: 30px 10px;\n    h2 {\n      text-align: center;\n      font-size: 2.3rem;\n      font-family: ", ";\n    }\n  }\n  .ContainerOptionsGeneralGet{\n    display: flex;\n    gap: 10px;\n    font-weight: 800;\n    padding: 10px 0;\n  }\n  .ContainerOptionsGeneralGet a {\n    cursor: pointer;\n    font-family: ", ";\n    font-size: 1.3rem;\n  }\n  .activeOptionGeneralGet{\n    border-bottom: 3px solid #15012e;\n  }\n  .ContainerTable{\n    padding-bottom: 15px;\n    width: 100%;\n    overflow-x: auto;\n  }\n  .StyleTable{\n    width: 1029px;\n    margin: 0 auto;\n    border-collapse: collapse;\n    border-radius: 10px;\n    overflow: hidden;\n    thead {\n      height: 60px;\n      background-color: #2c1742eb;\n      color: white;\n      font-family: ", ";\n    }\n    th {\n      font-weight: 100;\n      font-size: 1.2rem;\n      padding-left: 8px;\n    }\n    th:first-child {\n      padding-left: 15px;\n    }\n    th:last-child {\n      padding-right: 15px;\n    }\n    tbody tr{\n      cursor: pointer;\n      height: 50px;\n      font-size: 1rem;\n    }\n    tbody tr:nth-child(even){\n      background-color: #f5f5f5;\n    }\n    tbody tr:hover {\n      background-color: #f5f5f5;\n    }\n    td {\n      padding-left: 8px;\n      color: #15012e;\n    }\n    td:first-child {\n      font-weight: 900;\n      padding-left: 15px;\n    }\n    td:last-child {\n      padding-right: 15px;\n    }\n    .NoData {\n      text-align: center;\n      font-size: 1.5rem;\n      cursor: default;\n    }\n  }\n"])), function (props) {
   return props.theme.fonts.primary;
+}, function (props) {
+  return props.theme.fonts.secondary;
+}, function (props) {
+  return props.theme.fonts.secondary;
+}, function (props) {
+  return props.theme.fonts.secondary;
 });
 
 /***/ }),
@@ -9057,11 +9062,13 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var styleNavResize = function styleNavResize(_ref) {
-  var movile = _ref.movile;
-  if (movile) return "\n    position : fixed;\n    top: 0;\n    left: 0;\n    z-index: 50;\n    width: 85%;\n    max-width: 283px;\n    .ContainerCloseMenu {\n      display: flex;\n      padding: 10px;\n      justify-content: flex-end;\n      button {\n        cursor: pointer;\n      }\n      img {\n        width: 30px;\n        height: 30px;\n      }\n    }\n  ";
+  var movile = _ref.movile,
+      desktop = _ref.desktop;
+  if (movile) return "\n    position : fixed;\n    top: 0;\n    left: 0;\n    z-index: 50;\n    width: 85%;\n    max-width: 286px;\n    .ContainerCloseMenu {\n      display: flex;\n      padding: 10px;\n      justify-content: flex-end;\n      button {\n        cursor: pointer;\n      }\n      img {\n        width: 30px;\n        height: 30px;\n      }\n    }\n  ";
+  if (desktop) return "\n    width: 286px;\n  ";
 };
 
-var Nav = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.nav)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background-color: #220646;\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  ", "\n  .HeaderNav {\n    display: grid;\n    padding: 15px;\n    place-items: center center;\n    img {\n      width: 100px;\n      height: 100px;\n    }\n  }\n  .ContainerMenuNavbar {\n    flex-grow: 1;\n  }\n  .ContainerLogoutNavbar {\n    background-color: #15012e;\n  }\n  .ContainerLogoutNavbar > button {\n    display: flex;\n    gap: 10px;\n    align-items: center;\n    cursor: pointer;\n    padding: 10px 10px 10px 20px;\n    box-sizing: border-box;\n    width: 100%;\n  }\n  .ContainerLogoutNavbar > button:hover {\n    background-color: rgba(255, 255, 255, 0.08);\n  }\n  .ContainerLogoutNavbar > button img {\n    width: 30px;\n    height: 30px;\n  }\n  .ContainerLogoutNavbar > button .linkName {\n    font-weight: 100;\n    font-size: 0.8rem;\n    color: white;\n  }\n  .decorationActive {\n    border-right: 3px solid #e4cbff;\n  }\n"])), function (props) {
+var Nav = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.nav)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background-color: #220646;\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  ", "\n  .HeaderNav {\n    display: grid;\n    padding: 15px;\n    place-items: center center;\n    img {\n      width: 100px;\n      height: 100px;\n    }\n  }\n  .ContainerMenuNavbar {\n    flex-grow: 1;\n  }\n  .ContainerLogoutNavbar {\n    background-color: #15012e;\n  }\n  .ContainerLogoutNavbar > button {\n    display: flex;\n    gap: 10px;\n    align-items: center;\n    cursor: pointer;\n    padding: 10px 10px 10px 20px;\n    box-sizing: border-box;\n    width: 100%;\n  }\n  .ContainerLogoutNavbar > button:hover {\n    background-color: rgba(255, 255, 255, 0.08);\n  }\n  .ContainerLogoutNavbar > button img {\n    width: 30px;\n    height: 30px;\n  }\n  .ContainerLogoutNavbar > button .linkName {\n    font-weight: 100;\n    font-size: 0.8rem;\n    color: white;\n  }\n  .decorationActive {\n    border-right: 3px solid #e4cbff;\n    background-color: rgba(255, 255, 255, 0.08);\n  }\n"])), function (props) {
   return styleNavResize(props.resize);
 });
 
@@ -9309,6 +9316,2285 @@ var LOGIN = "/inicio-sesion";
 
 /***/ }),
 
+/***/ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/ComponentsOfClasificacion/GetClasificacionAtractivosTuristicos.js":
+/*!***********************************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ClasificacionAtractivosTuristicos/ComponentsOfClasificacion/GetClasificacionAtractivosTuristicos.js ***!
+  \***********************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _TableClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TableClasificacionAtractivosTuristicos */ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/ComponentsOfClasificacion/TableClasificacionAtractivosTuristicos.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var GetClasificacionAtractivosTuristicos = function GetClasificacionAtractivosTuristicos() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "GetClasificacionAtractivosTuristicos",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      children: "Clasificacion de recursos y atractivos"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "ContainerMainGetClasificacionAtractivosTuristicos",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_TableClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GetClasificacionAtractivosTuristicos);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/ComponentsOfClasificacion/GetRecordClasificacionAtractivosTuristicos.js":
+/*!*****************************************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ClasificacionAtractivosTuristicos/ComponentsOfClasificacion/GetRecordClasificacionAtractivosTuristicos.js ***!
+  \*****************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ComponentsOfViews_ActionBack__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../ComponentsOfViews/ActionBack */ "./resources/js/src/components/views/ComponentsOfViews/ActionBack.js");
+/* harmony import */ var _common_ErrorComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/ErrorComponent */ "./resources/js/src/components/common/ErrorComponent.js");
+/* harmony import */ var _Form_FormClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Form/FormClasificacionAtractivosTuristicos */ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/FormClasificacionAtractivosTuristicos.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+var GetRecordClasificacionAtractivosTuristicos = function GetRecordClasificacionAtractivosTuristicos() {
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)(),
+      idRecursoAtractivo = _useParams.idRecursoAtractivo;
+
+  if (idRecursoAtractivo != 1) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_common_ErrorComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    message: "El registro no existe"
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "GetRecordClasificacionAtractivosTuristicos",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ComponentsOfViews_ActionBack__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      to: "/clasificacion-recursos-atractivos"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+      children: "Nombre"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Form_FormClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GetRecordClasificacionAtractivosTuristicos);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/ComponentsOfClasificacion/TableClasificacionAtractivosTuristicos.js":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ClasificacionAtractivosTuristicos/ComponentsOfClasificacion/TableClasificacionAtractivosTuristicos.js ***!
+  \*************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var TableClasificacionAtractivosTuristicos = function TableClasificacionAtractivosTuristicos() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "ContainerTable",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+      className: "StyleTable",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: "#"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: "Nombre"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: "Departamento"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: "Municipio"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
+          className: "NoData",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+            colSpan: 4,
+            children: "No hay datos"
+          })
+        })
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TableClasificacionAtractivosTuristicos);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/FormClasificacionAtractivosTuristicos.js":
+/*!***************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/FormClasificacionAtractivosTuristicos.js ***!
+  \***************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../helpers/helpCapitalize */ "./resources/js/src/helpers/helpCapitalize.js");
+/* harmony import */ var _schemaErrorsFormCAT__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./schemaErrorsFormCAT */ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/schemaErrorsFormCAT.js");
+/* harmony import */ var _StyleFormClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./StyleFormClasificacionAtractivosTuristicos */ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/StyleFormClasificacionAtractivosTuristicos.js");
+/* harmony import */ var _DataJson_DataTipoDeBien_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DataJson/DataTipoDeBien.json */ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/DataJson/DataTipoDeBien.json");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+
+var initialValues = {
+  "ID_TIPO_BIEN": ""
+};
+
+var FormClasificacionAtractivosTuristicos = function FormClasificacionAtractivosTuristicos() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(formik__WEBPACK_IMPORTED_MODULE_0__.Formik, {
+    initialValues: initialValues,
+    validationSchema: _schemaErrorsFormCAT__WEBPACK_IMPORTED_MODULE_3__.schemaErrorsFormCAT,
+    onSubmit: /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(values) {
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                console.log("submit", values);
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }(),
+    children: function children(_ref2) {
+      var values = _ref2.values,
+          errors = _ref2.errors,
+          touched = _ref2.touched,
+          handleSubmit = _ref2.handleSubmit,
+          handleChange = _ref2.handleChange,
+          handleBlur = _ref2.handleBlur;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_StyleFormClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_4__.StyleFormClasificacionAtractivosTuristicos, {
+        onSubmit: handleSubmit,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "MainInformation",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              className: "titleInformation",
+              children: "Departamento: "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              className: "information",
+              children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_2__.helpCapitalize)("Bogota")
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              className: "titleInformation",
+              children: "Municipio: "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              className: "information",
+              children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_2__.helpCapitalize)("Bogota")
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
+            htmlFor: "ID_TIPO_BIEN",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+              className: "titleInformation",
+              children: "Tipo de bien"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("select", {
+              name: "ID_TIPO_BIEN",
+              id: "ID_TIPO_BIEN",
+              value: values.ID_TIPO_BIEN,
+              onChange: handleChange,
+              onBlur: handleBlur,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+                value: "",
+                disabled: true,
+                children: "Seleccione un tipo de bien"
+              }), _DataJson_DataTipoDeBien_json__WEBPACK_IMPORTED_MODULE_5__.map(function (val) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+                  value: val["id_tipos_bien"],
+                  children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_2__.helpCapitalize)(val["tipo_bien"])
+                }, val["id_tipos_bien"] + val["tipo_bien"]);
+              })]
+            }), touched.ID_TIPO_BIEN && errors.ID_TIPO_BIEN && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("small", {
+              className: "errorMessage",
+              children: errors.ID_TIPO_BIEN
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: "ContainerButtons",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+            type: "submit",
+            children: "Clasificar"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+            type: "submit",
+            children: "Siguiente"
+          })]
+        })]
+      });
+    }
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormClasificacionAtractivosTuristicos);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/StyleFormClasificacionAtractivosTuristicos.js":
+/*!********************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/StyleFormClasificacionAtractivosTuristicos.js ***!
+  \********************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StyleFormClasificacionAtractivosTuristicos": () => (/* binding */ StyleFormClasificacionAtractivosTuristicos)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+var StyleFormClasificacionAtractivosTuristicos = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].form(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  width: 95%;\n  max-width: 740px;\n  margin: 0 auto;\n  .MainInformation {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n    gap: 15px;\n  }\n  p,\n  label {\n    display: flex;\n    flex-direction: column;\n    gap: 5px;\n  }\n  .titleInformation {\n    font-family: ", ";\n    font-weight: 600;\n    color: #15012e;\n    font-size: 1.4rem;\n  }\n  .information {\n    font-size: 1.2rem;\n  }\n  .ContainerButtons {\n    margin-top: 20px;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-around;\n    gap: 10px;\n  }\n  .errorMessage {\n    color: red;\n    text-align: center;\n  }\n  select {\n    background-color: #2c1742eb;\n    color: white;\n    padding: 8px 10px;\n    border-radius: 8px;\n    cursor: pointer;\n    font-family: inherit;\n    font-size: 1rem;\n    width: 100%;\n    option {\n      background-color: white;\n      color: #15012e;\n    }\n    option:disabled {\n      color: #130522b3;\n    }\n  }\n  button {\n    padding: 10px 15px;\n    color: white;\n    border-radius: 8px;\n    cursor: pointer;\n    background-color: black;\n  }\n"])), function (props) {
+  return props.theme.fonts.secondary;
+});
+
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/schemaErrorsFormCAT.js":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/schemaErrorsFormCAT.js ***!
+  \*********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "schemaErrorsFormCAT": () => (/* binding */ schemaErrorsFormCAT)
+/* harmony export */ });
+/* harmony import */ var yup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! yup */ "./node_modules/yup/es/index.js");
+
+var schemaErrorsFormCAT = yup__WEBPACK_IMPORTED_MODULE_0__.object().shape({
+  ID_TIPO_BIEN: yup__WEBPACK_IMPORTED_MODULE_0__.string().required("El campo es obligatorio")
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/MainClasificacionAtractivosTuristicos.js":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ClasificacionAtractivosTuristicos/MainClasificacionAtractivosTuristicos.js ***!
+  \**********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ComponentsOfClasificacion_GetClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ComponentsOfClasificacion/GetClasificacionAtractivosTuristicos */ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/ComponentsOfClasificacion/GetClasificacionAtractivosTuristicos.js");
+/* harmony import */ var _ComponentsOfClasificacion_GetRecordClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ComponentsOfClasificacion/GetRecordClasificacionAtractivosTuristicos */ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/ComponentsOfClasificacion/GetRecordClasificacionAtractivosTuristicos.js");
+/* harmony import */ var _StyleMainClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./StyleMainClasificacionAtractivosTuristicos */ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/StyleMainClasificacionAtractivosTuristicos.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+var MainClasificacionAtractivosTuristicos = function MainClasificacionAtractivosTuristicos(_ref) {
+  var who = _ref.who;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_StyleMainClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_3__.StyleMainClasificacionAtractivosTuristicos, {
+    children: [who === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ComponentsOfClasificacion_GetClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_1__["default"], {}), who === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ComponentsOfClasificacion_GetRecordClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainClasificacionAtractivosTuristicos);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/StyleMainClasificacionAtractivosTuristicos.js":
+/*!***************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ClasificacionAtractivosTuristicos/StyleMainClasificacionAtractivosTuristicos.js ***!
+  \***************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StyleMainClasificacionAtractivosTuristicos": () => (/* binding */ StyleMainClasificacionAtractivosTuristicos)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+var StyleMainClasificacionAtractivosTuristicos = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: grid;\n  min-height: 100%;\n  .GetClasificacionAtractivosTuristicos {\n    overflow: hidden;\n  }\n  .GetRecordClasificacionAtractivosTuristicos {\n    h2 {\n      width: fit-content;\n      margin: 0 auto 10px;\n      padding-bottom: 5px;\n      border-bottom: 3px solid #2206467a;\n      text-transform: uppercase;\n    }\n  }\n  .GetClasificacionAtractivosTuristicos,\n  .GetRecordClasificacionAtractivosTuristicos {\n    display: flex;\n    flex-direction: column;\n    gap: 20px;\n    padding: 30px 10px;\n    h2 {\n      text-align: center;\n      font-size: 2.3rem;\n      font-family: ", ";\n    }\n  }\n"])), function (props) {
+  return props.theme.fonts.secondary;
+});
+
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/ActionBack.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/ActionBack.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var StyleActionBack = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  padding: 10px 0;\n  justify-content: flex-start;\n  .ButtonBack {\n    background-color: #36304a;\n    padding: 10px 15px;\n    color: white;\n    border-radius: 8px;\n    cursor: pointer;\n  }\n"])));
+
+var ActionBack = function ActionBack(_ref) {
+  var to = _ref.to;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyleActionBack, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+      to: to,
+      className: "ButtonBack",
+      children: "Atras"
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ActionBack);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralFieldsGeneralidades.js":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralFieldsGeneralidades.js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ListadoPreliminar_Form_DataJson_DataDepartamentos_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ListadoPreliminar/Form/DataJson/DataDepartamentos.json */ "./resources/js/src/components/views/ListadoPreliminar/Form/DataJson/DataDepartamentos.json");
+/* harmony import */ var _ListadoPreliminar_Form_DataJson_DataMunicipio_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ListadoPreliminar/Form/DataJson/DataMunicipio.json */ "./resources/js/src/components/views/ListadoPreliminar/Form/DataJson/DataMunicipio.json");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+var GeneralFieldsGeneralidades = function GeneralFieldsGeneralidades(_ref) {
+  var values = _ref.values,
+      errors = _ref.errors,
+      handleChange = _ref.handleChange,
+      handleBlur = _ref.handleBlur;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+      htmlFor: "ID_DEPARTAMENTOS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "NameField",
+        children: "Departamento"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
+        name: "ID_DEPARTAMENTOS",
+        id: "ID_DEPARTAMENTOS",
+        value: values.ID_DEPARTAMENTOS,
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        onBlur: function onBlur(e) {
+          return handleBlur(e);
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+          value: "",
+          disabled: true,
+          children: "Seleccione un departamento"
+        }), _ListadoPreliminar_Form_DataJson_DataDepartamentos_json__WEBPACK_IMPORTED_MODULE_1__.map(function (val) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+            value: val["Código"],
+            children: val["Nombre"][0].toUpperCase() + val["Nombre"].slice(1).toLocaleLowerCase()
+          }, val["Código"] + val["Nombre"]);
+        })]
+      }), errors.ID_DEPARTAMENTOS && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.ID_DEPARTAMENTOS
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+      htmlFor: "ID_MUNICIPIOS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "NameField",
+        children: "Municipio"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
+        name: "ID_MUNICIPIOS",
+        id: "ID_MUNICIPIOS",
+        value: values.ID_MUNICIPIOS,
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        onBlur: function onBlur(e) {
+          return handleBlur(e);
+        },
+        disabled: values.ID_DEPARTAMENTOS ? false : true,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+          value: "",
+          disabled: true,
+          children: values.ID_DEPARTAMENTOS ? "Seleccione un municipio" : "Primero seleccione departamento"
+        }), values.ID_DEPARTAMENTOS && _ListadoPreliminar_Form_DataJson_DataMunicipio_json__WEBPACK_IMPORTED_MODULE_2__[values.ID_DEPARTAMENTOS].map(function (val) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+            value: val["Id_Municipio"],
+            children: val["Nombre"][0].toUpperCase() + val["Nombre"].slice(1).toLocaleLowerCase()
+          }, val["Id_Municipio"] + val["Nombre"]);
+        })]
+      }), errors.ID_MUNICIPIOS && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.ID_MUNICIPIOS
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+      htmlFor: "NOMBRE",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "NameField",
+        children: "Nombre"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        type: "text",
+        name: "NOMBRE",
+        id: "NOMBRE",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        onBlur: function onBlur(e) {
+          return handleBlur(e);
+        },
+        value: values.NOMBRE,
+        autoComplete: "off"
+      }), errors.NOMBRE && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.NOMBRE
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+      htmlFor: "UBICACION",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "NameField",
+        children: "Ubicaci\xF3n"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        type: "text",
+        name: "UBICACION",
+        id: "UBICACION",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        onBlur: function onBlur(e) {
+          return handleBlur(e);
+        },
+        value: values.UBICACION,
+        autoComplete: "off"
+      }), errors.UBICACION && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.UBICACION
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GeneralFieldsGeneralidades);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormActividadesServicios.js":
+/*!*****************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormActividadesServicios.js ***!
+  \*****************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var Actividades = function Actividades(_ref) {
+  var values = _ref.values,
+      handleChange = _ref.handleChange;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "ContainerActividades",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "CULTURALES",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Culturales"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "CULTURALES",
+        id: "CULTURALES",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.CULTURALES,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "ARTISTICAS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Artisticas"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "ARTISTICAS",
+        id: "ARTISTICAS",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.ARTISTICAS,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "FISICAS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Fisicas"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "FISICAS",
+        id: "FISICAS",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.FISICAS,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "RECREATIVAS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Recreativas"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "RECREATIVAS",
+        id: "RECREATIVAS",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.RECREATIVAS,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "OTROS_ACTIVIDADES",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Otros"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "OTROS",
+        id: "OTROS_ACTIVIDADES",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.OTROS,
+        autoComplete: "off"
+      })]
+    })]
+  });
+};
+
+var Servicios = function Servicios(_ref2) {
+  var values = _ref2.values,
+      handleChange = _ref2.handleChange;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "ContainerServicios",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "TIENDAS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Tiendas"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "TIENDAS",
+        id: "TIENDAS",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.TIENDAS,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "GUIAS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Guias"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "GUIAS",
+        id: "GUIAS",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.GUIAS,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "BANOS_SERVICIOS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Ba\xF1os"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "BANOS",
+        id: "BANOS_SERVICIOS",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.BANOS,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "RESTAURANTES",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Restaurantes"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "RESTAURANTES",
+        id: "RESTAURANTES",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.RESTAURANTES,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "PARQUEADERO",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Parqueadero"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "PARQUEADERO",
+        id: "PARQUEADERO",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.PARQUEADERO,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "ALOJAMIENTO",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Alojamiento"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "ALOJAMIENTO",
+        id: "ALOJAMIENTO",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.ALOJAMIENTO,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "OTROS_SERVICIOS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Otros"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "OTROS",
+        id: "OTROS_SERVICIOS",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.OTROS,
+        autoComplete: "off"
+      })]
+    })]
+  });
+};
+
+var FormActividadesServicios = function FormActividadesServicios(_ref3) {
+  var values = _ref3.values,
+      handleChangeActividades = _ref3.handleChangeActividades,
+      handleChangeServicios = _ref3.handleChangeServicios;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Actividades, {
+      values: values.ACTIVIDADES,
+      handleChange: handleChangeActividades
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Servicios, {
+      values: values.SERVICIOS,
+      handleChange: handleChangeServicios
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormActividadesServicios);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormCaracteristicas.js":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormCaracteristicas.js ***!
+  \************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var FormCaracteristicas = function FormCaracteristicas(_ref) {
+  var values = _ref.values,
+      errors = _ref.errors,
+      handleChange = _ref.handleChange,
+      handleChangeFile = _ref.handleChangeFile,
+      handleBlur = _ref.handleBlur;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "DESCRIPCION_CARACTERISTICAS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Descripci\xF3n"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("textarea", {
+        name: "DESCRIPCION",
+        id: "DESCRIPCION_CARACTERISTICAS",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        onBlur: function onBlur(e) {
+          return handleBlur(e);
+        },
+        value: values.DESCRIPCION,
+        autoComplete: "off"
+      }), errors.DESCRIPCION && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.DESCRIPCION
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "ContainerInputFile",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Im\xE1gen 1 "
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "file",
+        name: "IMAGEN1",
+        onChange: function onChange(e) {
+          return handleChangeFile(e);
+        }
+      }), errors.IMAGEN1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.IMAGEN1
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "ContainerInputFile",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Im\xE1gen 2 "
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "file",
+        name: "IMAGEN2",
+        onChange: function onChange(e) {
+          return handleChangeFile(e);
+        }
+      }), errors.IMAGEN2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.IMAGEN2
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "FUENTE",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Fuente de las imagenes"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "FUENTE",
+        id: "FUENTE",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        onBlur: function onBlur(e) {
+          return handleBlur(e);
+        },
+        value: values.FUENTE,
+        autoComplete: "off"
+      }), errors.FUENTE && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.FUENTE
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormCaracteristicas);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormCaracteristicasRelevantes.js":
+/*!**********************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormCaracteristicasRelevantes.js ***!
+  \**********************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _DataJson_DataTipoClima_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../DataJson/DataTipoClima.json */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataTipoClima.json");
+/* harmony import */ var _DataJson_DataAccesoHorarios_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../DataJson/DataAccesoHorarios.json */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataAccesoHorarios.json");
+/* harmony import */ var _DataJson_DataDiasHorarios_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../DataJson/DataDiasHorarios.json */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataDiasHorarios.json");
+/* harmony import */ var _DataJson_DataTipoEstadoAtractivo_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../DataJson/DataTipoEstadoAtractivo.json */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataTipoEstadoAtractivo.json");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+var FormCaracteristicasRelevantes = function FormCaracteristicasRelevantes(_ref) {
+  var values = _ref.values,
+      errors = _ref.errors,
+      handleChange = _ref.handleChange,
+      handleBlur = _ref.handleBlur,
+      handleChangeCheckbox = _ref.handleChangeCheckbox;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "ContainerClima",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+        className: "NameContainer",
+        children: "Clima"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
+        htmlFor: "ID_TIPO_CLIMA",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "NameField",
+          children: "Tipo de clima"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
+          name: "ID_TIPO_CLIMA",
+          id: "ID_TIPO_CLIMA",
+          value: values.ID_TIPO_CLIMA,
+          onChange: function onChange(e) {
+            return handleChange(e);
+          },
+          onBlur: function onBlur(e) {
+            return handleBlur(e);
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+            value: "",
+            disabled: true,
+            children: "Seleccione un tipo de clima"
+          }), _DataJson_DataTipoClima_json__WEBPACK_IMPORTED_MODULE_1__.map(function (val) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+              value: val["ID_TIPO_CLIMA"],
+              children: val["TIPO_CLIMA"]
+            }, val["ID_TIPO_CLIMA"] + val["TIPO_CLIMA"]);
+          })]
+        }), errors.ID_TIPO_CLIMA && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("small", {
+          className: "errorMessage",
+          children: errors.ID_TIPO_CLIMA
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
+        htmlFor: "TEMPERATURA",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "NameField",
+          children: "Temperatura"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          type: "text",
+          name: "TEMPERATURA",
+          id: "TEMPERATURA",
+          onChange: function onChange(e) {
+            return handleChange(e);
+          },
+          onBlur: function onBlur(e) {
+            return handleBlur(e);
+          },
+          value: values.TEMPERATURA,
+          autoComplete: "off"
+        }), errors.TEMPERATURA && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("small", {
+          className: "errorMessage",
+          children: errors.TEMPERATURA
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "ContainerHorario",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+        className: "NameContainer",
+        children: "Horarios"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "ContainerAcceso",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "NameContainer",
+          children: "Acceso"
+        }), _DataJson_DataAccesoHorarios_json__WEBPACK_IMPORTED_MODULE_2__.map(function (_ref2) {
+          var NOMBRE = _ref2.NOMBRE;
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "ContainerOptionAcceso",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              type: "checkbox",
+              id: "ACCESO_HORARIOS" + NOMBRE,
+              name: "ACCESO_HORARIOS",
+              value: NOMBRE,
+              checked: values.ACCESO_HORARIOS[NOMBRE],
+              onChange: function onChange(e) {
+                return handleChangeCheckbox(e);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              htmlFor: "ACCESO_HORARIOS" + NOMBRE,
+              children: NOMBRE
+            })]
+          }, "ACCESO_HORARIOS" + NOMBRE);
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "ContainerDias",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "NameContainer",
+          children: "Dias"
+        }), _DataJson_DataDiasHorarios_json__WEBPACK_IMPORTED_MODULE_3__.map(function (_ref3) {
+          var NOMBRE = _ref3.NOMBRE;
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            className: "ContainerOptionAcceso",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              type: "checkbox",
+              id: "DIAS_HORARIOS" + NOMBRE,
+              name: "DIAS_HORARIOS",
+              value: NOMBRE,
+              checked: values.ACCESO_HORARIOS[NOMBRE],
+              onChange: function onChange(e) {
+                return handleChangeCheckbox(e);
+              }
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+              htmlFor: "DIAS_HORARIOS" + NOMBRE,
+              children: NOMBRE
+            })]
+          }, "DIAS_HORARIOS" + NOMBRE);
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "ContainerTarifas"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "ContainerEstadoAtractivo",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
+        htmlFor: "ID_TIPO_ESTADO",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "NameField",
+          children: "Estado del atractivo"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
+          name: "ID_TIPO_ESTADO",
+          id: "ID_TIPO_ESTADO",
+          value: values.ID_TIPO_ESTADO,
+          onChange: function onChange(e) {
+            return handleChange(e);
+          },
+          onBlur: function onBlur(e) {
+            return handleBlur(e);
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+            value: "",
+            disabled: true,
+            children: "Seleccione un tipo de estado"
+          }), _DataJson_DataTipoEstadoAtractivo_json__WEBPACK_IMPORTED_MODULE_4__.map(function (val) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+              value: val["ID_TIPO_ESTADO"],
+              children: val["TIPO_ESTADO"]
+            }, val["ID_TIPO_ESTADO"] + val["TIPO_ESTADO"]);
+          })]
+        }), errors.ID_TIPO_ESTADO && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("small", {
+          className: "errorMessage",
+          children: errors.ID_TIPO_ESTADO
+        })]
+      })
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormCaracteristicasRelevantes);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormGeneralidades.js":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormGeneralidades.js ***!
+  \**********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _GeneralFieldsGeneralidades__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../GeneralFieldsGeneralidades */ "./resources/js/src/components/views/ComponentsOfViews/GeneralFieldsGeneralidades.js");
+/* harmony import */ var _DataJson_DataTipoAcceso_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../DataJson/DataTipoAcceso.json */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataTipoAcceso.json");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+var ExtraDataGeneralidades = function ExtraDataGeneralidades(_ref) {
+  var values = _ref.values,
+      errors = _ref.errors,
+      handleChange = _ref.handleChange,
+      handleBlur = _ref.handleBlur;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+      htmlFor: "GEORREFERENCIACION",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "NameField",
+        children: "Georrefereniciaci\xF3n"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        type: "text",
+        name: "GEORREFERENCIACION",
+        id: "GEORREFERENCIACION",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        onBlur: function onBlur(e) {
+          return handleBlur(e);
+        },
+        value: values.GEORREFERENCIACION,
+        autoComplete: "off"
+      }), errors.GEORREFERENCIACION && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.GEORREFERENCIACION
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+      htmlFor: "ID_TIPO_ACCESO",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "NameField",
+        children: "Tipo de Acceso"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
+        name: "ID_TIPO_ACCESO",
+        id: "ID_TIPO_ACCESO",
+        value: values.ID_TIPO_ACCESO,
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        onBlur: function onBlur(e) {
+          return handleBlur(e);
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+          value: "",
+          disabled: true,
+          children: "Seleccione un tipo de acceso"
+        }), _DataJson_DataTipoAcceso_json__WEBPACK_IMPORTED_MODULE_2__.map(function (val) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+            value: val["ID_TIPO_ACCESO"],
+            children: val["ACCESO"]
+          }, val["ID_TIPO_ACCESO"] + val["ACCESO"]);
+        })]
+      }), errors.ID_TIPO_ACCESO && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.ID_TIPO_ACCESO
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+      htmlFor: "INDICACIONES_ACCESO",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "NameField",
+        children: "Indicaciones para el acceso:"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        type: "text",
+        name: "INDICACIONES_ACCESO",
+        id: "INDICACIONES_ACCESO",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        onBlur: function onBlur(e) {
+          return handleBlur(e);
+        },
+        value: values.INDICACIONES_ACCESO,
+        autoComplete: "off"
+      }), errors.INDICACIONES_ACCESO && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.INDICACIONES_ACCESO
+      })]
+    })]
+  });
+};
+
+var FormGeneralidades = function FormGeneralidades(_ref2) {
+  var values = _ref2.values,
+      errors = _ref2.errors,
+      handleChange = _ref2.handleChange,
+      handleBlur = _ref2.handleBlur;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_GeneralFieldsGeneralidades__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      errors: errors,
+      handleBlur: handleBlur,
+      handleChange: handleChange,
+      values: values
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+      htmlFor: "CORREGIMIENTO_VEREDA_LOCALIDAD",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "NameField",
+        children: "Corregimiento, Vereda o Localidad"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        type: "text",
+        name: "CORREGIMIENTO_VEREDA_LOCALIDAD",
+        id: "CORREGIMIENTO_VEREDA_LOCALIDAD",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        onBlur: function onBlur(e) {
+          return handleBlur(e);
+        },
+        value: values.CORREGIMIENTO_VEREDA_LOCALIDAD,
+        autoComplete: "off"
+      }), errors.CORREGIMIENTO_VEREDA_LOCALIDAD && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("small", {
+        className: "errorMessage",
+        children: errors.CORREGIMIENTO_VEREDA_LOCALIDAD
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ExtraDataGeneralidades, {
+      errors: errors,
+      handleBlur: handleBlur,
+      handleChange: handleChange,
+      values: values
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormGeneralidades);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormOtros.js":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormOtros.js ***!
+  \**************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var FormOtros = function FormOtros(_ref) {
+  var values = _ref.values,
+      valuesRedes = _ref.valuesRedes,
+      handleChangeRedes = _ref.handleChangeRedes,
+      handleChange = _ref.handleChange;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "ContainerRedes",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+        htmlFor: "PAGINA_WEB_OTROS",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          className: "NameField",
+          children: "Pagina web"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "text",
+          name: "PAGINA_WEB",
+          id: "PAGINA_WEB_OTROS",
+          onChange: function onChange(e) {
+            return handleChangeRedes(e);
+          },
+          value: valuesRedes.PAGINA_WEB,
+          autoComplete: "off"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+        htmlFor: "FACEBOOK",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          className: "NameField",
+          children: "Facebook"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "text",
+          name: "FACEBOOK",
+          id: "FACEBOOK",
+          onChange: function onChange(e) {
+            return handleChangeRedes(e);
+          },
+          value: valuesRedes.FACEBOOK,
+          autoComplete: "off"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+        htmlFor: "TWITTER",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          className: "NameField",
+          children: "Twitter"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "text",
+          name: "TWITTER",
+          id: "TWITTER",
+          onChange: function onChange(e) {
+            return handleChangeRedes(e);
+          },
+          value: valuesRedes.TWITTER,
+          autoComplete: "off"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+        htmlFor: "INSTAGRAM",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          className: "NameField",
+          children: "Instagram"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "text",
+          name: "INSTAGRAM",
+          id: "INSTAGRAM",
+          onChange: function onChange(e) {
+            return handleChangeRedes(e);
+          },
+          value: valuesRedes.INSTAGRAM,
+          autoComplete: "off"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+        htmlFor: "OTRA_OTROS",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          className: "NameField",
+          children: "Otra"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "text",
+          name: "OTRA",
+          id: "OTRA_OTROS",
+          onChange: function onChange(e) {
+            return handleChangeRedes(e);
+          },
+          value: valuesRedes.OTRA,
+          autoComplete: "off"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "CotainerReferencias",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+        htmlFor: "REF_BIBLIOGRAFICA",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          className: "NameField",
+          children: "Referencias bibliograficas"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("textarea", {
+          name: "REF_BIBLIOGRAFICA",
+          id: "REF_BIBLIOGRAFICA",
+          onChange: function onChange(e) {
+            return handleChange(e);
+          },
+          value: values.REF_BIBLIOGRAFICA,
+          autoComplete: "off"
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "CotainerObservaciones",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+        htmlFor: "OBSERVACIONES",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+          className: "NameField",
+          children: "Observaciones"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("textarea", {
+          name: "OBSERVACIONES",
+          id: "OBSERVACIONES",
+          onChange: function onChange(e) {
+            return handleChange(e);
+          },
+          value: values.OBSERVACIONES,
+          autoComplete: "off"
+        })]
+      })
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormOtros);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormPromocionAtractivo.js":
+/*!***************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormPromocionAtractivo.js ***!
+  \***************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var FormPromocionAtractivo = function FormPromocionAtractivo(_ref) {
+  var values = _ref.values,
+      handleChange = _ref.handleChange;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "FOLLETOS_GUIAS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Folletos y guias"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "FOLLETOS_GUIAS",
+        id: "FOLLETOS_GUIAS",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.FOLLETOS_GUIAS,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "PUBLICACIONES",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Publicaciones"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "PUBLICACIONES",
+        id: "PUBLICACIONES",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.PUBLICACIONES,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "TRIPADVISOR",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "TripAdvisor"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "TRIPADVISOR",
+        id: "TRIPADVISOR",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.TRIPADVISOR,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "CTRAVEL",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Colombia travel"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "CTRAVEL",
+        id: "CTRAVEL",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.CTRAVEL,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "GOOGLEM",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Google Maps"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "GOOGLEM",
+        id: "GOOGLEM",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.GOOGLEM,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "PAGINA_WEB_PROMOCION",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Pagina web"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "PAGINA_WEB",
+        id: "PAGINA_WEB_PROMOCION",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.PAGINA_WEB,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "YOUTUBE_PROMOCION",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Youtube"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "YOUTUBE",
+        id: "YOUTUBE_PROMOCION",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.YOUTUBE,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "OTROS_PROMOCION",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Otros"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "OTROS",
+        id: "OTROS_PROMOCION",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.OTROS,
+        autoComplete: "off"
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormPromocionAtractivo);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormServiciosEspeciales.js":
+/*!****************************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormServiciosEspeciales.js ***!
+  \****************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var FormServiciosEspeciales = function FormServiciosEspeciales(_ref) {
+  var values = _ref.values,
+      handleChange = _ref.handleChange;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "ASCENSORES",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Ascensores"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "ASCENSORES",
+        id: "ASCENSORES",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.ASCENSORES,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "RAMPAS",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Rampas"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "RAMPAS",
+        id: "RAMPAS",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.RAMPAS,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "DISCAP_AUDITIVA",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Discapacidad auditiva"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "DISCAP_AUDITIVA",
+        id: "DISCAP_AUDITIVA",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.DISCAP_AUDITIVA,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "BANOS_ESPECIALES",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Ba\xF1os"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "BANOS",
+        id: "BANOS_ESPECIALES",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.BANOS,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "MOVILIDAD",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Movilidad"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "MOVILIDAD",
+        id: "MOVILIDAD",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.MOVILIDAD,
+        autoComplete: "off"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+      htmlFor: "OTROS_ESPECIALES",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "NameField",
+        children: "Otros"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        name: "OTROS",
+        id: "OTROS_ESPECIALES",
+        onChange: function onChange(e) {
+          return handleChange(e);
+        },
+        value: values.OTROS,
+        autoComplete: "off"
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FormServiciosEspeciales);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/MainGeneralForm.js":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/MainGeneralForm.js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ComponentsOfGeneralForm_FormActividadesServicios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ComponentsOfGeneralForm/FormActividadesServicios */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormActividadesServicios.js");
+/* harmony import */ var _ComponentsOfGeneralForm_FormCaracteristicas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ComponentsOfGeneralForm/FormCaracteristicas */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormCaracteristicas.js");
+/* harmony import */ var _ComponentsOfGeneralForm_FormCaracteristicasRelevantes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ComponentsOfGeneralForm/FormCaracteristicasRelevantes */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormCaracteristicasRelevantes.js");
+/* harmony import */ var _ComponentsOfGeneralForm_FormGeneralidades__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ComponentsOfGeneralForm/FormGeneralidades */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormGeneralidades.js");
+/* harmony import */ var _ComponentsOfGeneralForm_FormOtros__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ComponentsOfGeneralForm/FormOtros */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormOtros.js");
+/* harmony import */ var _ComponentsOfGeneralForm_FormPromocionAtractivo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ComponentsOfGeneralForm/FormPromocionAtractivo */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormPromocionAtractivo.js");
+/* harmony import */ var _ComponentsOfGeneralForm_FormServiciosEspeciales__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ComponentsOfGeneralForm/FormServiciosEspeciales */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/ComponentsOfGeneralForm/FormServiciosEspeciales.js");
+/* harmony import */ var _handleFunctionsGeneralForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./handleFunctionsGeneralForm */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/handleFunctionsGeneralForm.js");
+/* harmony import */ var _StyleMainGeneralForm__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./StyleMainGeneralForm */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/StyleMainGeneralForm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var MainGeneralForm = function MainGeneralForm(_ref) {
+  var initialValues = _ref.initialValues,
+      initialErrors = _ref.initialErrors;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialValues),
+      _useState2 = _slicedToArray(_useState, 2),
+      values = _useState2[0],
+      setValues = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialErrors),
+      _useState4 = _slicedToArray(_useState3, 2),
+      errors = _useState4[0],
+      setErrors = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      load = _useState6[0],
+      setLoad = _useState6[1];
+
+  var _handleFunctionsGener = (0,_handleFunctionsGeneralForm__WEBPACK_IMPORTED_MODULE_8__.handleFunctionsGeneralForm)({
+    values: values,
+    errors: errors,
+    setValues: setValues,
+    setErrors: setErrors
+  }),
+      handleBlur = _handleFunctionsGener.handleBlur,
+      handleChangeCheckbox = _handleFunctionsGener.handleChangeCheckbox,
+      handleSubmit = _handleFunctionsGener.handleSubmit,
+      handleChangeGeneralidades = _handleFunctionsGener.handleChangeGeneralidades,
+      handleChangeCaracteristicas = _handleFunctionsGener.handleChangeCaracteristicas,
+      handleChangeFile = _handleFunctionsGener.handleChangeFile,
+      handleChangeCaracteristicasRelevantes = _handleFunctionsGener.handleChangeCaracteristicasRelevantes,
+      handleChangeActividades = _handleFunctionsGener.handleChangeActividades,
+      handleChangeServicios = _handleFunctionsGener.handleChangeServicios,
+      handleChangePromocion = _handleFunctionsGener.handleChangePromocion,
+      handleChangeServiciosEspeciales = _handleFunctionsGener.handleChangeServiciosEspeciales,
+      handleChangeRedes = _handleFunctionsGener.handleChangeRedes,
+      handleChangeOtros = _handleFunctionsGener.handleChangeOtros;
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_StyleMainGeneralForm__WEBPACK_IMPORTED_MODULE_9__.StyleMainGeneralForm, {
+    onSubmit: function onSubmit(e) {
+      return handleSubmit(e);
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_ComponentsOfGeneralForm_FormGeneralidades__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        values: values.GENERALIDADES,
+        handleChange: handleChangeGeneralidades,
+        handleBlur: handleBlur,
+        errors: errors
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_ComponentsOfGeneralForm_FormCaracteristicas__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        values: values.CARACTERISTICAS,
+        handleChange: handleChangeCaracteristicas,
+        handleChangeFile: handleChangeFile,
+        handleBlur: handleBlur,
+        errors: errors
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_ComponentsOfGeneralForm_FormCaracteristicasRelevantes__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      values: values.CARACTERISTICAS_RELEVANTES,
+      handleChange: handleChangeCaracteristicasRelevantes,
+      handleChangeCheckbox: handleChangeCheckbox,
+      handleBlur: handleBlur,
+      errors: errors
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_ComponentsOfGeneralForm_FormActividadesServicios__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      values: values.ACTIVIDADES_SERVICIOS,
+      handleChangeActividades: handleChangeActividades,
+      handleChangeServicios: handleChangeServicios
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_ComponentsOfGeneralForm_FormPromocionAtractivo__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        values: values.PROMOCION,
+        handleChange: handleChangePromocion
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_ComponentsOfGeneralForm_FormServiciosEspeciales__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        values: values.SERVICIOS_ESPECIALES,
+        handleChange: handleChangeServiciosEspeciales
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_ComponentsOfGeneralForm_FormOtros__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      values: values.OTROS,
+      valuesRedes: values.OTROS.REDES,
+      handleChange: handleChangeOtros,
+      handleChangeRedes: handleChangeRedes
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("button", {
+      type: "submit",
+      children: "enviar"
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainGeneralForm);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/StyleMainGeneralForm.js":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/StyleMainGeneralForm.js ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StyleMainGeneralForm": () => (/* binding */ StyleMainGeneralForm)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+var StyleMainGeneralForm = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].form(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  input[type=\"text\"] {\n    border: 1px solid black;\n    cursor: text;\n  }\n"])));
+
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/handleFunctionsGeneralForm.js":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/handleFunctionsGeneralForm.js ***!
+  \*******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "handleFunctionsGeneralForm": () => (/* binding */ handleFunctionsGeneralForm)
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var handleFunctionsGeneralForm = function handleFunctionsGeneralForm(_ref) {
+  var values = _ref.values,
+      setValues = _ref.setValues,
+      errors = _ref.errors,
+      setErrors = _ref.setErrors;
+
+  var normalChange = function normalChange(name, value, table) {
+    setValues(_objectSpread(_objectSpread({}, values), {}, _defineProperty({}, table, _objectSpread(_objectSpread({}, values[table]), {}, _defineProperty({}, name, value)))));
+  };
+
+  var handleChangeGeneralidades = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
+      var _objectSpread4;
+
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              if (e.target.name === "ID_DEPARTAMENTOS" && values.ID_MUNICIPIOS) {
+                setValues(_objectSpread(_objectSpread({}, values), {}, {
+                  GENERALIDADES: _objectSpread(_objectSpread({}, values.GENERALIDADES), {}, (_objectSpread4 = {}, _defineProperty(_objectSpread4, e.target.name, e.target.value), _defineProperty(_objectSpread4, "ID_MUNICIPIOS", ""), _objectSpread4))
+                }));
+              } else {
+                normalChange(e.target.name, e.target.value, "GENERALIDADES");
+              }
+
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function handleChangeGeneralidades(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  var handleChangeCaracteristicas = function handleChangeCaracteristicas(e) {
+    normalChange(e.target.name, e.target.value, "CARACTERISTICAS");
+  };
+
+  var handleChangeFile = function handleChangeFile(e) {
+    console.log(e);
+    setValues(_objectSpread(_objectSpread({}, values), {}, {
+      CARACTERISTICAS: _objectSpread(_objectSpread({}, values.CARACTERISTICAS), {}, _defineProperty({}, e.target.name, e.target.files[0]))
+    }));
+  };
+
+  var handleChangeCaracteristicasRelevantes = function handleChangeCaracteristicasRelevantes(e) {
+    normalChange(e.target.name, e.target.value, "CARACTERISTICAS_RELEVANTES");
+  };
+
+  var handleChangeCheckbox = function handleChangeCheckbox(e) {
+    setValues(_objectSpread(_objectSpread({}, values), {}, {
+      CARACTERISTICAS_RELEVANTES: _objectSpread(_objectSpread({}, values.CARACTERISTICAS_RELEVANTES), {}, _defineProperty({}, e.target.name, _objectSpread(_objectSpread({}, values.CARACTERISTICAS_RELEVANTES[e.target.name]), {}, _defineProperty({}, e.target.value, true))))
+    }));
+  };
+
+  var normalChangeActividadesServicios = function normalChangeActividadesServicios(name, value, table) {
+    setValues(_objectSpread(_objectSpread({}, values), {}, {
+      ACTIVIDADES_SERVICIOS: _objectSpread(_objectSpread({}, values.ACTIVIDADES_SERVICIOS), {}, _defineProperty({}, table, _objectSpread(_objectSpread({}, values.ACTIVIDADES_SERVICIOS[table]), {}, _defineProperty({}, name, value))))
+    }));
+  };
+
+  var handleChangeActividades = function handleChangeActividades(e) {
+    normalChangeActividadesServicios(e.target.name, e.target.value, "ACTIVIDADES");
+  };
+
+  var handleChangeServicios = function handleChangeServicios(e) {
+    normalChangeActividadesServicios(e.target.name, e.target.value, "SERVICIOS");
+  };
+
+  var handleChangePromocion = function handleChangePromocion(e) {
+    normalChange(e.target.name, e.target.value, "PROMOCION");
+  };
+
+  var handleChangeServiciosEspeciales = function handleChangeServiciosEspeciales(e) {
+    normalChange(e.target.name, e.target.value, "SERVICIOS_ESPECIALES");
+  };
+
+  var handleChangeRedes = function handleChangeRedes(e) {
+    setValues(_objectSpread(_objectSpread({}, values), {}, {
+      OTROS: _objectSpread(_objectSpread({}, values.OTROS), {}, {
+        REDES: _objectSpread(_objectSpread({}, values.OTROS.REDES), {}, _defineProperty({}, e.target.name, e.target.value))
+      })
+    }));
+  };
+
+  var handleChangeOtros = function handleChangeOtros(e) {
+    normalChange(e.target.name, e.target.value, "OTROS");
+  };
+
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+    console.log(values);
+  };
+
+  var handleBlur = function handleBlur(e) {};
+
+  return {
+    handleChangeCheckbox: handleChangeCheckbox,
+    handleBlur: handleBlur,
+    handleSubmit: handleSubmit,
+    handleChangeGeneralidades: handleChangeGeneralidades,
+    handleChangeCaracteristicas: handleChangeCaracteristicas,
+    handleChangeFile: handleChangeFile,
+    handleChangeCaracteristicasRelevantes: handleChangeCaracteristicasRelevantes,
+    handleChangeActividades: handleChangeActividades,
+    handleChangeServicios: handleChangeServicios,
+    handleChangePromocion: handleChangePromocion,
+    handleChangeServiciosEspeciales: handleChangeServiciosEspeciales,
+    handleChangeRedes: handleChangeRedes,
+    handleChangeOtros: handleChangeOtros
+  };
+};
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/initialValuesGeneralForm.js":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/initialValuesGeneralForm.js ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "initialValuesGeneralForm": () => (/* binding */ initialValuesGeneralForm)
+/* harmony export */ });
+var initialValuesGeneralForm = {
+  GENERALIDADES: {
+    GEORREFERENCIACION: "",
+    ID_TIPO_ACCESO: "",
+    INDICACIONES_ACCESO: "",
+    CORREGIMIENTO_VEREDA_LOCALIDAD: "",
+    ID_DEPARTAMENTOS: "",
+    ID_MUNICIPIOS: "",
+    NOMBRE: "",
+    UBICACION: ""
+  },
+  CARACTERISTICAS: {
+    DESCRIPCION: "",
+    IMAGEN1: null,
+    IMAGEN2: null,
+    FUENTE: ""
+  },
+  CARACTERISTICAS_RELEVANTES: {
+    ID_TIPO_CLIMA: "",
+    TEMPERATURA: "",
+    ACCESO_HORARIOS: {
+      RESTRINGIDO: false,
+      PERMANENTE: false,
+      VISITA_EXTERIOR: false,
+      VISITA_INTERIOR: false
+    },
+    DIAS_HORARIOS: {
+      LUNES: false,
+      MARTES: false,
+      MIERCOLES: false,
+      JUEVES: false,
+      VIERNES: false,
+      SABADO: false,
+      DOMINGO: false
+    },
+    ID_TIPO_ESTADO: ""
+  },
+  ACTIVIDADES_SERVICIOS: {
+    ACTIVIDADES: {
+      CULTURALES: "",
+      ARTISTICAS: "",
+      FISICAS: "",
+      RECREATIVAS: "",
+      OTROS: ""
+    },
+    SERVICIOS: {
+      TIENDAS: "",
+      GUIAS: "",
+      BANOS: "",
+      RESTAURANTES: "",
+      PARQUEADERO: "",
+      ALOJAMIENTO: "",
+      OTROS: ""
+    }
+  },
+  PROMOCION: {
+    FOLLETOS_GUIAS: "",
+    PUBLICACIONES: "",
+    TRIPADVISOR: "",
+    CTRAVEL: "",
+    GOOGLEM: "",
+    PAGINA_WEB: "",
+    YOUTUBE: "",
+    OTROS: ""
+  },
+  SERVICIOS_ESPECIALES: {
+    ASCENSORES: "",
+    RAMPAS: "",
+    DISCAP_AUDITIVA: "",
+    BANOS: "",
+    MOVILIDAD: "",
+    OTROS: ""
+  },
+  OTROS: {
+    REDES: {
+      PAGINA_WEB: "",
+      FACEBOOK: "",
+      TWITTER: "",
+      INSTAGRAM: "",
+      OTRA: ""
+    },
+    REF_BIBLIOGRAFICA: "",
+    OBSERVACIONES: ""
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralGet.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralGet.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _GeneralTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GeneralTable */ "./resources/js/src/components/views/ComponentsOfViews/GeneralTable.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var GeneralGet = function GeneralGet(_ref) {
+  var children = _ref.children,
+      h2Text = _ref.h2Text,
+      toFirst = _ref.toFirst,
+      toLast = _ref.toLast;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "GeneralGet",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      children: h2Text
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "ContainerMainGeneralGet",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "ContainerOptionsGeneralGet",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.NavLink, {
+          to: toFirst,
+          className: function className(_ref2) {
+            var isActive = _ref2.isActive;
+            return isActive ? "activeOptionGeneralGet" : undefined;
+          },
+          children: "Sin completar"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.NavLink, {
+          to: toLast,
+          className: function className(_ref3) {
+            var isActive = _ref3.isActive;
+            return isActive ? "activeOptionGeneralGet" : undefined;
+          },
+          children: "Completados"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_GeneralTable__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        children: children
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GeneralGet);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralTable.js":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralTable.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var GeneralTable = function GeneralTable(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "ContainerTable",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+      className: "StyleTable",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: "#"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: "Nombre"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: "C\xF3digo"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: "Calificaci\xF3n"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: "Ubicaci\xF3n"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: "Georreferenciaci\xF3n"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
+        children: children
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GeneralTable);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/FestividadesEventos/MainFestividadesEventos.js":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/src/components/views/FestividadesEventos/MainFestividadesEventos.js ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ComponentsOfViews/GeneralGet */ "./resources/js/src/components/views/ComponentsOfViews/GeneralGet.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var GetSinCompletarFestividadesEventos = function GetSinCompletarFestividadesEventos() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      h2Text: "Festividades y eventos",
+      toFirst: "/festividades-eventos/sin-completar",
+      toLast: "/festividades-eventos/completado",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+        className: "NoData",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+          colSpan: 6,
+          children: "No hay datos para completar"
+        })
+      })
+    })
+  });
+};
+
+var GetCompletadoFestividadesEventos = function GetCompletadoFestividadesEventos() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      h2Text: "Festividades y eventos",
+      toFirst: "/festividades-eventos/sin-completar",
+      toLast: "/festividades-eventos/completado",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+        className: "NoData",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+          colSpan: 6,
+          children: "No hay datos para visualizar"
+        })
+      })
+    })
+  });
+};
+
+var MainFestividadesEventos = function MainFestividadesEventos(_ref) {
+  var who = _ref.who;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "ContainerMainGeneral",
+    children: [who === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(GetSinCompletarFestividadesEventos, {}), who === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(GetCompletadoFestividadesEventos, {})]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainFestividadesEventos);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/GruposEspecialInteres/MainGruposEspecialInteres.js":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/src/components/views/GruposEspecialInteres/MainGruposEspecialInteres.js ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ComponentsOfViews/GeneralGet */ "./resources/js/src/components/views/ComponentsOfViews/GeneralGet.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var GetSinCompletarGruposEspecialInteres = function GetSinCompletarGruposEspecialInteres() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      h2Text: "Grupos de especial inter\xE9s",
+      toFirst: "/grupos-especial-interes/sin-completar",
+      toLast: "/grupos-especial-interes/completado",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+        className: "NoData",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+          colSpan: 6,
+          children: "No hay datos para completar"
+        })
+      })
+    })
+  });
+};
+
+var GetCompletadoGruposEspecialInteres = function GetCompletadoGruposEspecialInteres() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      h2Text: "Grupos de especial inter\xE9s",
+      toFirst: "/grupos-especial-interes/sin-completar",
+      toLast: "/grupos-especial-interes/completado",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+        className: "NoData",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+          colSpan: 6,
+          children: "No hay datos para visualizar"
+        })
+      })
+    })
+  });
+};
+
+var MainGruposEspecialInteres = function MainGruposEspecialInteres(_ref) {
+  var who = _ref.who;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "ContainerMainGeneral",
+    children: [who === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(GetSinCompletarGruposEspecialInteres, {}), who === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(GetCompletadoGruposEspecialInteres, {})]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainGruposEspecialInteres);
+
+/***/ }),
+
 /***/ "./resources/js/src/components/views/Home/MainHome.js":
 /*!************************************************************!*\
   !*** ./resources/js/src/components/views/Home/MainHome.js ***!
@@ -9387,46 +11673,6 @@ var StyleMainHome = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].di
 
 /***/ }),
 
-/***/ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/ActionBackListaPreliminar.js":
-/*!************************************************************************************************************************!*\
-  !*** ./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/ActionBackListaPreliminar.js ***!
-  \************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _templateObject;
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-
-var StyleActionBackListaPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  padding: 10px 0;\n  justify-content: flex-start;\n  .ButtonBack {\n    background-color: #36304a;\n    padding: 10px 15px;\n    color: white;\n    border-radius: 8px;\n    cursor: pointer;\n  }\n"])));
-
-var ActionBackListaPreliminar = function ActionBackListaPreliminar(_ref) {
-  var to = _ref.to;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(StyleActionBackListaPreliminar, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-      to: to,
-      className: "ButtonBack",
-      children: "Atras"
-    })
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ActionBackListaPreliminar);
-
-/***/ }),
-
 /***/ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/GetListadoPreliminar.js":
 /*!*******************************************************************************************************************!*\
   !*** ./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/GetListadoPreliminar.js ***!
@@ -9441,7 +11687,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _common_GeneralLoader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common/GeneralLoader */ "./resources/js/src/components/common/GeneralLoader.js");
 /* harmony import */ var _hooks_useDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useDataListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useDataListadoPreliminar.js");
-/* harmony import */ var _Table_TableListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Table/TableListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Table/TableListadoPreliminar.js");
+/* harmony import */ var _TableListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TableListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/TableListadoPreliminar.js");
 /* harmony import */ var _HeaderGetListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./HeaderGetListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/HeaderGetListadoPreliminar.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -9461,7 +11707,7 @@ var GetListadoPreliminar = function GetListadoPreliminar() {
       children: "Listado Preliminar"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "ContainerMainGetListadoPreliminar",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_HeaderGetListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Table_TableListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_HeaderGetListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_TableListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
     })]
   });
 };
@@ -9487,8 +11733,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpCapitalize */ "./resources/js/src/helpers/helpCapitalize.js");
 /* harmony import */ var _common_ErrorComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/ErrorComponent */ "./resources/js/src/components/common/ErrorComponent.js");
 /* harmony import */ var _common_GeneralLoader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/GeneralLoader */ "./resources/js/src/components/common/GeneralLoader.js");
-/* harmony import */ var _hooks_useRecordListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hooks/useRecordListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useRecordListadoPreliminar.js");
-/* harmony import */ var _ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ActionBackListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/ActionBackListaPreliminar.js");
+/* harmony import */ var _ComponentsOfViews_ActionBack__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ComponentsOfViews/ActionBack */ "./resources/js/src/components/views/ComponentsOfViews/ActionBack.js");
+/* harmony import */ var _hooks_useRecordListadoPreliminar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hooks/useRecordListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useRecordListadoPreliminar.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject;
 
@@ -9512,7 +11758,7 @@ var GetRecordListadoPreliminar = function GetRecordListadoPreliminar() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useParams)(),
       idListado = _useParams.idListado;
 
-  var response = (0,_hooks_useRecordListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__["default"])(idListado);
+  var response = (0,_hooks_useRecordListadoPreliminar__WEBPACK_IMPORTED_MODULE_5__["default"])(idListado);
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useNavigate)();
   if (!response) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_GeneralLoader__WEBPACK_IMPORTED_MODULE_3__["default"], {});
   if (!response.state) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_common_ErrorComponent__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -9527,7 +11773,7 @@ var GetRecordListadoPreliminar = function GetRecordListadoPreliminar() {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     className: "GetRecordListadoPreliminar",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_ComponentsOfViews_ActionBack__WEBPACK_IMPORTED_MODULE_4__["default"], {
       to: "/listado-preliminar"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
       children: response.data["NOMBRE"]
@@ -9537,18 +11783,18 @@ var GetRecordListadoPreliminar = function GetRecordListadoPreliminar() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
             className: "titleInformation",
-            children: "Municipio: "
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-            className: "information",
-            children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(response.data["MUNICIPIO"])
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-            className: "titleInformation",
             children: "Departamento: "
           }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
             className: "information",
             children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(response.data["DEPARTAMENTO"])
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "titleInformation",
+            children: "Municipio: "
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+            className: "information",
+            children: (0,_helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__.helpCapitalize)(response.data["MUNICIPIO"])
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
@@ -9637,21 +11883,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _helpers_helpCapitalize__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpCapitalize */ "./resources/js/src/helpers/helpCapitalize.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _templateObject;
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
 
 
-
-
-var Row = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].tr(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  cursor: pointer;\n  height: 50px;\n  font-size: 1rem;\n  &:nth-child(even) {\n    background-color: #f5f5f5;\n  }\n  &:hover {\n    background-color: #f5f5f5;\n  }\n  td {\n    padding-left: 8px;\n    color: #15012e;\n  }\n  td:first-child {\n    font-weight: 900;\n    padding-left: 15px;\n  }\n  td:last-child {\n    padding-right: 15px;\n  }\n"])));
 
 var RowTableListadoPreliminar = function RowTableListadoPreliminar(_ref) {
   var ID_LISTADO = _ref.ID_LISTADO,
@@ -9660,7 +11899,7 @@ var RowTableListadoPreliminar = function RowTableListadoPreliminar(_ref) {
       MUNICIPIO = _ref.MUNICIPIO,
       NOMBRE = _ref.NOMBRE,
       UBICACION = _ref.UBICACION;
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
 
   var handleClick = function handleClick(e) {
     navigate("./".concat(ID_LISTADO), {
@@ -9668,7 +11907,7 @@ var RowTableListadoPreliminar = function RowTableListadoPreliminar(_ref) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Row, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
     onClick: handleClick,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
@@ -9707,6 +11946,70 @@ var RowTableListadoPreliminar = function RowTableListadoPreliminar(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/TableListadoPreliminar.js":
+/*!*********************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/TableListadoPreliminar.js ***!
+  \*********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _RowTableListadoPreliminar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RowTableListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/RowTableListadoPreliminar.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+var TableListadoPreliminar = function TableListadoPreliminar() {
+  var data = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
+    return state.dataListaPreliminarSlice.dataLista;
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "ContainerTable",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+      className: "StyleTable",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+            children: "#"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+            children: "Nombre"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+            children: "Departamento"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+            children: "Municipio"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+            children: "Ubicaci\xF3n"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+            children: "Fuente"
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
+        children: Object.values(data).reverse().map(function (val, key) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_RowTableListadoPreliminar__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread({}, val), 'RowListadoPreliminar' + key);
+        })
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TableListadoPreliminar);
+
+/***/ }),
+
 /***/ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/UpdateListadoPreliminar.js":
 /*!**********************************************************************************************************************!*\
   !*** ./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/UpdateListadoPreliminar.js ***!
@@ -9723,9 +12026,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_helpHttp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../helpers/helpHttp */ "./resources/js/src/helpers/helpHttp.js");
 /* harmony import */ var _common_ErrorComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../common/ErrorComponent */ "./resources/js/src/components/common/ErrorComponent.js");
 /* harmony import */ var _common_GeneralLoader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../common/GeneralLoader */ "./resources/js/src/components/common/GeneralLoader.js");
-/* harmony import */ var _Form_FormListaPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Form/FormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/FormListaPreliminar.js");
-/* harmony import */ var _hooks_useUpdateDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hooks/useUpdateDataListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useUpdateDataListadoPreliminar.js");
-/* harmony import */ var _ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ActionBackListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/ActionBackListaPreliminar.js");
+/* harmony import */ var _ComponentsOfViews_ActionBack__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../ComponentsOfViews/ActionBack */ "./resources/js/src/components/views/ComponentsOfViews/ActionBack.js");
+/* harmony import */ var _Form_FormListaPreliminar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Form/FormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/FormListaPreliminar.js");
+/* harmony import */ var _hooks_useUpdateDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../hooks/useUpdateDataListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/hooks/useUpdateDataListadoPreliminar.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
@@ -9750,7 +12053,7 @@ var UpdateListadoPreliminar = function UpdateListadoPreliminar() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useParams)(),
       idListado = _useParams.idListado;
 
-  var response = (0,_hooks_useUpdateDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_5__["default"])(idListado);
+  var response = (0,_hooks_useUpdateDataListadoPreliminar__WEBPACK_IMPORTED_MODULE_6__["default"])(idListado);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     return function () {
       if (!response) return false;
@@ -9806,11 +12109,11 @@ var UpdateListadoPreliminar = function UpdateListadoPreliminar() {
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "UpdateListadoPreliminar",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_ComponentsOfViews_ActionBack__WEBPACK_IMPORTED_MODULE_4__["default"], {
       to: "/listado-preliminar/".concat(response.data.ID_LISTADO)
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
       children: "Actulizar un listado preliminar"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Form_FormListaPreliminar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Form_FormListaPreliminar__WEBPACK_IMPORTED_MODULE_5__["default"], {
       initialValues: response.data,
       nameButton: "Actualizar",
       who: 4
@@ -9834,16 +12137,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _DataJson_DataDepartamentos_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataJson/DataDepartamentos.json */ "./resources/js/src/components/views/ListadoPreliminar/Form/DataJson/DataDepartamentos.json");
-/* harmony import */ var _DataJson_DataMunicipio_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DataJson/DataMunicipio.json */ "./resources/js/src/components/views/ListadoPreliminar/Form/DataJson/DataMunicipio.json");
-/* harmony import */ var _DataJson_DataFuentes_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DataJson/DataFuentes.json */ "./resources/js/src/components/views/ListadoPreliminar/Form/DataJson/DataFuentes.json");
-/* harmony import */ var _handleFunctions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./handleFunctions */ "./resources/js/src/components/views/ListadoPreliminar/Form/handleFunctions.js");
-/* harmony import */ var _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./initialValuesFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/initialValuesFormListaPreliminar.js");
-/* harmony import */ var _StyleFormListaPreliminar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./StyleFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/StyleFormListaPreliminar.js");
-/* harmony import */ var _common_ButtonPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../common/ButtonPage */ "./resources/js/src/components/common/ButtonPage.js");
-/* harmony import */ var _common_LoaderForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../common/LoaderForm */ "./resources/js/src/components/common/LoaderForm.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _DataJson_DataFuentes_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataJson/DataFuentes.json */ "./resources/js/src/components/views/ListadoPreliminar/Form/DataJson/DataFuentes.json");
+/* harmony import */ var _handleFunctionsLP__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./handleFunctionsLP */ "./resources/js/src/components/views/ListadoPreliminar/Form/handleFunctionsLP.js");
+/* harmony import */ var _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./initialValuesFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/initialValuesFormListaPreliminar.js");
+/* harmony import */ var _StyleFormListaPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./StyleFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/StyleFormListaPreliminar.js");
+/* harmony import */ var _common_ButtonPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../common/ButtonPage */ "./resources/js/src/components/common/ButtonPage.js");
+/* harmony import */ var _common_LoaderForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../common/LoaderForm */ "./resources/js/src/components/common/LoaderForm.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _ComponentsOfViews_GeneralFieldsGeneralidades__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../ComponentsOfViews/GeneralFieldsGeneralidades */ "./resources/js/src/components/views/ComponentsOfViews/GeneralFieldsGeneralidades.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -9868,7 +12170,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var FormListaPreliminar = function FormListaPreliminar(_ref) {
   var initialValues = _ref.initialValues,
       nameButton = _ref.nameButton,
@@ -9879,7 +12180,7 @@ var FormListaPreliminar = function FormListaPreliminar(_ref) {
       values = _useState2[0],
       setValues = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_5__.initialErrors),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(_initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_3__.initialErrors),
       _useState4 = _slicedToArray(_useState3, 2),
       errors = _useState4[0],
       setErrors = _useState4[1];
@@ -9889,127 +12190,31 @@ var FormListaPreliminar = function FormListaPreliminar(_ref) {
       load = _useState6[0],
       setLoad = _useState6[1];
 
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useNavigate)();
 
-  var _handleFunctions = (0,_handleFunctions__WEBPACK_IMPORTED_MODULE_4__.handleFunctions)(values, setValues, errors, setErrors, setLoad, navigate),
-      handleBlur = _handleFunctions.handleBlur,
-      handleChange = _handleFunctions.handleChange,
-      handleSubmit = _handleFunctions.handleSubmit;
+  var _handleFunctionsLP = (0,_handleFunctionsLP__WEBPACK_IMPORTED_MODULE_2__.handleFunctionsLP)(values, setValues, errors, setErrors, setLoad, navigate),
+      handleBlur = _handleFunctionsLP.handleBlur,
+      handleChange = _handleFunctionsLP.handleChange,
+      handleSubmit = _handleFunctionsLP.handleSubmit;
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_StyleFormListaPreliminar__WEBPACK_IMPORTED_MODULE_6__.StyleFormListaPreliminar, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_StyleFormListaPreliminar__WEBPACK_IMPORTED_MODULE_4__.StyleFormListaPreliminar, {
     onSubmit: function onSubmit(e) {
       e.preventDefault();
       handleSubmit(who);
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       className: "ContainerFields",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("label", {
-        htmlFor: "ID_DEPARTAMENTOS",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-          className: "NameField",
-          children: "Departamento"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("select", {
-          name: "ID_DEPARTAMENTOS",
-          id: "ID_DEPARTAMENTOS",
-          value: values.ID_DEPARTAMENTOS,
-          onChange: function onChange(e) {
-            return handleChange(e);
-          },
-          onBlur: function onBlur(e) {
-            return handleBlur(e);
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
-            value: "",
-            disabled: true,
-            children: "Seleccione un departamento"
-          }), _DataJson_DataDepartamentos_json__WEBPACK_IMPORTED_MODULE_1__.map(function (val) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
-              value: val["Código"],
-              children: val["Nombre"][0].toUpperCase() + val["Nombre"].slice(1).toLocaleLowerCase()
-            }, val["Código"] + val["Nombre"]);
-          })]
-        }), errors.ID_DEPARTAMENTOS && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
-          className: "errorMessage",
-          children: errors.ID_DEPARTAMENTOS
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("label", {
-        htmlFor: "ID_MUNICIPIOS",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-          className: "NameField",
-          children: "Municipio"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("select", {
-          name: "ID_MUNICIPIOS",
-          id: "ID_MUNICIPIOS",
-          value: values.ID_MUNICIPIOS,
-          onChange: function onChange(e) {
-            return handleChange(e);
-          },
-          onBlur: function onBlur(e) {
-            return handleBlur(e);
-          },
-          disabled: values.ID_DEPARTAMENTOS ? false : true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
-            value: "",
-            disabled: true,
-            children: values.ID_DEPARTAMENTOS ? "Seleccione un municipio" : "Primero seleccione departamento"
-          }), values.ID_DEPARTAMENTOS && _DataJson_DataMunicipio_json__WEBPACK_IMPORTED_MODULE_2__[values.ID_DEPARTAMENTOS].map(function (val) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
-              value: val["Id_Municipio"],
-              children: val["Nombre"][0].toUpperCase() + val["Nombre"].slice(1).toLocaleLowerCase()
-            }, val["Id_Municipio"] + val["Nombre"]);
-          })]
-        }), errors.ID_MUNICIPIOS && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
-          className: "errorMessage",
-          children: errors.ID_MUNICIPIOS
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("label", {
-        htmlFor: "NOMBRE",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-          className: "NameField",
-          children: "Nombre"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
-          type: "text",
-          name: "NOMBRE",
-          id: "NOMBRE",
-          onChange: function onChange(e) {
-            return handleChange(e);
-          },
-          onBlur: function onBlur(e) {
-            return handleBlur(e);
-          },
-          value: values.NOMBRE,
-          autoComplete: "off"
-        }), errors.NOMBRE && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
-          className: "errorMessage",
-          children: errors.NOMBRE
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("label", {
-        htmlFor: "UBICACION",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
-          className: "NameField",
-          children: "Ubicaci\xF3n"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("input", {
-          type: "text",
-          name: "UBICACION",
-          id: "UBICACION",
-          onChange: function onChange(e) {
-            return handleChange(e);
-          },
-          onBlur: function onBlur(e) {
-            return handleBlur(e);
-          },
-          value: values.UBICACION,
-          autoComplete: "off"
-        }), errors.UBICACION && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
-          className: "errorMessage",
-          children: errors.UBICACION
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("label", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_ComponentsOfViews_GeneralFieldsGeneralidades__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        errors: errors,
+        handleBlur: handleBlur,
+        handleChange: handleChange,
+        values: values
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
         htmlFor: "ID_FUENTE",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
           className: "NameField",
           children: "Fuente"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("select", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
           name: "ID_FUENTE",
           id: "ID_FUENTE",
           value: values.ID_FUENTE,
@@ -10019,24 +12224,24 @@ var FormListaPreliminar = function FormListaPreliminar(_ref) {
           onChange: function onChange(e) {
             return handleChange(e);
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
             value: "",
             disabled: true,
             children: "Selecione una fuente"
-          }), _DataJson_DataFuentes_json__WEBPACK_IMPORTED_MODULE_3__.map(function (val) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
+          }), _DataJson_DataFuentes_json__WEBPACK_IMPORTED_MODULE_1__.map(function (val) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
               value: val.id_tipos_bien,
               children: val.tipo_bien[0].toUpperCase() + val.tipo_bien.slice(1).toLocaleLowerCase()
             }, val.id_tipos_bien + val.tipo_bien);
           })]
-        }), errors.ID_FUENTE && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("small", {
+        }), errors.ID_FUENTE && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
           className: "errorMessage",
           children: errors.ID_FUENTE
         })]
       })]
-    }), load ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_common_LoaderForm__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    }), load ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_LoaderForm__WEBPACK_IMPORTED_MODULE_6__["default"], {
       colorLoad: "#15012e"
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_common_ButtonPage__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_common_ButtonPage__WEBPACK_IMPORTED_MODULE_5__["default"], {
       type: "submit",
       colorButton: "#15012e",
       children: nameButton
@@ -10186,16 +12391,16 @@ var UnitValidationsListaPreliminar = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./resources/js/src/components/views/ListadoPreliminar/Form/handleFunctions.js":
-/*!*************************************************************************************!*\
-  !*** ./resources/js/src/components/views/ListadoPreliminar/Form/handleFunctions.js ***!
-  \*************************************************************************************/
+/***/ "./resources/js/src/components/views/ListadoPreliminar/Form/handleFunctionsLP.js":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ListadoPreliminar/Form/handleFunctionsLP.js ***!
+  \***************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "handleFunctions": () => (/* binding */ handleFunctions)
+/* harmony export */   "handleFunctionsLP": () => (/* binding */ handleFunctionsLP)
 /* harmony export */ });
 /* harmony import */ var _helpers_helpToastMessage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../helpers/helpToastMessage */ "./resources/js/src/helpers/helpToastMessage.js");
 /* harmony import */ var _initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./initialValuesFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/initialValuesFormListaPreliminar.js");
@@ -10219,7 +12424,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-var handleFunctions = function handleFunctions(values, setValues, errors, setErrors, setLoad, navigate) {
+var handleFunctionsLP = function handleFunctionsLP(values, setValues, errors, setErrors, setLoad, navigate) {
   var ValidateField = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(name, value) {
       var FieldValue, response;
@@ -10513,7 +12718,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Form_initialValuesFormListaPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Form/initialValuesFormListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Form/initialValuesFormListaPreliminar.js");
 /* harmony import */ var _ComponentsOfListadoPreliminar_GetRecordListadoPreliminar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ComponentsOfListadoPreliminar/GetRecordListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/GetRecordListadoPreliminar.js");
 /* harmony import */ var _ComponentsOfListadoPreliminar_UpdateListadoPreliminar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ComponentsOfListadoPreliminar/UpdateListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/UpdateListadoPreliminar.js");
-/* harmony import */ var _ComponentsOfListadoPreliminar_ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ComponentsOfListadoPreliminar/ActionBackListaPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/ActionBackListaPreliminar.js");
+/* harmony import */ var _ComponentsOfViews_ActionBack__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../ComponentsOfViews/ActionBack */ "./resources/js/src/components/views/ComponentsOfViews/ActionBack.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -10529,7 +12734,7 @@ __webpack_require__.r(__webpack_exports__);
 var CreateListadoPreliminar = function CreateListadoPreliminar() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     className: "CreateListadoPreliminar",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_ComponentsOfListadoPreliminar_ActionBackListaPreliminar__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_ComponentsOfViews_ActionBack__WEBPACK_IMPORTED_MODULE_7__["default"], {
       to: "/listado-preliminar"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
       children: "Crear un listado preliminar"
@@ -10573,96 +12778,6 @@ var StyleMainListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_0__[
   return props.theme.fonts.secondary;
 });
 
-
-/***/ }),
-
-/***/ "./resources/js/src/components/views/ListadoPreliminar/Table/StyleTableListadoPreliminar.js":
-/*!**************************************************************************************************!*\
-  !*** ./resources/js/src/components/views/ListadoPreliminar/Table/StyleTableListadoPreliminar.js ***!
-  \**************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ContainerTableListadoPreliminar": () => (/* binding */ ContainerTableListadoPreliminar),
-/* harmony export */   "StyleTableListadoPreliminar": () => (/* binding */ StyleTableListadoPreliminar)
-/* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _templateObject, _templateObject2;
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-var StyleTableListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].table(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  width: 1029px;\n  margin: 0 auto;\n  border-collapse: collapse;\n  border-radius: 10px;\n  overflow: hidden;\n  thead {\n    height: 60px;\n    background-color: #2c1742eb;\n    color: white;\n    font-family: ", ";\n  }\n  th {\n    font-weight: 100;\n    font-size: 1.2rem;\n    padding-left: 8px;\n  }\n  th:first-child {\n    padding-left: 15px;\n  }\n  th:last-child {\n    padding-right: 15px;\n  }\n"])), function (props) {
-  return props.theme.fonts.secondary;
-});
-var ContainerTableListadoPreliminar = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  padding-bottom: 15px;\n  width: 100%;\n  overflow-x: auto;\n"])));
-
-
-/***/ }),
-
-/***/ "./resources/js/src/components/views/ListadoPreliminar/Table/TableListadoPreliminar.js":
-/*!*********************************************************************************************!*\
-  !*** ./resources/js/src/components/views/ListadoPreliminar/Table/TableListadoPreliminar.js ***!
-  \*********************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _ComponentsOfListadoPreliminar_RowTableListadoPreliminar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ComponentsOfListadoPreliminar/RowTableListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/ComponentsOfListadoPreliminar/RowTableListadoPreliminar.js");
-/* harmony import */ var _StyleTableListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./StyleTableListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/Table/StyleTableListadoPreliminar.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-
-
-
-var TableListadoPreliminar = function TableListadoPreliminar() {
-  var data = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
-    return state.dataListaPreliminarSlice.dataLista;
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_StyleTableListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__.ContainerTableListadoPreliminar, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_StyleTableListadoPreliminar__WEBPACK_IMPORTED_MODULE_3__.StyleTableListadoPreliminar, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
-            children: "N\xB0"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
-            children: "Nombre"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
-            children: "Departamento"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
-            children: "Municipio"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
-            children: "Ubicaci\xF3n"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
-            children: "Fuente"
-          })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
-        children: Object.values(data).reverse().map(function (val, key) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ComponentsOfListadoPreliminar_RowTableListadoPreliminar__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread({}, val), 'RowListadoPreliminar' + key);
-        })
-      })]
-    })
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TableListadoPreliminar);
 
 /***/ }),
 
@@ -11385,6 +13500,223 @@ var LoginStyle = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(f
 
 /***/ }),
 
+/***/ "./resources/js/src/components/views/PatrimonioInmaterial/MainPatrimonioInmaterial.js":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/src/components/views/PatrimonioInmaterial/MainPatrimonioInmaterial.js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ComponentsOfViews/GeneralGet */ "./resources/js/src/components/views/ComponentsOfViews/GeneralGet.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var GetSinCompletarPatrimonioInmaterial = function GetSinCompletarPatrimonioInmaterial() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      h2Text: "Patrimonio inmaterial",
+      toFirst: "/patrimonio-inmaterial/sin-completar",
+      toLast: "/patrimonio-inmaterial/completado",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+        className: "NoData",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+          colSpan: 6,
+          children: "No hay datos para completar"
+        })
+      })
+    })
+  });
+};
+
+var GetCompletadoPatrimonioInmaterial = function GetCompletadoPatrimonioInmaterial() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      h2Text: "Patrimonio inmaterial",
+      toFirst: "/patrimonio-inmaterial/sin-completar",
+      toLast: "/patrimonio-inmaterial/completado",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+        className: "NoData",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+          colSpan: 6,
+          children: "No hay datos para visualizar"
+        })
+      })
+    })
+  });
+};
+
+var MainPatrimonioInmaterial = function MainPatrimonioInmaterial(_ref) {
+  var who = _ref.who;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "ContainerMainGeneral",
+    children: [who === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(GetSinCompletarPatrimonioInmaterial, {}), who === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(GetCompletadoPatrimonioInmaterial, {})]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainPatrimonioInmaterial);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/PatrimonioMaterial/MainPatrimonioMaterial.js":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/src/components/views/PatrimonioMaterial/MainPatrimonioMaterial.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ComponentsOfViews_GeneralForm_initialValuesGeneralForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ComponentsOfViews/GeneralForm/initialValuesGeneralForm */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/initialValuesGeneralForm.js");
+/* harmony import */ var _ComponentsOfViews_GeneralForm_MainGeneralForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ComponentsOfViews/GeneralForm/MainGeneralForm */ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/MainGeneralForm.js");
+/* harmony import */ var _ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ComponentsOfViews/GeneralGet */ "./resources/js/src/components/views/ComponentsOfViews/GeneralGet.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
+
+
+
+
+
+
+
+
+
+var GetSinCompletarPatrimonioMaterial = function GetSinCompletarPatrimonioMaterial() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      h2Text: "Patrimonio material",
+      toFirst: "/patrimonio-material/sin-completar",
+      toLast: "/patrimonio-material/completado",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tr", {
+        className: "NoData",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+          colSpan: 6,
+          children: "No hay datos para completar"
+        })
+      })
+    })
+  });
+};
+
+var GetCompletadoPatrimonioMaterial = function GetCompletadoPatrimonioMaterial() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      h2Text: "Patrimonio material",
+      toFirst: "/patrimonio-material/sin-completar",
+      toLast: "/patrimonio-material/completado",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tr", {
+        className: "NoData",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+          colSpan: 6,
+          children: "No hay datos para visualizar"
+        })
+      })
+    })
+  });
+};
+
+var CreateMainPatrimonioMaterial = function CreateMainPatrimonioMaterial(_ref) {
+  _objectDestructuringEmpty(_ref);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ComponentsOfViews_GeneralForm_MainGeneralForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        initialErrors: {},
+        initialValues: _ComponentsOfViews_GeneralForm_initialValuesGeneralForm__WEBPACK_IMPORTED_MODULE_1__.initialValuesGeneralForm
+      })
+    })
+  });
+};
+
+var MainPatrimonioMaterial = function MainPatrimonioMaterial(_ref2) {
+  var who = _ref2.who;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "ContainerMainGeneral",
+    children: [who === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(GetSinCompletarPatrimonioMaterial, {}), who === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(GetCompletadoPatrimonioMaterial, {}), who === 3 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CreateMainPatrimonioMaterial, {})]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainPatrimonioMaterial);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/SitiosNaturales/MainSitiosNaturales.js":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/src/components/views/SitiosNaturales/MainSitiosNaturales.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ComponentsOfViews/GeneralGet */ "./resources/js/src/components/views/ComponentsOfViews/GeneralGet.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var GetSinCompletarSitiosNaturales = function GetSinCompletarSitiosNaturales() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      h2Text: "Sitios naturales",
+      toFirst: "/sitios-naturales/sin-completar",
+      toLast: "/sitios-naturales/completado",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+        className: "NoData",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+          colSpan: 6,
+          children: "No hay datos para completar"
+        })
+      })
+    })
+  });
+};
+
+var GetCompletadoSitiosNaturales = function GetCompletadoSitiosNaturales() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ComponentsOfViews_GeneralGet__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      h2Text: "Sitios naturales",
+      toFirst: "/sitios-naturales/sin-completar",
+      toLast: "/sitios-naturales/completado",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+        className: "NoData",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+          colSpan: 6,
+          children: "No hay datos para visualizar"
+        })
+      })
+    })
+  });
+};
+
+var MainSitiosNaturales = function MainSitiosNaturales(_ref) {
+  var who = _ref.who;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "ContainerMainGeneral",
+    children: [who === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(GetSinCompletarSitiosNaturales, {}), who === 2 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(GetCompletadoSitiosNaturales, {})]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MainSitiosNaturales);
+
+/***/ }),
+
 /***/ "./resources/js/src/features/dataListaPreliminarSlice.js":
 /*!***************************************************************!*\
   !*** ./resources/js/src/features/dataListaPreliminarSlice.js ***!
@@ -12045,6 +14377,215 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime
 
 /***/ }),
 
+/***/ "./resources/js/src/pages/ClasificacionRecursosAtractivos.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/src/pages/ClasificacionRecursosAtractivos.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_views_ClasificacionAtractivosTuristicos_MainClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/views/ClasificacionAtractivosTuristicos/MainClasificacionAtractivosTuristicos */ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/MainClasificacionAtractivosTuristicos.js");
+/* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
+/* harmony import */ var _Error404__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Error404 */ "./resources/js/src/pages/Error404.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+var ClasificacionRecursosAtractivos = function ClasificacionRecursosAtractivos() {
+  (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__["default"])("Clasificacion de recursos y atractivos");
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "/",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        index: true,
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_ClasificacionAtractivosTuristicos_MainClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 1
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/:idRecursoAtractivo",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_ClasificacionAtractivosTuristicos_MainClasificacionAtractivosTuristicos__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 2
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "*",
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Error404__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ClasificacionRecursosAtractivos);
+
+/***/ }),
+
+/***/ "./resources/js/src/pages/Error404.js":
+/*!********************************************!*\
+  !*** ./resources/js/src/pages/Error404.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var StyleError404 = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  gap: 25px;\n  h2 {\n    font-family: ", ";\n    font-size: 2.5rem;\n  }\n  img{\n    height: 150px;\n    width: 150px;\n  }\n"])), function (props) {
+  return props.theme.fonts.secondary;
+});
+
+var Error404 = function Error404() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(StyleError404, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+      src: "/img/Vectores/Img404.svg",
+      alt: "404"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+      children: "La pagina no existe"
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Error404);
+
+/***/ }),
+
+/***/ "./resources/js/src/pages/FestividadesEventos.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/src/pages/FestividadesEventos.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_views_FestividadesEventos_MainFestividadesEventos__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/views/FestividadesEventos/MainFestividadesEventos */ "./resources/js/src/components/views/FestividadesEventos/MainFestividadesEventos.js");
+/* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
+/* harmony import */ var _Error404__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Error404 */ "./resources/js/src/pages/Error404.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+var FestividadesEventos = function FestividadesEventos() {
+  (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__["default"])("Festividades y eventos");
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "/",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        index: true,
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Navigate, {
+          to: "./sin-completar",
+          replace: true
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/sin-completar",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_FestividadesEventos_MainFestividadesEventos__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 1
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/completado",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_FestividadesEventos_MainFestividadesEventos__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 2
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "*",
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Error404__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FestividadesEventos);
+
+/***/ }),
+
+/***/ "./resources/js/src/pages/GruposEspecialInteres.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/src/pages/GruposEspecialInteres.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_views_GruposEspecialInteres_MainGruposEspecialInteres__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/views/GruposEspecialInteres/MainGruposEspecialInteres */ "./resources/js/src/components/views/GruposEspecialInteres/MainGruposEspecialInteres.js");
+/* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
+/* harmony import */ var _Error404__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Error404 */ "./resources/js/src/pages/Error404.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+var GruposEspecialInteres = function GruposEspecialInteres() {
+  (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__["default"])("Grupos de especial interés");
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "/",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        index: true,
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Navigate, {
+          to: "./sin-completar",
+          replace: true
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/sin-completar",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_GruposEspecialInteres_MainGruposEspecialInteres__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 1
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/completado",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_GruposEspecialInteres_MainGruposEspecialInteres__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 2
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "*",
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Error404__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GruposEspecialInteres);
+
+/***/ }),
+
 /***/ "./resources/js/src/pages/Home.js":
 /*!****************************************!*\
   !*** ./resources/js/src/pages/Home.js ***!
@@ -12057,12 +14598,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _components_layout_MainLayout_LeadingLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout/MainLayout/LeadingLayout */ "./resources/js/src/components/layout/MainLayout/LeadingLayout.js");
 /* harmony import */ var _components_views_Home_MainHome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/views/Home/MainHome */ "./resources/js/src/components/views/Home/MainHome.js");
 /* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
-/* harmony import */ var _ListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ListadoPreliminar */ "./resources/js/src/pages/ListadoPreliminar.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _ClasificacionRecursosAtractivos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ClasificacionRecursosAtractivos */ "./resources/js/src/pages/ClasificacionRecursosAtractivos.js");
+/* harmony import */ var _Error404__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Error404 */ "./resources/js/src/pages/Error404.js");
+/* harmony import */ var _FestividadesEventos__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./FestividadesEventos */ "./resources/js/src/pages/FestividadesEventos.js");
+/* harmony import */ var _GruposEspecialInteres__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./GruposEspecialInteres */ "./resources/js/src/pages/GruposEspecialInteres.js");
+/* harmony import */ var _ListadoPreliminar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ListadoPreliminar */ "./resources/js/src/pages/ListadoPreliminar.js");
+/* harmony import */ var _PatrimonioInmaterial__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./PatrimonioInmaterial */ "./resources/js/src/pages/PatrimonioInmaterial.js");
+/* harmony import */ var _PatrimonioMaterial__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./PatrimonioMaterial */ "./resources/js/src/pages/PatrimonioMaterial.js");
+/* harmony import */ var _SitiosNaturales__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./SitiosNaturales */ "./resources/js/src/pages/SitiosNaturales.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
 
 
 
@@ -12074,46 +14629,37 @@ __webpack_require__.r(__webpack_exports__);
 
 var Home = function Home() {
   (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_3__["default"])('Inicio');
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Routes, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
       path: "/",
-      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_layout_MainLayout_LeadingLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {}),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_layout_MainLayout_LeadingLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {}),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
         index: true,
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_views_Home_MainHome__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_views_Home_MainHome__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
         path: "listado-preliminar/*",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ListadoPreliminar__WEBPACK_IMPORTED_MODULE_4__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
-        path: "clasificacion-recursos-atractivos",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          children: "clasificacion recursos y actractivos"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
-        path: "patrimonio-material",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          children: "patrimonio material"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
-        path: "patrimonio-inmaterial",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          children: "patrimonio inmaterial"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
-        path: "festividades-eventos",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          children: "festividades y eventos"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
-        path: "grupos-especial-interes",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          children: "grupos especial interes"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
-        path: "sitios-naturales",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          children: "sitios naturales"
-        })
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_ListadoPreliminar__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "clasificacion-recursos-atractivos/*",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_ClasificacionRecursosAtractivos__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "patrimonio-material/*",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_PatrimonioMaterial__WEBPACK_IMPORTED_MODULE_10__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "patrimonio-inmaterial/*",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_PatrimonioInmaterial__WEBPACK_IMPORTED_MODULE_9__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "festividades-eventos/*",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_FestividadesEventos__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "grupos-especial-interes/*",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_GruposEspecialInteres__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "sitios-naturales/*",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_SitiosNaturales__WEBPACK_IMPORTED_MODULE_11__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Route, {
+        path: "*",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Error404__WEBPACK_IMPORTED_MODULE_5__["default"], {})
       })]
     })
   });
@@ -12135,10 +14681,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/views/ListadoPreliminar/MainListadoPreliminar */ "./resources/js/src/components/views/ListadoPreliminar/MainListadoPreliminar.js");
 /* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Error404__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Error404 */ "./resources/js/src/pages/Error404.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -12148,31 +14696,34 @@ __webpack_require__.r(__webpack_exports__);
 
 var ListadoPreliminar = function ListadoPreliminar() {
   (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__["default"])('Listado preliminar');
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Routes, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
       path: "/",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
         index: true,
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
           who: 1
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
         path: ":idListado",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
           who: 2
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
         path: "crear",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
           who: 3
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
         path: "actualizar/:idListado",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_ListadoPreliminar_MainListadoPreliminar__WEBPACK_IMPORTED_MODULE_1__["default"], {
           who: 4
         })
       })]
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "*",
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Error404__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+    })]
   });
 };
 
@@ -12207,6 +14758,185 @@ var Login = function Login() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Login);
+
+/***/ }),
+
+/***/ "./resources/js/src/pages/PatrimonioInmaterial.js":
+/*!********************************************************!*\
+  !*** ./resources/js/src/pages/PatrimonioInmaterial.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_views_PatrimonioInmaterial_MainPatrimonioInmaterial__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/views/PatrimonioInmaterial/MainPatrimonioInmaterial */ "./resources/js/src/components/views/PatrimonioInmaterial/MainPatrimonioInmaterial.js");
+/* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
+/* harmony import */ var _Error404__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Error404 */ "./resources/js/src/pages/Error404.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+var PatrimonioInmaterial = function PatrimonioInmaterial() {
+  (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__["default"])("Patrimonio inmaterial");
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "/",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        index: true,
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Navigate, {
+          to: "./sin-completar",
+          replace: true
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/sin-completar",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_PatrimonioInmaterial_MainPatrimonioInmaterial__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 1
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/completado",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_PatrimonioInmaterial_MainPatrimonioInmaterial__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 2
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "*",
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Error404__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PatrimonioInmaterial);
+
+/***/ }),
+
+/***/ "./resources/js/src/pages/PatrimonioMaterial.js":
+/*!******************************************************!*\
+  !*** ./resources/js/src/pages/PatrimonioMaterial.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_views_PatrimonioMaterial_MainPatrimonioMaterial__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/views/PatrimonioMaterial/MainPatrimonioMaterial */ "./resources/js/src/components/views/PatrimonioMaterial/MainPatrimonioMaterial.js");
+/* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
+/* harmony import */ var _Error404__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Error404 */ "./resources/js/src/pages/Error404.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+var PatrimonioMaterial = function PatrimonioMaterial() {
+  (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__["default"])("Patrimonio material");
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "/",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        index: true,
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Navigate, {
+          to: "./sin-completar",
+          replace: true
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/sin-completar",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_PatrimonioMaterial_MainPatrimonioMaterial__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 1
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/completado",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_PatrimonioMaterial_MainPatrimonioMaterial__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 2
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/pruebas",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_PatrimonioMaterial_MainPatrimonioMaterial__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 3
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "*",
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Error404__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PatrimonioMaterial);
+
+/***/ }),
+
+/***/ "./resources/js/src/pages/SitiosNaturales.js":
+/*!***************************************************!*\
+  !*** ./resources/js/src/pages/SitiosNaturales.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_views_SitiosNaturales_MainSitiosNaturales__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/views/SitiosNaturales/MainSitiosNaturales */ "./resources/js/src/components/views/SitiosNaturales/MainSitiosNaturales.js");
+/* harmony import */ var _hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hooks/useTittle */ "./resources/js/src/hooks/useTittle.js");
+/* harmony import */ var _Error404__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Error404 */ "./resources/js/src/pages/Error404.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+var SitiosNaturales = function SitiosNaturales() {
+  (0,_hooks_useTittle__WEBPACK_IMPORTED_MODULE_2__["default"])("Sitios naturales");
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "/",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        index: true,
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Navigate, {
+          to: "./sin-completar",
+          replace: true
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/sin-completar",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_SitiosNaturales_MainSitiosNaturales__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 1
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+        path: "/completado",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_views_SitiosNaturales_MainSitiosNaturales__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          who: 2
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+      path: "*",
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Error404__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SitiosNaturales);
 
 /***/ }),
 
@@ -101221,6 +103951,72 @@ function isString(v) {
 
 
 
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/DataJson/DataTipoDeBien.json":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ClasificacionAtractivosTuristicos/Form/DataJson/DataTipoDeBien.json ***!
+  \***************************************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('[{"id_tipos_bien":1,"tipo_bien":"Patrimonio Cultural Material"},{"id_tipos_bien":2,"tipo_bien":"Patrimonio Cultural Inmaterial"},{"id_tipos_bien":3,"tipo_bien":"Festividades y Eventos"},{"id_tipos_bien":4,"tipo_bien":"Grupos de Especial Interés"},{"id_tipos_bien":5,"tipo_bien":"Sitios Naturales"}]');
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataAccesoHorarios.json":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataAccesoHorarios.json ***!
+  \**********************************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('[{"NOMBRE":"RESTRINGIDO","VALOR":true},{"NOMBRE":"PERMANENTE","VALOR":true},{"NOMBRE":"VISITA_EXTERIOR","VALOR":true},{"NOMBRE":"VISITA_INTERIOR","VALOR":true}]');
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataDiasHorarios.json":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataDiasHorarios.json ***!
+  \********************************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('[{"NOMBRE":"LUNES","VALOR":true},{"NOMBRE":"MARTES","VALOR":true},{"NOMBRE":"MIERCOLES","VALOR":true},{"NOMBRE":"JUEVES","VALOR":true},{"NOMBRE":"VIERNES","VALOR":true},{"NOMBRE":"SABADO","VALOR":true},{"NOMBRE":"DOMINGO","VALOR":true}]');
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataTipoAcceso.json":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataTipoAcceso.json ***!
+  \******************************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('[{"ID_TIPO_ACCESO":1,"ACCESO":"Terrestre"},{"ID_TIPO_ACCESO":2,"ACCESO":"Acuático"},{"ID_TIPO_ACCESO":3,"ACCESO":"Aéreo"}]');
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataTipoClima.json":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataTipoClima.json ***!
+  \*****************************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('[{"ID_TIPO_CLIMA":1,"TIPO_CLIMA":"Cálido"},{"ID_TIPO_CLIMA":2,"TIPO_CLIMA":"Medio"},{"ID_TIPO_CLIMA":3,"TIPO_CLIMA":"Frio"},{"ID_TIPO_CLIMA":4,"TIPO_CLIMA":"Muy Frio"},{"ID_TIPO_CLIMA":5,"TIPO_CLIMA":"Extremadamento Frio"},{"ID_TIPO_CLIMA":6,"TIPO_CLIMA":"Subnival"},{"ID_TIPO_CLIMA":7,"TIPO_CLIMA":"Nival"}]');
+
+/***/ }),
+
+/***/ "./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataTipoEstadoAtractivo.json":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/src/components/views/ComponentsOfViews/GeneralForm/DataJson/DataTipoEstadoAtractivo.json ***!
+  \***************************************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('[{"ID_TIPO_ESTADO":1,"TIPO_ESTADO":"Satisfactorio"},{"ID_TIPO_ESTADO":2,"TIPO_ESTADO":"Bueno"},{"ID_TIPO_ESTADO":3,"TIPO_ESTADO":"Regular"},{"ID_TIPO_ESTADO":4,"TIPO_ESTADO":"Malo o ruinoso"}]');
 
 /***/ }),
 
