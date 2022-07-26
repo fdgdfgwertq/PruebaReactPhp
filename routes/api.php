@@ -34,4 +34,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete("/listados-preliminares/update",[ListadosPreliminaresController::class,'cancelUpdate']);
     Route::get("/listados-preliminares/",[ListadosPreliminaresController::class,'getData']);
     Route::post("/listados-preliminares/",[ListadosPreliminaresController::class,'getRecord']);
+    Route::put("/clasificacion-recursos-atractivos/create",[ListadosPreliminaresController::class,'clasificacion']);
 });

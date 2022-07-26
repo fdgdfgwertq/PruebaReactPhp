@@ -8,6 +8,7 @@ use App\Models\ListadosPreliminares;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\PatrimoniosMaterialesController;
 
 class ListadosPreliminaresController extends Controller
 {
@@ -238,6 +239,63 @@ class ListadosPreliminaresController extends Controller
                 "state" => false,
                 "message" => "Error en la base de datos",
                 'phpMessage' => $th->getMessage()
+            ]);
+        }
+    }
+
+    public function clasificacion(Request $request)
+    {
+        $rules = [
+            'ID_LISTADO' => 'required|numeric',
+            'ID_TIPO_BIEN'=>'required|max:1',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json([
+                'state' => false,
+                'message' => 'No pasó la validación',
+                'errors' => $validator->errors()
+            ]);
+        }
+        $ID_USUARIO = Auth::user()->ID_USUARIO;
+        try {
+            $queryData = ListadosPreliminares::select("listados_preliminares.ID_TIPO_BIEN")
+            ->where("listados_preliminares.ID_LISTADO","=",$request->ID_LISTADO)
+            ->first();
+            if(!isset($queryData)) return response()->json([
+                'state' => false,
+                'message' => "El registro no existe"
+            ]);
+            $queryData = $queryData->toArray();
+            $clientData = $request->all();
+            $changedFieldsListadoPreliminar = array();
+            foreach ($queryData as $key => $value){
+                if($clientData[$key]==$value) continue;
+                    $changedFieldsListadoPreliminar[$key] = $clientData[$key];
+                    PatrimoniosClasificacionController::deleteForms($value,$request->ID_LISTADO,$ID_USUARIO); 
+            }
+            if(empty($changedFieldsListadoPreliminar)) return response()->json([
+                'state' => false,
+                'message' => "No modificó la clasificación del atractivo"
+            ]);
+            $listadoPreliminar = ListadosPreliminares::find($clientData['ID_LISTADO']);
+            if(!empty($changedFieldsListadoPreliminar)) {
+                $listadoPreliminar->update($changedFieldsListadoPreliminar);
+                foreach ($changedFieldsListadoPreliminar as $key => $value){
+                    HistorialController::createUpdate($ID_USUARIO,'listados_preliminares',$listadoPreliminar->ID_LISTADO,$key,$queryData[$key],$value);
+                }
+                PatrimoniosClasificacionController::insertForms($listadoPreliminar->ID_LISTADO,$value,$ID_USUARIO);
+            }
+            $listadoPreliminar->ACTUALIZANDO = false;
+            $listadoPreliminar->save();
+            return response()->json([
+                "state" => true
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'state' => false,
+                'message' => 'Error en la base de datos',
+                'phpMessage' => $th->getMessage(),
             ]);
         }
     }
