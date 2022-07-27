@@ -16,8 +16,11 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-family: ${(props) => props.theme.fonts.primary};
   }
-  button,a,input[type="submit"],input[type="text"],input[type="password"],input[type="email"]{
+  button,a,input[type="submit"],input[type="text"],input[type="password"],input[type="email"],input[type="number"]{
     all: unset;
+  }
+  :focus-visible {
+    outline: none;
   }
   .ContainerMainGeneral{
     display: grid;

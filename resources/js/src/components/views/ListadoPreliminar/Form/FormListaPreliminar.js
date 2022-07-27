@@ -35,6 +35,7 @@ const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
           handleBlur={handleBlur}
           handleChange={handleChange}
           values={values}
+          valuesCodigo={values}
         />
         <label htmlFor="ID_FUENTE">
           <span className="NameField">Fuente</span>

@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import FormActividadesServicios from './ComponentsOfGeneralForm/FormActividadesServicios';
-import FormCaracteristicas from './ComponentsOfGeneralForm/FormCaracteristicas';
-import FormCaracteristicasRelevantes from './ComponentsOfGeneralForm/FormCaracteristicasRelevantes';
-import FormGeneralidades from './ComponentsOfGeneralForm/FormGeneralidades';
-import FormOtros from './ComponentsOfGeneralForm/FormOtros';
-import FormPromocionAtractivo from './ComponentsOfGeneralForm/FormPromocionAtractivo';
-import FormServiciosEspeciales from './ComponentsOfGeneralForm/FormServiciosEspeciales';
-import { handleFunctionsGeneralForm } from './handleFunctionsGeneralForm';
-import { StyleMainGeneralForm } from './StyleMainGeneralForm';
+import React, { useState } from "react";
+import ButtonPage from "../../../common/ButtonPage";
+import FormActividadesServicios from "./ComponentsOfGeneralForm/FormActividadesServicios";
+import FormCaracteristicas from "./ComponentsOfGeneralForm/FormCaracteristicas";
+import FormCaracteristicasRelevantes from "./ComponentsOfGeneralForm/FormCaracteristicasRelevantes";
+import FormGeneralidades from "./ComponentsOfGeneralForm/FormGeneralidades";
+import FormOtros from "./ComponentsOfGeneralForm/FormOtros";
+import FormPromocionAtractivo from "./ComponentsOfGeneralForm/FormPromocionAtractivo";
+import FormPuntajesValoracion from "./ComponentsOfGeneralForm/FormPuntajesValoracion";
+import FormServiciosEspeciales from "./ComponentsOfGeneralForm/FormServiciosEspeciales";
+import { handleFunctionsGeneralForm } from "./handleFunctionsGeneralForm";
+import { StyleMainGeneralForm } from "./StyleMainGeneralForm";
 
-const MainGeneralForm = ({ initialValues, initialErrors }) => {
+const MainGeneralForm = ({ initialValues, initialErrors, who }) => {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState(initialErrors);
   const [load, setLoad] = useState(false);
@@ -19,9 +21,14 @@ const MainGeneralForm = ({ initialValues, initialErrors }) => {
     handleChangeCheckbox,
     handleSubmit,
     handleChangeGeneralidades,
+    handleChangeAdminPropietario,
     handleChangeCaracteristicas,
+    handleChangeCodigo,
     handleChangeFile,
+    handleChangePuntajes,
+    handleChangeCalidadMaterial,
     handleChangeCaracteristicasRelevantes,
+    handleChangeTarifas,
     handleChangeActividades,
     handleChangeServicios,
     handleChangePromocion,
@@ -32,60 +39,61 @@ const MainGeneralForm = ({ initialValues, initialErrors }) => {
 
   return (
     <StyleMainGeneralForm onSubmit={(e) => handleSubmit(e)}>
-      <div>
-        <FormGeneralidades
-          values={values.GENERALIDADES}
-          handleChange={handleChangeGeneralidades}
-          handleBlur={handleBlur}
-          errors={errors}
-        />
-      </div>
-      <br />
-      <div>
-        <FormCaracteristicas
-          values={values.CARACTERISTICAS}
-          handleChange={handleChangeCaracteristicas}
-          handleChangeFile={handleChangeFile}
-          handleBlur={handleBlur}
-          errors={errors}
-        />
-      </div>
-      <br />
+      <FormGeneralidades
+        values={values.GENERALIDADES}
+        valuesCodigo={values.CARACTERISTICAS.CODIGOS}
+        handleChange={handleChangeGeneralidades}
+        handleChangeAdminPropietario={handleChangeAdminPropietario}
+        handleBlur={handleBlur}
+        errors={errors}
+      />
+      <FormCaracteristicas
+        values={values.CARACTERISTICAS}
+        handleChange={handleChangeCaracteristicas}
+        handleChangeFile={handleChangeFile}
+        handleBlur={handleBlur}
+        errors={errors}
+        handleChangeCodigo={handleChangeCodigo}
+        valuesCodigo={values.CARACTERISTICAS.CODIGOS}
+      />
+      <FormPuntajesValoracion
+        errors={errors}
+        handleBlur={handleBlur}
+        handleChange={handleChangePuntajes}
+        handleChangeCalidadMaterial={handleChangeCalidadMaterial}
+        values={values.PUNTAJES_VALORACION}
+        who={who}
+      />
       <FormCaracteristicasRelevantes
         values={values.CARACTERISTICAS_RELEVANTES}
         handleChange={handleChangeCaracteristicasRelevantes}
         handleChangeCheckbox={handleChangeCheckbox}
+        handleChangeTarifas={handleChangeTarifas}
         handleBlur={handleBlur}
         errors={errors}
       />
-      <br />
       <FormActividadesServicios
         values={values.ACTIVIDADES_SERVICIOS}
         handleChangeActividades={handleChangeActividades}
         handleChangeServicios={handleChangeServicios}
       />
-      <br />
-      <div>
-        <FormPromocionAtractivo
-          values={values.PROMOCION}
-          handleChange={handleChangePromocion}
-        />
-      </div>
-      <br />
-      <div>
-        <FormServiciosEspeciales
-          values={values.SERVICIOS_ESPECIALES}
-          handleChange={handleChangeServiciosEspeciales}
-        />
-      </div>
-      <br />
+      <FormPromocionAtractivo
+        values={values.PROMOCION}
+        handleChange={handleChangePromocion}
+      />
+      <FormServiciosEspeciales
+        values={values.SERVICIOS_ESPECIALES}
+        handleChange={handleChangeServiciosEspeciales}
+      />
       <FormOtros
         values={values.OTROS}
         valuesRedes={values.OTROS.REDES}
         handleChange={handleChangeOtros}
         handleChangeRedes={handleChangeRedes}
       />
-      <button type="submit">enviar</button>
+      <ButtonPage type="submit" colorButton="#15012e">
+        Enviar
+      </ButtonPage>
     </StyleMainGeneralForm>
   );
 };

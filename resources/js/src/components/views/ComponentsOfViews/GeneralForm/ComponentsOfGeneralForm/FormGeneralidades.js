@@ -10,7 +10,7 @@ const ExtraDataGeneralidades = ({
 }) => {
   return (
     <>
-      <label htmlFor="GEORREFERENCIACION">
+      <label htmlFor="GEORREFERENCIACION" className="LabelType1">
         <span className="NameField">Georrefereniciación</span>
         <input
           type="text"
@@ -25,7 +25,7 @@ const ExtraDataGeneralidades = ({
           <small className="errorMessage">{errors.GEORREFERENCIACION}</small>
         )}
       </label>
-      <label htmlFor="ID_TIPO_ACCESO">
+      <label htmlFor="ID_TIPO_ACCESO" className="LabelType1">
         <span className="NameField">Tipo de Acceso</span>
         <select
           name="ID_TIPO_ACCESO"
@@ -52,7 +52,7 @@ const ExtraDataGeneralidades = ({
           <small className="errorMessage">{errors.ID_TIPO_ACCESO}</small>
         )}
       </label>
-      <label htmlFor="INDICACIONES_ACCESO">
+      <label htmlFor="INDICACIONES_ACCESO" className="LabelType1">
         <span className="NameField">Indicaciones para el acceso:</span>
         <input
           type="text"
@@ -71,44 +71,146 @@ const ExtraDataGeneralidades = ({
   );
 };
 
-const FormGeneralidades = ({
+const AdminPropietario = ({
   values,
   errors,
   handleChange,
   handleBlur,
 }) => {
   return (
-    <>
-      <GeneralFieldsGeneralidades
-        errors={errors}
-        handleBlur={handleBlur}
-        handleChange={handleChange}
-        values={values}
-      />
-      <label htmlFor="CORREGIMIENTO_VEREDA_LOCALIDAD">
-        <span className="NameField">Corregimiento, Vereda o Localidad</span>
-        <input
-          type="text"
-          name="CORREGIMIENTO_VEREDA_LOCALIDAD"
-          id="CORREGIMIENTO_VEREDA_LOCALIDAD"
-          onChange={(e) => handleChange(e)}
-          onBlur={(e) => handleBlur(e)}
-          value={values.CORREGIMIENTO_VEREDA_LOCALIDAD}
-          autoComplete="off"
+    <div className="SectionDivType2">
+      <h4>Datos propietario/tenedor</h4>
+      <div className="SectionDivType1">
+        <label htmlFor="NOMBRE_PROPIETARIO" className="LabelType1">
+          <span className="NameField">Nombre</span>
+          <input
+            type="text"
+            name="NOMBRE"
+            id="NOMBRE_PROPIETARIO"
+            onChange={(e) => handleChange(e)}
+            onBlur={(e) => handleBlur(e)}
+            value={values.NOMBRE}
+            autoComplete="off"
+          />
+          {errors.NOMBRE && (
+            <small className="errorMessage">{errors.NOMBRE}</small>
+          )}
+        </label>
+        <label htmlFor="DIRECCION_UBICACION" className="LabelType1">
+          <span className="NameField">Direccion/Ubicacion</span>
+          <input
+            type="text"
+            name="DIRECCION_UBICACION"
+            id="DIRECCION_UBICACION"
+            onChange={(e) => handleChange(e)}
+            onBlur={(e) => handleBlur(e)}
+            value={values.DIRECCION_UBICACION}
+            autoComplete="off"
+          />
+          {errors.DIRECCION_UBICACION && (
+            <small className="errorMessage">{errors.DIRECCION_UBICACION}</small>
+          )}
+        </label>
+        <label htmlFor="CORREO" className="LabelType1">
+          <span className="NameField">Correo</span>
+          <input
+            type="email"
+            name="CORREO"
+            id="CORREO"
+            onChange={(e) => handleChange(e)}
+            onBlur={(e) => handleBlur(e)}
+            value={values.CORREO}
+            autoComplete="off"
+          />
+          {errors.CORREO && (
+            <small className="errorMessage">{errors.CORREO}</small>
+          )}
+        </label>
+        <label htmlFor="TELEFONO1" className="LabelType1">
+          <span className="NameField">Telefono 1</span>
+          <input
+            type="text"
+            name="TELEFONO1"
+            id="TELEFONO1"
+            onChange={(e) => handleChange(e)}
+            onBlur={(e) => handleBlur(e)}
+            value={values.TELEFONO1}
+            autoComplete="off"
+          />
+          {errors.TELEFONO1 && (
+            <small className="errorMessage">{errors.TELEFONO1}</small>
+          )}
+        </label>
+        <label htmlFor="TELEFONO2" className="LabelType1">
+          <span className="NameField">Telefono 2</span>
+          <input
+            type="text"
+            name="TELEFONO2"
+            id="TELEFONO2"
+            onChange={(e) => handleChange(e)}
+            onBlur={(e) => handleBlur(e)}
+            value={values.TELEFONO2}
+            autoComplete="off"
+          />
+          {errors.TELEFONO2 && (
+            <small className="errorMessage">{errors.TELEFONO2}</small>
+          )}
+        </label>
+      </div>
+    </div>
+  );
+};
+
+const FormGeneralidades = ({
+  values,
+  valuesCodigo,
+  errors,
+  handleChange,
+  handleChangeAdminPropietario,
+  handleBlur,
+}) => {
+  return (
+    <section>
+      <h3>Generalidades</h3>
+      <div className="SectionDivType1">
+        <GeneralFieldsGeneralidades
+          errors={errors}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          values={values}
+          valuesCodigo={valuesCodigo}
         />
-        {errors.CORREGIMIENTO_VEREDA_LOCALIDAD && (
-          <small className="errorMessage">
-            {errors.CORREGIMIENTO_VEREDA_LOCALIDAD}
-          </small>
-        )}
-      </label>
-      <ExtraDataGeneralidades
+        <label htmlFor="CORREGIMIENTO_VEREDA_LOCALIDAD" className="LabelType1">
+          <span className="NameField">Corregimiento, Vereda o Localidad</span>
+          <input
+            type="text"
+            name="CORREGIMIENTO_VEREDA_LOCALIDAD"
+            id="CORREGIMIENTO_VEREDA_LOCALIDAD"
+            onChange={(e) => handleChange(e)}
+            onBlur={(e) => handleBlur(e)}
+            value={values.CORREGIMIENTO_VEREDA_LOCALIDAD}
+            autoComplete="off"
+          />
+          {errors.CORREGIMIENTO_VEREDA_LOCALIDAD && (
+            <small className="errorMessage">
+              {errors.CORREGIMIENTO_VEREDA_LOCALIDAD}
+            </small>
+          )}
+        </label>
+        <ExtraDataGeneralidades
+          errors={errors}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          values={values}
+        />
+      </div>
+      <AdminPropietario
         errors={errors}
         handleBlur={handleBlur}
-        handleChange={handleChange}
-        values={values}
+        handleChange={handleChangeAdminPropietario}
+        values={values["ADMIN/PROPIETARIOS"]}
       />
-    </>
+    </section>
   );
 };
 

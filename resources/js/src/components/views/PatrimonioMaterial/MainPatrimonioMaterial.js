@@ -41,7 +41,12 @@ const CreateMainPatrimonioMaterial = ({}) => {
       <div>
         <MainGeneralForm
           initialErrors={{}}
-          initialValues={initialValuesGeneralForm}
+          initialValues={initialValuesGeneralForm({
+            ESTADO_CONSERVACION: "",
+            CONSTITUCION: "",
+            REPRESENTATIVIDAD: "",
+          })}
+          who={1}
         />
       </div>
     </>

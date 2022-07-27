@@ -4,18 +4,19 @@ import Municipios from "../ListadoPreliminar/Form/DataJson/DataMunicipio.json";
 
 const GeneralFieldsGeneralidades = ({
   values,
+  valuesCodigo,
   errors,
   handleChange,
   handleBlur,
 }) => {
   return (
     <>
-      <label htmlFor="ID_DEPARTAMENTOS">
+      <label htmlFor="ID_DEPARTAMENTOS" className="LabelType1">
         <span className="NameField">Departamento</span>
         <select
           name="ID_DEPARTAMENTOS"
           id="ID_DEPARTAMENTOS"
-          value={values.ID_DEPARTAMENTOS}
+          value={valuesCodigo.ID_DEPARTAMENTOS}
           onChange={(e) => handleChange(e)}
           onBlur={(e) => handleBlur(e)}
         >
@@ -35,23 +36,23 @@ const GeneralFieldsGeneralidades = ({
           <small className="errorMessage">{errors.ID_DEPARTAMENTOS}</small>
         )}
       </label>
-      <label htmlFor="ID_MUNICIPIOS">
+      <label htmlFor="ID_MUNICIPIOS" className="LabelType1">
         <span className="NameField">Municipio</span>
         <select
           name="ID_MUNICIPIOS"
           id="ID_MUNICIPIOS"
-          value={values.ID_MUNICIPIOS}
+          value={valuesCodigo.ID_MUNICIPIOS}
           onChange={(e) => handleChange(e)}
           onBlur={(e) => handleBlur(e)}
-          disabled={values.ID_DEPARTAMENTOS ? false : true}
+          disabled={valuesCodigo.ID_DEPARTAMENTOS ? false : true}
         >
           <option value="" disabled>
-            {values.ID_DEPARTAMENTOS
+            {valuesCodigo.ID_DEPARTAMENTOS
               ? "Seleccione un municipio"
               : "Primero seleccione departamento"}
           </option>
-          {values.ID_DEPARTAMENTOS &&
-            Municipios[values.ID_DEPARTAMENTOS].map((val) => {
+          {valuesCodigo.ID_DEPARTAMENTOS &&
+            Municipios[valuesCodigo.ID_DEPARTAMENTOS].map((val) => {
               return (
                 <option
                   value={val["Id_Municipio"]}
@@ -67,7 +68,7 @@ const GeneralFieldsGeneralidades = ({
           <small className="errorMessage">{errors.ID_MUNICIPIOS}</small>
         )}
       </label>
-      <label htmlFor="NOMBRE">
+      <label htmlFor="NOMBRE" className="LabelType1">
         <span className="NameField">Nombre</span>
         <input
           type="text"
@@ -82,7 +83,7 @@ const GeneralFieldsGeneralidades = ({
           <small className="errorMessage">{errors.NOMBRE}</small>
         )}
       </label>
-      <label htmlFor="UBICACION">
+      <label htmlFor="UBICACION" className="LabelType1">
         <span className="NameField">Ubicación</span>
         <input
           type="text"

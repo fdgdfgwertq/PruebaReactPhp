@@ -1,19 +1,40 @@
-export const initialValuesGeneralForm = {
+export const initialValuesGeneralForm = (Calidad) => ({
   GENERALIDADES: {
     GEORREFERENCIACION: "",
     ID_TIPO_ACCESO: "",
     INDICACIONES_ACCESO: "",
     CORREGIMIENTO_VEREDA_LOCALIDAD: "",
-    ID_DEPARTAMENTOS: "",
-    ID_MUNICIPIOS: "",
     NOMBRE: "",
     UBICACION: "",
+    "ADMIN/PROPIETARIOS": {
+      NOMBRE: "",
+      DIRECCION_UBICACION: "",
+      CORREO: "",
+      TELEFONO1: "",
+      TELEFONO2: "",
+    },
   },
   CARACTERISTICAS: {
+    CODIGOS: {
+      ID_MUNICIPIOS: "",
+      ID_DEPARTAMENTOS: "",
+      ID_ELEMENTO: "",
+      ID_COMPONENTE: "",
+      ID_GRUPO: "",
+      ID_TIPO_PATRIMONIO: "",
+    },
     DESCRIPCION: "",
     IMAGEN1: null,
     IMAGEN2: null,
     FUENTE: "",
+  },
+  PUNTAJES_VALORACION: {
+    CALIDAD: {
+      ...Calidad,
+      SUBTOTAL: "",
+    },
+    ID_SIGNIFICADO: "",
+    TOTAL: "",
   },
   CARACTERISTICAS_RELEVANTES: {
     ID_TIPO_CLIMA: "",
@@ -32,6 +53,15 @@ export const initialValuesGeneralForm = {
       VIERNES: false,
       SABADO: false,
       DOMINGO: false,
+    },
+    TARIFAS: {
+      NINOS: "",
+      ADULTOS: "",
+      ADULTO_MAYOR: "",
+      EXTRANJEROS: "",
+      ESTUDIANTES: "",
+      CITA_PREVIA: "",
+      GENERAL: "",
     },
     ID_TIPO_ESTADO: "",
   },
@@ -82,4 +112,4 @@ export const initialValuesGeneralForm = {
     REF_BIBLIOGRAFICA: "",
     OBSERVACIONES: "",
   },
-};
+});
