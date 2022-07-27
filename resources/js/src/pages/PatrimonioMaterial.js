@@ -22,7 +22,7 @@ const PatrimonioMaterial = () => {
           element={<MainPatrimonioMaterial who={2} />}
         />
         <Route
-          path="/pruebas"
+          path="/sin-completar/:idSinCompletar"
           element={<MainPatrimonioMaterial who={3} />}
         />
       </Route>

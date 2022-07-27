@@ -1,4 +1,6 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import ErrorComponent from '../../common/ErrorComponent';
 import { initialValuesGeneralForm } from '../ComponentsOfViews/GeneralForm/initialValuesGeneralForm';
 import MainGeneralForm from '../ComponentsOfViews/GeneralForm/MainGeneralForm';
 import GeneralGet from '../ComponentsOfViews/GeneralGet';
@@ -35,7 +37,11 @@ const GetCompletadoPatrimonioMaterial = () => {
   );
 }
 
-const CreateMainPatrimonioMaterial = ({}) => {
+const CreateMainPatrimonioMaterial = () => {
+  const {idSinCompletar} = useParams();
+  
+  if(idSinCompletar!=1) return <ErrorComponent message="El registro no existe"/>
+
   return (
     <>
       <div>

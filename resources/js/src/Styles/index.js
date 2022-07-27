@@ -26,10 +26,10 @@ export const GlobalStyles = createGlobalStyle`
     display: grid;
     min-height: 100%;
   }
-  .GeneralGet{
+  .GeneralGet,.TemplateGet{
     overflow: hidden;
   }
-  .GeneralGet {
+  .GeneralGet,.TemplateGet {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -40,18 +40,18 @@ export const GlobalStyles = createGlobalStyle`
       font-family: ${(props) => props.theme.fonts.secondary};
     }
   }
-  .ContainerOptionsGeneralGet{
+  .ContainerOptionsGeneralGet,.ContainerOptionsTemplateGet{
     display: flex;
     gap: 10px;
     font-weight: 800;
     padding: 10px 0;
   }
-  .ContainerOptionsGeneralGet a {
+  .ContainerOptionsGeneralGet a,.ContainerOptionsTemplateGet a {
     cursor: pointer;
     font-family: ${(props) => props.theme.fonts.secondary};
     font-size: 1.3rem;
   }
-  .activeOptionGeneralGet{
+  .activeOptionGeneralGet,.activeOptionTemplateGet{
     border-bottom: 3px solid #15012e;
   }
   .ContainerTable{

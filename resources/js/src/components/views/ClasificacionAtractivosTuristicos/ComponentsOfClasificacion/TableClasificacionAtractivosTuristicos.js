@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TableClasificacionAtractivosTuristicos = () => {
+const TableClasificacionAtractivosTuristicos = ({children}) => {
   return (
     <div className="ContainerTable">
       <table className="StyleTable">
@@ -13,9 +13,7 @@ const TableClasificacionAtractivosTuristicos = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className='NoData'>
-            <td colSpan={4}>No hay datos</td>
-          </tr>
+          {children}
         </tbody>
       </table>
     </div>

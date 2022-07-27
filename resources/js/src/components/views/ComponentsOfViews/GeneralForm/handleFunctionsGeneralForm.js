@@ -163,7 +163,6 @@ export const handleFunctionsGeneralForm = ({
   }
 
   const handleChangePuntajes = (e) => {
-    console.log(e);
     let Subtotal = values.PUNTAJES_VALORACION.CALIDAD.SUBTOTAL;
     let SignificadoPuntaje = Significado[e.target.value - 1]["PUNTAJE"];
     Subtotal = isNaN(parseInt(Subtotal)) ? 0 : parseInt(Subtotal);
@@ -181,7 +180,6 @@ export const handleFunctionsGeneralForm = ({
   }
 
   const handleChangeCalidadMaterial = (e) => {
-    console.log(e.target.value);
     let ESTADO_CONSERVACION =
       e.target.name === "ESTADO_CONSERVACION"
         ? e.target.value

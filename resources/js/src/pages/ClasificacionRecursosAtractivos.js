@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import MainClasificacionAtractivosTuristicos from '../components/views/ClasificacionAtractivosTuristicos/MainClasificacionAtractivosTuristicos';
 import useTittle from '../hooks/useTittle';
 import Error404 from './Error404';
@@ -11,11 +11,13 @@ const ClasificacionRecursosAtractivos = () => {
       <Route path="/">
         <Route
           index
-          element={<MainClasificacionAtractivosTuristicos who={1} />}
+          element={<Navigate to="./sin-clasificar" replace={true}/>}
         />
+        <Route path='/sin-clasificar' element={<MainClasificacionAtractivosTuristicos who={1} />}/>
+        <Route path='/clasificado' element={<MainClasificacionAtractivosTuristicos who={2} />}/>
         <Route
-          path="/:idRecursoAtractivo"
-          element={<MainClasificacionAtractivosTuristicos who={2} />}
+          path="/sin-clasificar/:idRecursoAtractivo"
+          element={<MainClasificacionAtractivosTuristicos who={3} />}
         />
       </Route>
       <Route path="*" element={<Error404 />} />

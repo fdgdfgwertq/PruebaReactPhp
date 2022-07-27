@@ -3,9 +3,6 @@ import styled from "styled-components";
 const StyleMainClasificacionAtractivosTuristicos = styled.div`
   display: grid;
   min-height: 100%;
-  .GetClasificacionAtractivosTuristicos {
-    overflow: hidden;
-  }
   .GetRecordClasificacionAtractivosTuristicos {
     h2 {
       width: fit-content;
@@ -15,7 +12,6 @@ const StyleMainClasificacionAtractivosTuristicos = styled.div`
       text-transform: uppercase;
     }
   }
-  .GetClasificacionAtractivosTuristicos,
   .GetRecordClasificacionAtractivosTuristicos {
     display: flex;
     flex-direction: column;

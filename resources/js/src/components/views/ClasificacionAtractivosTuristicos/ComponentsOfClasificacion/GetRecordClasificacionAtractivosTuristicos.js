@@ -11,7 +11,7 @@ const GetRecordClasificacionAtractivosTuristicos = () => {
 
   return (
     <div className="GetRecordClasificacionAtractivosTuristicos">
-      <ActionBack to="/clasificacion-recursos-atractivos" />
+      <ActionBack to="/clasificacion-recursos-atractivos/sin-clasificar" />
       <h2>Nombre</h2>
       <FormClasificacionAtractivosTuristicos />
     </div>
