@@ -4,6 +4,7 @@ import { helpCapitalize } from '../../../../helpers/helpCapitalize';
 import { schemaErrorsFormCAT } from './schemaErrorsFormCAT';
 import { StyleFormClasificacionAtractivosTuristicos } from './StyleFormClasificacionAtractivosTuristicos'
 import TipoDeBien from "./DataJson/DataTipoDeBien.json";
+import ButtonPage from '../../../common/ButtonPage';
 
 const initialValues = {
   "ID_TIPO_BIEN" : ""
@@ -65,8 +66,12 @@ const FormClasificacionAtractivosTuristicos = () => {
             </label>
           </div>
           <div className="ContainerButtons">
-            <button type="submit">Clasificar</button>
-            <button type="submit">Siguiente</button>
+            <ButtonPage type="submit" colorButton="blue">
+              Clasificar
+            </ButtonPage>
+            <ButtonPage type="submit" colorButton="green">
+              Siguiente
+            </ButtonPage>
           </div>
         </StyleFormClasificacionAtractivosTuristicos>
       )}

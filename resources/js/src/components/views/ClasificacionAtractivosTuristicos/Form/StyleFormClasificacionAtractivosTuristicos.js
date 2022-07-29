@@ -55,13 +55,6 @@ const StyleFormClasificacionAtractivosTuristicos = styled.form`
       color: #130522b3;
     }
   }
-  button {
-    padding: 10px 15px;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: black;
-  }
 `;
 
 export { StyleFormClasificacionAtractivosTuristicos };

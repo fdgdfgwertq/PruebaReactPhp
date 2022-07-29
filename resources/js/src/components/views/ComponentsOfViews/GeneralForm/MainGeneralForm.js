@@ -106,8 +106,8 @@ const MainGeneralForm = ({ initialValues, initialErrors, who }) => {
         handleBlur={handleBlur}
         errors={errors.OTROS}
       />
-      <ButtonPage type="submit" colorButton="#15012e">
-        Enviar
+      <ButtonPage type="submit" colorButton="green">
+        Aceptar
       </ButtonPage>
     </StyleMainGeneralForm>
   );

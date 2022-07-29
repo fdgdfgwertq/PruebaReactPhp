@@ -14,7 +14,7 @@ const CreateListadoPreliminar = () => {
       <h2>Crear un listado preliminar</h2>
       <FormListaPreliminar
         initialValues={initialValues}
-        nameButton="Enviar"
+        nameButton="Aceptar"
         who={3}
       />
     </div>

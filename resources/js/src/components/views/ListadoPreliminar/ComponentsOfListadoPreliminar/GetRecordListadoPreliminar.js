@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { helpCapitalize } from '../../../../helpers/helpCapitalize';
+import ButtonPage from '../../../common/ButtonPage';
 import ErrorComponent from '../../../common/ErrorComponent';
 import GeneralLoader from '../../../common/GeneralLoader';
 import ActionBack from '../../ComponentsOfViews/ActionBack';
@@ -40,18 +41,6 @@ const ContainerInformation = styled.div`
     justify-content: space-around;
     gap: 10px;
   }
-  button {
-    padding: 10px 15px;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .delete {
-    background-color: red;
-  }
-  .update {
-    background-color: blue;
-  }
 `;
 
 const GetRecordListadoPreliminar = () => {
@@ -74,7 +63,7 @@ const GetRecordListadoPreliminar = () => {
       <ActionBack to="/listado-preliminar" />
       <h2>{response.data["NOMBRE"]}</h2>
       <ContainerInformation>
-        <div className='MainInformation'>
+        <div className="MainInformation">
           <p>
             <span className="titleInformation">Departamento: </span>{" "}
             <span className="information">
@@ -101,8 +90,12 @@ const GetRecordListadoPreliminar = () => {
           </p>
         </div>
         <div className="ContainerButtons">
-          <button onClick={handleClick} className='update'>Actualizar</button>
-          <button className='delete'>Eliminar</button>
+          <span onClick={handleClick}>
+            <ButtonPage colorButton="green">Actualizar</ButtonPage>
+          </span>
+          <span>
+            <ButtonPage colorButton="red">Eliminar</ButtonPage>
+          </span>
         </div>
       </ContainerInformation>
     </div>

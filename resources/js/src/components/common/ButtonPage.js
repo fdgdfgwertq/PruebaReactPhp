@@ -1,29 +1,29 @@
-import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import React from "react";
+import styled from "styled-components";
 
-const ButtonStyle = styled(motion.button)`
-  border: 2px solid;
-  padding: 10px 20px;
+const ButtonStyle = styled.button`
   color: ${(props) => props["color-button"]};
-  background-color: transparent;
-  border-radius: 10px;
-  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
   cursor: pointer;
-  font-weight: 700;
+  &:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+  }
+  &:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
 `;
 
-const ButtonPage = ({ children, colorButton,type }) => {
+const ButtonPage = ({ children,colorButton, type }) => {
   return (
-    <ButtonStyle
-      whileHover={{
-        scale: 1.1,
-        transition: { duration: 0.2 },
-      }}
-      whileTap={{ scale: 0.9 }}
-      color-button={colorButton}
-      type={type||null}
-    >
+    <ButtonStyle type={type || null} color-button={colorButton}>
       {children}
     </ButtonStyle>
   );

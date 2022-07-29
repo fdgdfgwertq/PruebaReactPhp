@@ -66,7 +66,7 @@ const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
           )}
         </label>
       </div>
-      <ButtonPage type="submit" colorButton="#15012e">
+      <ButtonPage type="submit" colorButton="green">
         {nameButton}
       </ButtonPage>
     </StyleFormListaPreliminar>
