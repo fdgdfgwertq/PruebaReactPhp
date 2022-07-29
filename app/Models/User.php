@@ -15,13 +15,13 @@ class User extends Authenticatable
     public $timestamps = false;
     protected $fillable = [
         'ID_TIPO_USUARIO',
-        'ID_ESTADO',
         'PRIMER_NOMBRE',
         'SEGUNDO_NOMBRE',
         'PRIMER_APELLIDO',
         'SEGUNDO_APELLIDO',
         'USUARIO',
         'CORREO',
-        'CLAVE'
+        'CLAVE',
+        'EXISTS'
     ];
 }

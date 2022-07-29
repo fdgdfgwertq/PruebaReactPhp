@@ -18,6 +18,7 @@ class ListadosPreliminares extends Model
         'ID_CODIGO',
         'NOMBRE',
         'UBICACION',
-        'ACTUALIZANDO'
+        'ACTUALIZANDO',
+        'EXISTS'
     ];
 }
