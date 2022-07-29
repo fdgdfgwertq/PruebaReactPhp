@@ -21,6 +21,7 @@ class PatrimoniosInmateriales extends Model
         'ID_PROMOCION',
         'ID_RED_SOCIAL',
         'REF_BIBLIOGRAFICA',
-        'OBSERVACIONES'
+        'OBSERVACIONES',
+        'EXISTS'
     ];
 }

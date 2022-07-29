@@ -27,6 +27,7 @@ class GruposEspeciales extends Model
         'OBSERVACIONES',
         'APROB_INTERNACIONAL',
         'INTERNACIONAL',
-        'FECHA_APROB'
+        'FECHA_APROB',
+        'EXISTS'
     ];
 }

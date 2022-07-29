@@ -24,6 +24,7 @@ class FestividadesEventos extends Model
         'ID_SERVICIO_ESPECIAL',
         'ID_RED_SOCIAL',
         'REF_BIBLIOGRAFICA',
-        'OBSERVACIONES'
+        'OBSERVACIONES',
+        'EXISTS'
     ];
 }

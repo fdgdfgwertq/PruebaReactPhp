@@ -19,7 +19,7 @@ class HistorialController extends Controller
         $historial->save();
     }
 
-    public static function createInsert($ID_USUARIO,$TABLA_MOVIMIENTO,$ID_REGISTRO_MOVIMIENTO,$TIPO_MOVIMIENTO) {
+    public static function createInsertDelete($ID_USUARIO,$TABLA_MOVIMIENTO,$ID_REGISTRO_MOVIMIENTO,$TIPO_MOVIMIENTO) {
         $historial = new Historial_Insert_Delete();
         $historial->ID_USUARIO = $ID_USUARIO;
         $historial->TABLA_MOVIMIENTO = $TABLA_MOVIMIENTO;
