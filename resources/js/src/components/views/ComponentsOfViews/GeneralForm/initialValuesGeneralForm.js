@@ -63,7 +63,7 @@ export const initialValuesGeneralForm = (Calidad) => ({
       CITA_PREVIA: "",
       GENERAL: "",
     },
-    ID_TIPO_ESTADO: "",
+    ID_ESTADO: "",
   },
   ACTIVIDADES_SERVICIOS: {
     ACTIVIDADES: {

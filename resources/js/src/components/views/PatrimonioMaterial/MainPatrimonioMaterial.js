@@ -1,9 +1,17 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import ErrorComponent from '../../common/ErrorComponent';
+import ActionBack from '../ComponentsOfViews/ActionBack';
+import { initialErrorsGeneralForm } from '../ComponentsOfViews/GeneralForm/initialErrorsGeneralForm';
 import { initialValuesGeneralForm } from '../ComponentsOfViews/GeneralForm/initialValuesGeneralForm';
 import MainGeneralForm from '../ComponentsOfViews/GeneralForm/MainGeneralForm';
 import GeneralGet from '../ComponentsOfViews/GeneralGet';
+
+const calidadValues = {
+  ESTADO_CONSERVACION: "",
+  CONSTITUCION: "",
+  REPRESENTATIVIDAD: "",
+};
 
 const GetSinCompletarPatrimonioMaterial = () => {
   return (
@@ -44,14 +52,12 @@ const CreateMainPatrimonioMaterial = () => {
 
   return (
     <>
-      <div>
+      <div className="GeneralContainer">
+        <ActionBack to="/patrimonio-material/sin-completar" />
+        <h2>Completar datos del patrimonio material</h2>
         <MainGeneralForm
-          initialErrors={{}}
-          initialValues={initialValuesGeneralForm({
-            ESTADO_CONSERVACION: "",
-            CONSTITUCION: "",
-            REPRESENTATIVIDAD: "",
-          })}
+          initialErrors={initialErrorsGeneralForm({ ...calidadValues })}
+          initialValues={initialValuesGeneralForm({ ...calidadValues })}
           who={1}
         />
       </div>

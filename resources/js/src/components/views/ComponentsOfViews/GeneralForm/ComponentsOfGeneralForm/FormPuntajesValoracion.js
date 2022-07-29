@@ -12,7 +12,7 @@ const Significado = ({ values, errors, handleChange, handleBlur }) => {
             id="ID_SIGNIFICADO"
             value={values.ID_SIGNIFICADO}
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "PUNTAJES_VALORACION")}
           >
             <option value="" disabled>
               Seleccione un significado
@@ -52,7 +52,7 @@ const CalidadMaterial = ({ values, errors, handleChange, handleBlur }) => {
             name="ESTADO_CONSERVACION"
             id="ESTADO_CONSERVACION"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "PUNTAJES_VALORACION", "CALIDAD")}
             value={values.ESTADO_CONSERVACION}
             min={0}
             max={21}
@@ -68,7 +68,7 @@ const CalidadMaterial = ({ values, errors, handleChange, handleBlur }) => {
             name="CONSTITUCION"
             id="CONSTITUCION"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "PUNTAJES_VALORACION", "CALIDAD")}
             value={values.CONSTITUCION}
             min={0}
             max={21}
@@ -84,7 +84,7 @@ const CalidadMaterial = ({ values, errors, handleChange, handleBlur }) => {
             name="REPRESENTATIVIDAD"
             id="REPRESENTATIVIDAD"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "PUNTAJES_VALORACION", "CALIDAD")}
             value={values.REPRESENTATIVIDAD}
             min={0}
             max={28}
@@ -114,7 +114,7 @@ const FormPuntajesValoracion = ({
       <h3>Puntajes de valoracion</h3>
       {who === 1 && (
         <CalidadMaterial
-          errors={errors}
+          errors={errors.CALIDAD}
           handleBlur={handleBlur}
           handleChange={handleChangeCalidadMaterial}
           values={values.CALIDAD}

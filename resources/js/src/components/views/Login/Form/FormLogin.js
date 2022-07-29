@@ -4,23 +4,24 @@ import { ContainerForm } from "./StylesFormLogin";
 import { Formik } from "formik";
 import { initialValues } from "./initialValuesFormLogin";
 import { schemaErrorsFormLogin } from "./schemaErrorsFormLogin";
-import LoaderForm from "../../../common/LoaderForm";
 import { useNavigate } from "react-router-dom";
 import { HOME } from "../../../router/paths";
 import { fetchLogin, saveCookies } from "./LogicFormLogin";
+import { useDispatch } from "react-redux";
+import { closeLoaderForm, openLoaderForm } from "../../../../features/modalsSlice";
 
 const FormLogin = () => {
   let navigate = useNavigate();
-  const [load, setLoad] = useState(false);
+  const dispatch = useDispatch();
   
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={schemaErrorsFormLogin}
       onSubmit={async (values, { setErrors, setSubmitting, resetForm }) => {
-        setLoad(true);
+        dispatch(openLoaderForm());
         const data = await fetchLogin(values);
-        setLoad(false);
+        dispatch(closeLoaderForm());
         if (!data.state) return setErrors(data.errors);
         saveCookies(data);
         setSubmitting(false);
@@ -70,13 +71,9 @@ const FormLogin = () => {
               <small className="errorMessage">{errors.clave}</small>
             )}
           </label>
-          {load ? (
-            <LoaderForm colorLoad="white" />
-          ) : (
-            <ButtonPage type="submit" colorButton="white">
-              LOGIN
-            </ButtonPage>
-          )}
+          <ButtonPage type="submit" colorButton="white">
+            LOGIN
+          </ButtonPage>
         </ContainerForm>
       )}
     </Formik>

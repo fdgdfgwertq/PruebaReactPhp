@@ -4,22 +4,22 @@ import { handleFunctionsLP } from "./handleFunctionsLP";
 import { initialErrors } from './initialValuesFormListaPreliminar';
 import { StyleFormListaPreliminar } from './StyleFormListaPreliminar';
 import ButtonPage from '../../../common/ButtonPage';
-import LoaderForm from '../../../common/LoaderForm';
 import { useNavigate } from 'react-router-dom';
 import GeneralFieldsGeneralidades from '../../ComponentsOfViews/GeneralFieldsGeneralidades';
+import { useDispatch } from 'react-redux';
 
 const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState(initialErrors);
-  const [load, setLoad] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { handleBlur, handleChange, handleSubmit } = handleFunctionsLP(
     values,
     setValues,
-    errors,
     setErrors,
-    setLoad,
-    navigate
+    errors,
+    navigate,
+    dispatch
   );
 
   return (
@@ -66,13 +66,9 @@ const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
           )}
         </label>
       </div>
-      {load ? (
-        <LoaderForm colorLoad="#15012e" />
-      ) : (
-        <ButtonPage type="submit" colorButton="#15012e">
-          {nameButton}
-        </ButtonPage>
-      )}
+      <ButtonPage type="submit" colorButton="#15012e">
+        {nameButton}
+      </ButtonPage>
     </StyleFormListaPreliminar>
   );
 };

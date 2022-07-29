@@ -18,7 +18,7 @@ const GeneralFieldsGeneralidades = ({
           id="ID_DEPARTAMENTOS"
           value={valuesCodigo.ID_DEPARTAMENTOS}
           onChange={(e) => handleChange(e)}
-          onBlur={(e) => handleBlur(e)}
+          onBlur={(e) => handleBlur(e, "CARACTERISTICAS", "CODIGOS")}
         >
           <option value="" disabled>
             Seleccione un departamento
@@ -43,7 +43,7 @@ const GeneralFieldsGeneralidades = ({
           id="ID_MUNICIPIOS"
           value={valuesCodigo.ID_MUNICIPIOS}
           onChange={(e) => handleChange(e)}
-          onBlur={(e) => handleBlur(e)}
+          onBlur={(e) => handleBlur(e, "CARACTERISTICAS", "CODIGOS")}
           disabled={valuesCodigo.ID_DEPARTAMENTOS ? false : true}
         >
           <option value="" disabled>
@@ -75,7 +75,7 @@ const GeneralFieldsGeneralidades = ({
           name="NOMBRE"
           id="NOMBRE"
           onChange={(e) => handleChange(e)}
-          onBlur={(e) => handleBlur(e)}
+          onBlur={(e) => handleBlur(e, "GENERALIDADES")}
           value={values.NOMBRE}
           autoComplete="off"
         />
@@ -90,7 +90,7 @@ const GeneralFieldsGeneralidades = ({
           name="UBICACION"
           id="UBICACION"
           onChange={(e) => handleChange(e)}
-          onBlur={(e) => handleBlur(e)}
+          onBlur={(e) => handleBlur(e, "GENERALIDADES")}
           value={values.UBICACION}
           autoComplete="off"
         />

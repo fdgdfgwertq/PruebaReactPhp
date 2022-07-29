@@ -133,8 +133,7 @@ const StyleMainGeneralForm = styled.form`
   .Results {
     font-size: 1.2rem;
   }
-  #ID_SIGNIFICADO,
-  #ID_TIPO_ESTADO {
+  label[for="ID_SIGNIFICADO"] {
     max-width: 511px;
   }
   .MainHorario {
@@ -156,7 +155,10 @@ const StyleMainGeneralForm = styled.form`
     color: red;
     text-align: center;
   }
-  button{
+  .textEstado {
+    font-weight: 900;
+  }
+  button {
     align-self: center;
     width: max-content;
   }

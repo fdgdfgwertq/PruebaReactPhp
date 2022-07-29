@@ -8,6 +8,7 @@ const Codigo = ({
   values,
   valuesDes,
   errors,
+  errorDescripcion,
   handleChange,
   handleBlur,
   handleChangeDes,
@@ -32,7 +33,7 @@ const Codigo = ({
               id="ID_TIPO_PATRIMONIO"
               value={values.ID_TIPO_PATRIMONIO}
               onChange={(e) => handleChange(e)}
-              onBlur={(e) => handleBlur(e)}
+              onBlur={(e) => handleBlur(e, "CARACTERISTICAS", "CODIGOS")}
               disabled={values.ID_MUNICIPIOS ? false : true}
             >
               <option value="" disabled>
@@ -65,7 +66,7 @@ const Codigo = ({
               id="ID_GRUPO"
               value={values.ID_GRUPO}
               onChange={(e) => handleChange(e)}
-              onBlur={(e) => handleBlur(e)}
+              onBlur={(e) => handleBlur(e, "CARACTERISTICAS", "CODIGOS")}
               disabled={values.ID_TIPO_PATRIMONIO ? false : true}
             >
               <option value="" disabled>
@@ -99,7 +100,7 @@ const Codigo = ({
                   id="ID_COMPONENTE"
                   value={values.ID_COMPONENTE}
                   onChange={(e) => handleChange(e)}
-                  onBlur={(e) => handleBlur(e)}
+                  onBlur={(e) => handleBlur(e, "CARACTERISTICAS", "CODIGOS")}
                 >
                   <option value="" disabled>
                     Seleccione un componente
@@ -136,7 +137,7 @@ const Codigo = ({
                   id="ID_ELEMENTO"
                   value={values.ID_ELEMENTO}
                   onChange={(e) => handleChange(e)}
-                  onBlur={(e) => handleBlur(e)}
+                  onBlur={(e) => handleBlur(e, "CARACTERISTICAS", "CODIGOS")}
                 >
                   <option value="" disabled>
                     Seleccione un elemento
@@ -169,13 +170,13 @@ const Codigo = ({
             name="DESCRIPCION"
             id="DESCRIPCION_CARACTERISTICAS"
             onChange={(e) => handleChangeDes(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "CARACTERISTICAS")}
             placeholder="Introduce una descripcion"
             value={valuesDes.DESCRIPCION}
             rows={3}
           />
-          {errors.DESCRIPCION && (
-            <small className="errorMessage">{errors.DESCRIPCION}</small>
+          {errorDescripcion && (
+            <small className="errorMessage">{errorDescripcion}</small>
           )}
         </label>
       </div>
@@ -202,6 +203,7 @@ const Images = ({
               name="IMAGEN1"
               id="IMAGEN1"
               onChange={(e) => handleChangeFile(e)}
+              onBlur={(e) => handleBlur(e, "CARACTERISTICAS")}
             />
           </label>
           {errors.IMAGEN1 && (
@@ -216,6 +218,7 @@ const Images = ({
               name="IMAGEN2"
               id="IMAGEN2"
               onChange={(e) => handleChangeFile(e)}
+              onBlur={(e) => handleBlur(e, "CARACTERISTICAS")}
             />
           </label>
           {errors.IMAGEN2 && (
@@ -229,7 +232,7 @@ const Images = ({
             name="FUENTE"
             id="FUENTE"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "CARACTERISTICAS")}
             value={values.FUENTE}
             autoComplete="off"
           />
@@ -257,10 +260,11 @@ const FormCaracteristicas = ({
       <Codigo
         values={valuesCodigo}
         valuesDes={values}
-        errors={errors}
+        errors={errors.CODIGOS}
         handleBlur={handleBlur}
         handleChange={handleChangeCodigo}
         handleChangeDes={handleChange}
+        errorDescripcion={errors.DESCRIPCION}
       />
       <Images
         values={values}

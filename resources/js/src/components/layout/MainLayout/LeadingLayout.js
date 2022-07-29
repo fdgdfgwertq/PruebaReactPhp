@@ -10,6 +10,7 @@ import ModalLogout from '../../common/ModalLogout';
 import { AnimatePresence } from 'framer-motion';
 import HeaderDesktop from './ComponentsMainLayout/HeaderDesktop';
 import { Toaster } from "react-hot-toast";
+import LoaderForm from './ComponentsMainLayout/LoaderForm';
 
 const MovileLeandingLayout = () => {
   const menuState = useSelector((state) => state.mainLayoutSlice.menuState);
@@ -35,6 +36,7 @@ const LeadingLayout = () => {
   const modalLayoutState = useSelector(
     (state) => state.modalsSlice.modalLayoutState
   );
+  const loaderForm = useSelector((state) => state.modalsSlice.loaderForm);
 
   return (
     <StyleLeandingLayout resize={{ movile: movile, desktop: desktop }}>
@@ -45,7 +47,8 @@ const LeadingLayout = () => {
         <Outlet />
       </main>
       {modalLayoutState && <ModalLogout />}
-      <Toaster/>
+      {loaderForm && <LoaderForm/>}
+      <Toaster />
     </StyleLeandingLayout>
   );
 }

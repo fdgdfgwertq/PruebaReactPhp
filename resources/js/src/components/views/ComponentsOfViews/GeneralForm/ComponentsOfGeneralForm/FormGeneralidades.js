@@ -17,7 +17,7 @@ const ExtraDataGeneralidades = ({
           name="GEORREFERENCIACION"
           id="GEORREFERENCIACION"
           onChange={(e) => handleChange(e)}
-          onBlur={(e) => handleBlur(e)}
+          onBlur={(e) => handleBlur(e, "GENERALIDADES")}
           value={values.GEORREFERENCIACION}
           autoComplete="off"
         />
@@ -32,7 +32,7 @@ const ExtraDataGeneralidades = ({
           id="ID_TIPO_ACCESO"
           value={values.ID_TIPO_ACCESO}
           onChange={(e) => handleChange(e)}
-          onBlur={(e) => handleBlur(e)}
+          onBlur={(e) => handleBlur(e, "GENERALIDADES")}
         >
           <option value="" disabled>
             Seleccione un tipo de acceso
@@ -59,7 +59,7 @@ const ExtraDataGeneralidades = ({
           name="INDICACIONES_ACCESO"
           id="INDICACIONES_ACCESO"
           onChange={(e) => handleChange(e)}
-          onBlur={(e) => handleBlur(e)}
+          onBlur={(e) => handleBlur(e, "GENERALIDADES")}
           value={values.INDICACIONES_ACCESO}
           autoComplete="off"
         />
@@ -88,7 +88,7 @@ const AdminPropietario = ({
             name="NOMBRE"
             id="NOMBRE_PROPIETARIO"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "GENERALIDADES", "ADMIN/PROPIETARIOS")}
             value={values.NOMBRE}
             autoComplete="off"
           />
@@ -103,7 +103,7 @@ const AdminPropietario = ({
             name="DIRECCION_UBICACION"
             id="DIRECCION_UBICACION"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "GENERALIDADES", "ADMIN/PROPIETARIOS")}
             value={values.DIRECCION_UBICACION}
             autoComplete="off"
           />
@@ -118,7 +118,7 @@ const AdminPropietario = ({
             name="CORREO"
             id="CORREO"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "GENERALIDADES", "ADMIN/PROPIETARIOS")}
             value={values.CORREO}
             autoComplete="off"
           />
@@ -133,7 +133,7 @@ const AdminPropietario = ({
             name="TELEFONO1"
             id="TELEFONO1"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "GENERALIDADES", "ADMIN/PROPIETARIOS")}
             value={values.TELEFONO1}
             autoComplete="off"
           />
@@ -148,7 +148,7 @@ const AdminPropietario = ({
             name="TELEFONO2"
             id="TELEFONO2"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "GENERALIDADES", "ADMIN/PROPIETARIOS")}
             value={values.TELEFONO2}
             autoComplete="off"
           />
@@ -165,6 +165,7 @@ const FormGeneralidades = ({
   values,
   valuesCodigo,
   errors,
+  errorsCod,
   handleChange,
   handleChangeAdminPropietario,
   handleBlur,
@@ -174,7 +175,7 @@ const FormGeneralidades = ({
       <h3>Generalidades</h3>
       <div className="SectionDivType1">
         <GeneralFieldsGeneralidades
-          errors={errors}
+          errors={{ ...errors, ...errorsCod }}
           handleBlur={handleBlur}
           handleChange={handleChange}
           values={values}
@@ -187,7 +188,7 @@ const FormGeneralidades = ({
             name="CORREGIMIENTO_VEREDA_LOCALIDAD"
             id="CORREGIMIENTO_VEREDA_LOCALIDAD"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "GENERALIDADES")}
             value={values.CORREGIMIENTO_VEREDA_LOCALIDAD}
             autoComplete="off"
           />
@@ -205,7 +206,7 @@ const FormGeneralidades = ({
         />
       </div>
       <AdminPropietario
-        errors={errors}
+        errors={errors["ADMIN/PROPIETARIOS"]}
         handleBlur={handleBlur}
         handleChange={handleChangeAdminPropietario}
         values={values["ADMIN/PROPIETARIOS"]}

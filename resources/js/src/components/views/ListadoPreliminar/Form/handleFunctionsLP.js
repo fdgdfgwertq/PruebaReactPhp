@@ -1,3 +1,4 @@
+import { closeLoaderForm, openLoaderForm } from "../../../../features/modalsSlice";
 import { toastMs } from "../../../../helpers/helpToastMessage";
 import { initialErrors, initialValues } from "./initialValuesFormListaPreliminar";
 import { fetchFormListaPreliminar } from "./logicFormListaPreliminar";
@@ -6,10 +7,10 @@ import { UnitValidationsListaPreliminar, ValidationsFormListaPreliminar } from "
 export const handleFunctionsLP = (
   values,
   setValues,
-  errors,
   setErrors,
-  setLoad,
-  navigate
+  errors,
+  navigate,
+  dispatch
 ) => {
   const ValidateField = async (name, value) => {
     let FieldValue = { [name]: value };
@@ -33,10 +34,10 @@ export const handleFunctionsLP = (
   };
 
   const handleSubmit = async (who) => {
-    setLoad(true);
+    dispatch(openLoaderForm());
     const response = await ValidationsFormListaPreliminar(values);
     if (!response.state) {
-      setLoad(false);
+      dispatch(closeLoaderForm());
       return setErrors({ ...initialErrors, ...response.errors });
     }
     const method = who === 3 ? "post" : "put";
@@ -49,9 +50,9 @@ export const handleFunctionsLP = (
       if (responseServe.errors)
         setErrors({ ...initialErrors, ...responseServe.errors });
       if (responseServe.message) toastMs().error(responseServe.message);
-      return setLoad(false);
+      return dispatch(closeLoaderForm());
     }
-    setLoad(false);
+    dispatch(closeLoaderForm());
     if (who === 3) {
       setValues({ ...initialValues });
       toastMs().success("El resgistro se almaceno correctamente");

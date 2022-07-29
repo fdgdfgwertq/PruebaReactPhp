@@ -17,7 +17,7 @@ const Clima = ({ values, errors, handleChange, handleBlur }) => {
             id="ID_TIPO_CLIMA"
             value={values.ID_TIPO_CLIMA}
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "CARACTERISTICAS_RELEVANTES")}
           >
             <option value="" disabled>
               Seleccione un tipo de clima
@@ -44,7 +44,7 @@ const Clima = ({ values, errors, handleChange, handleBlur }) => {
             name="TEMPERATURA"
             id="TEMPERATURA"
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "CARACTERISTICAS_RELEVANTES")}
             value={values.TEMPERATURA}
             autoComplete="off"
           />
@@ -117,7 +117,7 @@ const Horario = ({ values, handleChange }) => {
   );
 };
 
-const Tarifas = ({ values, handleChange }) => {
+const Tarifas = ({ values, handleChange, handleBlur, errors }) => {
   return (
     <div className="SectionDivType2">
       <h4>Tarifas</h4>
@@ -129,9 +129,15 @@ const Tarifas = ({ values, handleChange }) => {
             name="NINOS"
             id="NINOS"
             onChange={(e) => handleChange(e)}
+            onBlur={(e) =>
+              handleBlur(e, "CARACTERISTICAS_RELEVANTES", "TARIFAS")
+            }
             value={values.NINOS}
             autoComplete="off"
           />
+          {errors.NINOS && (
+            <small className="errorMessage">{errors.NINOS}</small>
+          )}
         </label>
         <label htmlFor="ADULTOS" className="LabelType1">
           <span className="NameField">Adulto</span>
@@ -140,9 +146,15 @@ const Tarifas = ({ values, handleChange }) => {
             name="ADULTOS"
             id="ADULTOS"
             onChange={(e) => handleChange(e)}
+            onBlur={(e) =>
+              handleBlur(e, "CARACTERISTICAS_RELEVANTES", "TARIFAS")
+            }
             value={values.ADULTOS}
             autoComplete="off"
           />
+          {errors.ADULTOS && (
+            <small className="errorMessage">{errors.ADULTOS}</small>
+          )}
         </label>
         <label htmlFor="ADULTO_MAYOR" className="LabelType1">
           <span className="NameField">Adulto mayor</span>
@@ -151,9 +163,15 @@ const Tarifas = ({ values, handleChange }) => {
             name="ADULTO_MAYOR"
             id="ADULTO_MAYOR"
             onChange={(e) => handleChange(e)}
+            onBlur={(e) =>
+              handleBlur(e, "CARACTERISTICAS_RELEVANTES", "TARIFAS")
+            }
             value={values.ADULTO_MAYOR}
             autoComplete="off"
           />
+          {errors.ADULTO_MAYOR && (
+            <small className="errorMessage">{errors.ADULTO_MAYOR}</small>
+          )}
         </label>
         <label htmlFor="EXTRANJEROS" className="LabelType1">
           <span className="NameField">Extranjeros</span>
@@ -162,9 +180,15 @@ const Tarifas = ({ values, handleChange }) => {
             name="EXTRANJEROS"
             id="EXTRANJEROS"
             onChange={(e) => handleChange(e)}
+            onBlur={(e) =>
+              handleBlur(e, "CARACTERISTICAS_RELEVANTES", "TARIFAS")
+            }
             value={values.EXTRANJEROS}
             autoComplete="off"
           />
+          {errors.EXTRANJEROS && (
+            <small className="errorMessage">{errors.EXTRANJEROS}</small>
+          )}
         </label>
         <label htmlFor="ESTUDIANTES" className="LabelType1">
           <span className="NameField">Estudiantes</span>
@@ -173,9 +197,15 @@ const Tarifas = ({ values, handleChange }) => {
             name="ESTUDIANTES"
             id="ESTUDIANTES"
             onChange={(e) => handleChange(e)}
+            onBlur={(e) =>
+              handleBlur(e, "CARACTERISTICAS_RELEVANTES", "TARIFAS")
+            }
             value={values.ESTUDIANTES}
             autoComplete="off"
           />
+          {errors.ESTUDIANTES && (
+            <small className="errorMessage">{errors.ESTUDIANTES}</small>
+          )}
         </label>
         <label htmlFor="CITA_PREVIA" className="LabelType1">
           <span className="NameField">Cita previa</span>
@@ -184,9 +214,15 @@ const Tarifas = ({ values, handleChange }) => {
             name="CITA_PREVIA"
             id="CITA_PREVIA"
             onChange={(e) => handleChange(e)}
+            onBlur={(e) =>
+              handleBlur(e, "CARACTERISTICAS_RELEVANTES", "TARIFAS")
+            }
             value={values.CITA_PREVIA}
             autoComplete="off"
           />
+          {errors.CITA_PREVIA && (
+            <small className="errorMessage">{errors.CITA_PREVIA}</small>
+          )}
         </label>
         <label htmlFor="GENERAL" className="LabelType1">
           <span className="NameField">General</span>
@@ -195,9 +231,15 @@ const Tarifas = ({ values, handleChange }) => {
             name="GENERAL"
             id="GENERAL"
             onChange={(e) => handleChange(e)}
+            onBlur={(e) =>
+              handleBlur(e, "CARACTERISTICAS_RELEVANTES", "TARIFAS")
+            }
             value={values.GENERAL}
             autoComplete="off"
           />
+          {errors.GENERAL && (
+            <small className="errorMessage">{errors.GENERAL}</small>
+          )}
         </label>
       </div>
     </div>
@@ -208,14 +250,14 @@ const EstadoAtractivo = ({ values, errors, handleChange, handleBlur }) => {
   return (
     <div className="SectionDivType2">
       <h4>Estado del atractivo</h4>
-      <div>
-        <label htmlFor="ID_TIPO_ESTADO" className="LabelType1">
+      <div className="SectionDivType1">
+        <label htmlFor="ID_ESTADO" className="LabelType1">
           <select
-            name="ID_TIPO_ESTADO"
-            id="ID_TIPO_ESTADO"
-            value={values.ID_TIPO_ESTADO}
+            name="ID_ESTADO"
+            id="ID_ESTADO"
+            value={values.ID_ESTADO}
             onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
+            onBlur={(e) => handleBlur(e, "CARACTERISTICAS_RELEVANTES")}
           >
             <option value="" disabled>
               Seleccione un tipo de estado
@@ -223,18 +265,21 @@ const EstadoAtractivo = ({ values, errors, handleChange, handleBlur }) => {
             {TipoEstado.map((val) => {
               return (
                 <option
-                  value={val["ID_TIPO_ESTADO"]}
-                  key={val["ID_TIPO_ESTADO"] + val["TIPO_ESTADO"]}
+                  value={val["ID_ESTADO"]}
+                  key={val["ID_ESTADO"] + val["ESTADO"]}
                 >
-                  {val["TIPO_ESTADO"]}
+                  {val["ESTADO"]}
                 </option>
               );
             })}
           </select>
-          {errors.ID_TIPO_ESTADO && (
-            <small className="errorMessage">{errors.ID_TIPO_ESTADO}</small>
+          {errors.ID_ESTADO && (
+            <small className="errorMessage">{errors.ID_ESTADO}</small>
           )}
         </label>
+        <small className="textEstado">
+          {values.ID_ESTADO && TipoEstado[values.ID_ESTADO - 1]["DESCRIPCION"]}
+        </small>
       </div>
     </div>
   );
@@ -258,7 +303,12 @@ const FormCaracteristicasRelevantes = ({
         handleChange={handleChange}
       />
       <Horario values={values} handleChange={handleChangeCheckbox} />
-      <Tarifas values={values.TARIFAS} handleChange={handleChangeTarifas} />
+      <Tarifas
+        values={values.TARIFAS}
+        handleChange={handleChangeTarifas}
+        errors={errors.TARIFAS}
+        handleBlur={handleBlur}
+      />
       <EstadoAtractivo
         values={values}
         errors={errors}

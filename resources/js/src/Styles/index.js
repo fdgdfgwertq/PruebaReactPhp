@@ -22,14 +22,24 @@ export const GlobalStyles = createGlobalStyle`
   :focus-visible {
     outline: none;
   }
+  main::-webkit-scrollbar {
+    width: 10px;
+  }
+  main::-webkit-scrollbar-thumb {
+    background: #15012ec7;
+    border-radius: 4px;
+  }
+  main::-webkit-scrollbar-thumb:active {
+    background-color: #15012e;
+  }
   .ContainerMainGeneral{
     display: grid;
     min-height: 100%;
   }
-  .GeneralGet,.TemplateGet{
+  .GeneralGet,.TemplateGet,.GeneralContainer{
     overflow: hidden;
   }
-  .GeneralGet,.TemplateGet {
+  .GeneralGet,.TemplateGet,.GeneralContainer {
     display: flex;
     flex-direction: column;
     gap: 20px;
