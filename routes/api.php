@@ -40,5 +40,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post("/clasificacion-recursos-atractivos/sinclas",[PatrimoniosClasificacionController::class,'getRecordSin']);
     Route::get("/clasificacion-recursos-atractivos/clas",[PatrimoniosClasificacionController::class,'getDataCon']);
     Route::post("/clasificacion-recursos-atractivos/clas",[PatrimoniosClasificacionController::class,'getRecordCon']);
-    Route::put("/clasificacion-recursos-atractivos/create",[ListadosPreliminaresController::class,'clasificacion']);
+    Route::put("/clasificacion-recursos-atractivos/create",[ListadosPreliminaresController::class,'clasificacion']);   
 });
