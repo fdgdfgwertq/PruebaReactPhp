@@ -54,7 +54,7 @@ const ContainerLoader = styled.div`
 
 const LoaderForm = () => {
   return (
-    <ContainerLoader>
+    <ContainerLoader className="LoaderForm">
       <span className="loader"></span>
     </ContainerLoader>
   );

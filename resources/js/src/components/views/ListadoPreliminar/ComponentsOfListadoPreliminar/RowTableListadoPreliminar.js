@@ -12,7 +12,7 @@ const RowTableListadoPreliminar = ({
 }) => {
   const navigate = useNavigate();
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     navigate(`./${ID_LISTADO}`, { replace: true });
   }
 

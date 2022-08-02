@@ -8,41 +8,6 @@ import GeneralLoader from '../../../common/GeneralLoader';
 import ActionBack from '../../ComponentsOfViews/ActionBack';
 import useRecordListadoPreliminar from '../hooks/useRecordListadoPreliminar';
 
-const ContainerInformation = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 95%;
-  max-width: 740px;
-  margin: 0 auto;
-  .MainInformation {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-  }
-  p {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .titleInformation {
-    font-family: ${(props) => props.theme.fonts.secondary};
-    font-weight: 600;
-    color: #15012e;
-    font-size: 1.4rem;
-  }
-  .information {
-    font-size: 1.2rem;
-  }
-  .ContainerButtons {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 10px;
-  }
-`;
-
 const GetRecordListadoPreliminar = () => {
   const { idListado } = useParams();
   const response = useRecordListadoPreliminar(idListado);
@@ -62,7 +27,7 @@ const GetRecordListadoPreliminar = () => {
     <div className="GetRecordListadoPreliminar">
       <ActionBack to="/listado-preliminar" />
       <h2>{response.data["NOMBRE"]}</h2>
-      <ContainerInformation>
+      <div className="ContainerInformation">
         <div className="MainInformation">
           <p>
             <span className="titleInformation">Departamento: </span>{" "}
@@ -97,7 +62,7 @@ const GetRecordListadoPreliminar = () => {
             <ButtonPage colorButton="red">Eliminar</ButtonPage>
           </span>
         </div>
-      </ContainerInformation>
+      </div>
     </div>
   );
 }

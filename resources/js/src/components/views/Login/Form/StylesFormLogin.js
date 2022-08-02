@@ -15,10 +15,6 @@ const ContainerForm = styled.form`
     padding: 10px;
     border-bottom: 1px solid white;
   }
-  input.errorInput {
-    color: rgb(217 58 89);
-    border-bottom: 1px solid rgb(217 58 89);
-  }
   input::placeholder {
     color: #ffffffa6;
   }

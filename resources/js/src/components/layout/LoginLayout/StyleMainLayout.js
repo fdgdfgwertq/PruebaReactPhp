@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const MainDiv = styled.div`
   position: relative;
   min-height: 100vh;
-  & > * {
+  & > *:not(.LoaderForm) {
     position: relative;
     z-index: 3;
   }

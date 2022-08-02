@@ -11,13 +11,27 @@ const ClasificacionRecursosAtractivos = () => {
       <Route path="/">
         <Route
           index
-          element={<Navigate to="./sin-clasificar" replace={true}/>}
+          element={<Navigate to="./sin-clasificar" replace={true} />}
         />
-        <Route path='/sin-clasificar' element={<MainClasificacionAtractivosTuristicos who={1} />}/>
-        <Route path='/clasificado' element={<MainClasificacionAtractivosTuristicos who={2} />}/>
+        <Route
+          path="/sin-clasificar"
+          element={<MainClasificacionAtractivosTuristicos who={1} />}
+        />
+        <Route
+          path="/clasificado"
+          element={<MainClasificacionAtractivosTuristicos who={2} />}
+        />
         <Route
           path="/sin-clasificar/:idRecursoAtractivo"
           element={<MainClasificacionAtractivosTuristicos who={3} />}
+        />
+        <Route
+          path="/clasificado/:idRecursoAtractivo"
+          element={<MainClasificacionAtractivosTuristicos who={4} />}
+        />
+        <Route
+          path="/clasificado/actualizar/:idRecursoAtractivo"
+          element={<MainClasificacionAtractivosTuristicos who={5} />}
         />
       </Route>
       <Route path="*" element={<Error404 />} />

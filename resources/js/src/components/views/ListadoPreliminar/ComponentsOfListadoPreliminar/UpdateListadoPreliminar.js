@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { helpHttp } from '../../../../helpers/helpHttp';
+import useCancelUpdate from '../../../../hooks/useCancelUpdate';
 import ErrorComponent from '../../../common/ErrorComponent';
 import GeneralLoader from '../../../common/GeneralLoader';
 import ActionBack from '../../ComponentsOfViews/ActionBack';
@@ -10,23 +10,7 @@ import useUpdateDataListadoPreliminar from '../hooks/useUpdateDataListadoPrelimi
 const UpdateListadoPreliminar = () => {
   const { idListado } = useParams();
   const response = useUpdateDataListadoPreliminar(idListado);  
-
-  useEffect(() => {
-    return () => {
-      if (!response) return false;
-      if(!response.state) return false;
-      setTimeout(async () => {
-        try {
-          const body = { ID_LISTADO: idListado };
-          const response = await helpHttp().del("listados-preliminares/update",{body});
-          console.log(response,"del");
-          if (!response.state) throw response;
-        } catch (error) {
-          console.log(error);
-        }
-      }, 500);
-    };
-  });
+  useCancelUpdate(response);
 
   if (!response) return <GeneralLoader />;
 

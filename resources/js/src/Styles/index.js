@@ -120,4 +120,38 @@ export const GlobalStyles = createGlobalStyle`
       cursor: default;
     }
   }
+  .ContainerInformation {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 95%;
+    max-width: 740px;
+    margin: 0 auto;
+    .MainInformation {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    p {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .titleInformation {
+      font-family: ${(props) => props.theme.fonts.secondary};
+      font-weight: 600;
+      color: #15012e;
+      font-size: 1.4rem;
+    }
+    .information {
+      font-size: 1.2rem;
+    }
+    .ContainerButtons {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 10px;
+    }
+  }
 `;

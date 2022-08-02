@@ -14,7 +14,7 @@ class HistorialController extends Controller
         $historial->TABLA_MODIFICADA = $TABLA_MODIFICADA;
         $historial->ID_REGISTRO_MODIFICADO = $ID_REGISTRO_MODIFICADO;
         $historial->CAMPO_MODIFICADO = $CAMPO_MODIFICADO;
-        $historial->VALOR_OLD = $VALOR_OLD;
+        $historial->VALOR_OLD = isset($VALOR_OLD) ? $VALOR_OLD : 0;
         $historial->VALOR_NEW = $VALOR_NEW;
         $historial->save();
     }

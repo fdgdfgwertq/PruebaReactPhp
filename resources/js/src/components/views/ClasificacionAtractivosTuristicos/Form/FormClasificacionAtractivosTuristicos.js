@@ -1,22 +1,56 @@
-import { Formik } from 'formik';
-import React from 'react';
-import { helpCapitalize } from '../../../../helpers/helpCapitalize';
-import { schemaErrorsFormCAT } from './schemaErrorsFormCAT';
-import { StyleFormClasificacionAtractivosTuristicos } from './StyleFormClasificacionAtractivosTuristicos'
+import { Formik } from "formik";
+import React from "react";
+import { helpCapitalize } from "../../../../helpers/helpCapitalize";
+import { schemaErrorsFormCAT } from "./schemaErrorsFormCAT";
+import { StyleFormClasificacionAtractivosTuristicos } from "./StyleFormClasificacionAtractivosTuristicos";
 import TipoDeBien from "./DataJson/DataTipoDeBien.json";
-import ButtonPage from '../../../common/ButtonPage';
+import ButtonPage from "../../../common/ButtonPage";
+import { useDispatch } from "react-redux";
+import {
+  closeLoaderForm,
+  openLoaderForm,
+} from "../../../../features/modalsSlice";
+import { fetchFormClasificacion } from "./logicFormClasificacion";
+import { useNavigate } from "react-router-dom";
+import { toastMs } from "../../../../helpers/helpToastMessage";
 
-const initialValues = {
-  "ID_TIPO_BIEN" : ""
-}
-
-const FormClasificacionAtractivosTuristicos = () => {
+const FormClasificacionAtractivosTuristicos = ({
+  initialValues,
+  actualizando,
+  ID_LISTADO,
+  DEPARTAMENTO,
+  MUNICIPIO,
+}) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={schemaErrorsFormCAT}
-      onSubmit={async (values) => {
-        console.log("submit", values);
+      onSubmit={async (values, { setErrors, setSubmitting }) => {
+        dispatch(openLoaderForm());
+        const data = await fetchFormClasificacion(values);
+        console.log(data);
+        dispatch(closeLoaderForm());
+        if (!data.state) {
+          toastMs().error(data.messsage);
+          return setErrors(data.errors);
+        }
+        setSubmitting(false);
+        if (actualizando) {
+          toastMs().success("Se actualizo correctamente");
+          navigate(
+            `/clasificacion-recursos-atractivos/clasificado/${ID_LISTADO}`,
+            {
+              replace: true,
+            }
+          );
+        } else {
+          toastMs().success("Se clasifico correctamente");
+          navigate(`/clasificacion-recursos-atractivos/sin-clasificar`, {
+            replace: true,
+          });
+        }
       }}
     >
       {({
@@ -31,11 +65,13 @@ const FormClasificacionAtractivosTuristicos = () => {
           <div className="MainInformation">
             <p>
               <span className="titleInformation">Departamento: </span>
-              <span className="information">{helpCapitalize("Bogota")}</span>
+              <span className="information">
+                {helpCapitalize(DEPARTAMENTO)}
+              </span>
             </p>
             <p>
               <span className="titleInformation">Municipio: </span>
-              <span className="information">{helpCapitalize("Bogota")}</span>
+              <span className="information">{helpCapitalize(MUNICIPIO)}</span>
             </p>
             <label htmlFor="ID_TIPO_BIEN">
               <span className="titleInformation">Tipo de bien</span>
@@ -66,17 +102,25 @@ const FormClasificacionAtractivosTuristicos = () => {
             </label>
           </div>
           <div className="ContainerButtons">
-            <ButtonPage type="submit" colorButton="blue">
-              Clasificar
-            </ButtonPage>
-            <ButtonPage type="submit" colorButton="green">
-              Siguiente
-            </ButtonPage>
+            {actualizando ? (
+              <ButtonPage type="submit" colorButton="green">
+                Actualizar
+              </ButtonPage>
+            ) : (
+              <>
+                <ButtonPage type="submit" colorButton="blue">
+                  Clasificar
+                </ButtonPage>
+                <ButtonPage type="submit" colorButton="green">
+                  Siguiente
+                </ButtonPage>
+              </>
+            )}
           </div>
         </StyleFormClasificacionAtractivosTuristicos>
       )}
     </Formik>
   );
-}
+};
 
-export default FormClasificacionAtractivosTuristicos
+export default FormClasificacionAtractivosTuristicos;

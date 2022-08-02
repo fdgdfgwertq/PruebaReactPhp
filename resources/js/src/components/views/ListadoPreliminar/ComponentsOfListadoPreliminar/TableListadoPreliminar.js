@@ -8,8 +8,8 @@ const TableListadoPreliminar = () => {
   );
 
   return (
-    <div className='ContainerTable'>
-      <table className='StyleTable'>
+    <div className="ContainerTable">
+      <table className="StyleTable">
         <thead>
           <tr>
             <th>#</th>
@@ -21,9 +21,20 @@ const TableListadoPreliminar = () => {
           </tr>
         </thead>
         <tbody>
-          {Object.values(data).reverse().map((val,key) =>{
-            return <RowTableListadoPreliminar key={'RowListadoPreliminar'+key} {...val}/>;
-          })}
+          {data.length ? (
+            data.map((val, key) => {
+              return (
+                <RowTableListadoPreliminar
+                  key={"RowListadoPreliminar" + key}
+                  {...val}
+                />
+              );
+            })
+          ) : (
+            <tr className="NoData">
+              <td colSpan={6}>No hay datos para visualizar</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

@@ -8,12 +8,12 @@ use App\Models\ListadosPreliminares;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\PatrimoniosMaterialesController;
 
 class ListadosPreliminaresController extends Controller
 {
-    public function create(Request $request) 
-    {   
+    public function create(Request $request) {   
         $rules = [
             'ID_DEPARTAMENTOS'=>'required|max:2',
             'ID_MUNICIPIOS'=>'required|max:3',
@@ -68,10 +68,10 @@ class ListadosPreliminaresController extends Controller
         }
         $ID_USUARIO = Auth::user()->ID_USUARIO;
         try {
-            $queryData = ListadosPreliminares::select("listados_preliminares.ID_LISTADO","listados_preliminares.ACTUALIZANDO","listados_preliminares.EXISTS")
+            $queryData = ListadosPreliminares::select("listados_preliminares.ID_LISTADO","listados_preliminares.ACTUALIZANDO","listados_preliminares.EXIST")
             ->where("listados_preliminares.ID_LISTADO","=",$request->ID_LISTADO)
             ->where("listados_preliminares.ID_TIPO_BIEN","=",NULL)
-            ->where("listados_preliminares.EXISTS","=",true)
+            ->where("listados_preliminares.EXIST","=",true)
             ->first();
             if(!isset($queryData)) return response()->json([
                 'state' => false,
@@ -84,7 +84,7 @@ class ListadosPreliminaresController extends Controller
                     "message" => "El registro está siendo actualizado"
                 ]);
             }
-            $listadoPreliminar->EXISTS = false;
+            $listadoPreliminar->EXIST = false;
             $listadoPreliminar->save();
             HistorialController::createInsertDelete($ID_USUARIO,'listados_preliminares',$listadoPreliminar->ID_LISTADO,0);
             return response()->json([
@@ -156,8 +156,8 @@ class ListadosPreliminaresController extends Controller
                     HistorialController::createUpdate($ID_USUARIO,'listados_preliminares',$listadoPreliminar->ID_LISTADO,$key,$queryData[$key],$value);
                 }
             }
-            $listadoPreliminar->ACTUALIZANDO = false;
-            $listadoPreliminar->save();
+            $idTokenUser = Auth::user()->currentAccessToken()->toArray()['id'];
+            UpdateController::actionCancelUpdate($idTokenUser);
             return response()->json([
                 "state" => true
             ]);
@@ -181,18 +181,14 @@ class ListadosPreliminaresController extends Controller
                     ->on("codigos.ID_DEPARTAMENTOS",'municipios.ID_DEPARTAMENTOS');
             });})
             ->join("departamentos","municipios.ID_DEPARTAMENTOS","=","departamentos.ID_DEPARTAMENTOS")
-            ->select("listados_preliminares.ID_LISTADO","listados_preliminares.ACTUALIZANDO","listados_preliminares.ID_FUENTE","fuentes.FUENTE","codigos.ID_MUNICIPIOS","codigos.ID_DEPARTAMENTOS","departamentos.DEPARTAMENTO","municipios.MUNICIPIO","listados_preliminares.NOMBRE","listados_preliminares.UBICACION")
+            ->select("listados_preliminares.ID_LISTADO","listados_preliminares.ID_FUENTE","fuentes.FUENTE","codigos.ID_MUNICIPIOS","codigos.ID_DEPARTAMENTOS","departamentos.DEPARTAMENTO","municipios.MUNICIPIO","listados_preliminares.NOMBRE","listados_preliminares.UBICACION")
             ->where("listados_preliminares.ID_TIPO_BIEN","=",NULL)
-            ->where("listados_preliminares.EXISTS","=",1)
+            ->where("listados_preliminares.EXIST","=",1)
             ->orderBy("listados_preliminares.ID_LISTADO","DESC")
             ->get()->toArray();
-            $dataSend = array();
-            foreach ($queryData as $key => $value){
-                $dataSend[$value['ID_LISTADO']] = $value;
-            }
             return response()->json([
                 "state" => true,
-                "data" => $dataSend
+                "data" => $queryData
             ]);
         } catch (\Throwable $th) {
             return response()->json([
@@ -214,9 +210,9 @@ class ListadosPreliminaresController extends Controller
                     ->on("codigos.ID_DEPARTAMENTOS",'municipios.ID_DEPARTAMENTOS');
             });})
             ->join("departamentos","municipios.ID_DEPARTAMENTOS","=","departamentos.ID_DEPARTAMENTOS")
-            ->select("listados_preliminares.ID_LISTADO","listados_preliminares.ACTUALIZANDO","listados_preliminares.ID_FUENTE","fuentes.FUENTE","codigos.ID_MUNICIPIOS","codigos.ID_DEPARTAMENTOS","departamentos.DEPARTAMENTO","municipios.MUNICIPIO","listados_preliminares.NOMBRE","listados_preliminares.UBICACION")
+            ->select("listados_preliminares.ID_LISTADO","listados_preliminares.ID_FUENTE","fuentes.FUENTE","codigos.ID_MUNICIPIOS","codigos.ID_DEPARTAMENTOS","departamentos.DEPARTAMENTO","municipios.MUNICIPIO","listados_preliminares.NOMBRE","listados_preliminares.UBICACION")
             ->where("listados_preliminares.ID_TIPO_BIEN","=",NULL)
-            ->where("listados_preliminares.EXISTS","=",1)
+            ->where("listados_preliminares.EXIST","=",1)
             ->where("listados_preliminares.ID_LISTADO","=",$request->ID_LISTADO)
             ->first();
             if(!isset($queryData)) return response()->json([
@@ -237,20 +233,21 @@ class ListadosPreliminaresController extends Controller
         }
     }
 
-    public function stateUpdate(Request $request)
+    public function infoUpdate(Request $request)
     {
         try {
-            $listadoPreliminar = ListadosPreliminares::find($request->ID_LISTADO);
+            $listadoPreliminar = ListadosPreliminares::find($request->REGISTRO);
             if(!isset($listadoPreliminar)) return response()->json([
                 'state' => false,
                 'message' => "El registro no existe"
             ]);
-            if($listadoPreliminar->ACTUALIZANDO==1) return response()->json([
+            $idTokenUser = Auth::user()->currentAccessToken()->toArray()['id'];
+            $response = UpdateController::stateUpdate($request->REGISTRO,1,$idTokenUser);
+            if($response['state']==0) throw new Error($response['message']);
+            if($response['state']==1) return response()->json([
                 'state' => false,
                 'message' => "El registro se esta actualizando"
             ]);
-            $listadoPreliminar->ACTUALIZANDO = true;
-            $listadoPreliminar->save();
             $queryData = ListadosPreliminares::join("codigos","codigos.ID_CODIGO","=","listados_preliminares.ID_CODIGO")
             ->join("fuentes","listados_preliminares.id_fuente","=","fuentes.id_fuente")
             ->join('municipios', function ($join) {
@@ -259,34 +256,12 @@ class ListadosPreliminaresController extends Controller
                     ->on("codigos.ID_DEPARTAMENTOS",'municipios.ID_DEPARTAMENTOS');
             });})
             ->join("departamentos","municipios.ID_DEPARTAMENTOS","=","departamentos.ID_DEPARTAMENTOS")
-            ->select("listados_preliminares.ID_LISTADO","listados_preliminares.ACTUALIZANDO","listados_preliminares.ID_FUENTE","fuentes.FUENTE","codigos.ID_MUNICIPIOS","codigos.ID_DEPARTAMENTOS","departamentos.DEPARTAMENTO","municipios.MUNICIPIO","listados_preliminares.NOMBRE","listados_preliminares.UBICACION")
-            ->where("listados_preliminares.ID_LISTADO","=",$request->ID_LISTADO)
+            ->select("listados_preliminares.ID_LISTADO","listados_preliminares.ID_FUENTE","fuentes.FUENTE","codigos.ID_MUNICIPIOS","codigos.ID_DEPARTAMENTOS","departamentos.DEPARTAMENTO","municipios.MUNICIPIO","listados_preliminares.NOMBRE","listados_preliminares.UBICACION")
+            ->where("listados_preliminares.ID_LISTADO","=",$request->REGISTRO)
             ->first()->toArray();
             return response()->json([
                 "state" => true,
                 "data" => $queryData
-            ]);
-        } catch (\Throwable $th) {
-            return response()->json([
-                "state" => false,
-                "message" => "Error en la base de datos",
-                'phpMessage' => $th->getMessage()
-            ]);
-        }
-    }
-
-    public function cancelUpdate(Request $request)
-    {
-        try {
-            $listadoPreliminar = ListadosPreliminares::find($request->ID_LISTADO);
-            if(!isset($listadoPreliminar)) return response()->json([
-                'state' => false,
-                'message' => "El registro no existe"
-            ]);
-            $listadoPreliminar->ACTUALIZANDO = false;
-            $listadoPreliminar->save();
-            return response()->json([
-                "state" => true
             ]);
         } catch (\Throwable $th) {
             return response()->json([
@@ -340,8 +315,8 @@ class ListadosPreliminaresController extends Controller
                 }
                 PatrimoniosClasificacionController::insertForms($listadoPreliminar->ID_LISTADO,$value,$ID_USUARIO);
             }
-            $listadoPreliminar->ACTUALIZANDO = false;
-            $listadoPreliminar->save();
+            $idTokenUser = Auth::user()->currentAccessToken()->toArray()['id'];
+            UpdateController::actionCancelUpdate($idTokenUser);
             return response()->json([
                 "state" => true
             ]);

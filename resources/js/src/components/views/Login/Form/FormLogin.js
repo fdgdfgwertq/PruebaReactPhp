@@ -49,7 +49,6 @@ const FormLogin = () => {
               value={values.correo}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={touched.correo && errors.correo ? "errorInput" : null}
             />
             {touched.correo && errors.correo && (
               <small className="errorMessage">{errors.correo}</small>
@@ -65,7 +64,6 @@ const FormLogin = () => {
               value={values.clave}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={touched.clave && errors.clave ? "errorInput" : null}
             />
             {touched.clave && errors.clave && (
               <small className="errorMessage">{errors.clave}</small>

@@ -3,7 +3,8 @@ import styled from "styled-components";
 const StyleMainClasificacionAtractivosTuristicos = styled.div`
   display: grid;
   min-height: 100%;
-  .GetRecordClasificacionAtractivosTuristicos {
+  .GetRecordClasificacionAtractivosTuristicos,
+  .GetRecordClasificado {
     h2 {
       width: fit-content;
       margin: 0 auto 10px;
@@ -12,6 +13,7 @@ const StyleMainClasificacionAtractivosTuristicos = styled.div`
       text-transform: uppercase;
     }
   }
+  .GetRecordClasificado,
   .GetRecordClasificacionAtractivosTuristicos {
     display: flex;
     flex-direction: column;

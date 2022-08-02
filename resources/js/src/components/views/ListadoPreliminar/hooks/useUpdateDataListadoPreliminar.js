@@ -11,7 +11,7 @@ const useUpdateDataListadoPreliminar = (idListado) => {
 
     (async () => {
       try {
-        const body = { ID_LISTADO: idListado };
+        const body = { REGISTRO: idListado };
         const response = await helpHttp().post("listados-preliminares/update", {signal,body});
         console.log(response);
         if (!response.state) throw response;

@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { helpHttp } from "../../../../helpers/helpHttp";
 import { useDispatch } from "react-redux";
 import {
-  setDataLista,
-  setMessageLista,
+  setDataLista
 } from "../../../../features/dataListaPreliminarSlice";
+import { toastMs } from "../../../../helpers/helpToastMessage";
 
 const useDataListadoPreliminar = () => {
   const [response, setResponse] = useState(false);
@@ -23,7 +23,7 @@ const useDataListadoPreliminar = () => {
         if (isMounted) dispatch(setDataLista(response.data));
       } catch (error) {
         console.log(error);
-        if (isMounted) dispatch(setMessageLista(response.message));
+        if (isMounted) toastMs().error(error.message);
       } finally {
         if (isMounted) setResponse(true);
       }

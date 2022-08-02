@@ -28,6 +28,6 @@ class GruposEspeciales extends Model
         'APROB_INTERNACIONAL',
         'INTERNACIONAL',
         'FECHA_APROB',
-        'EXISTS'
+        'EXIST'
     ];
 }

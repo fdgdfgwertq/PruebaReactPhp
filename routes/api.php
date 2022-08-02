@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ListadosPreliminaresController;
 use App\Http\Controllers\PatrimoniosClasificacionController;
+use App\Http\Controllers\UpdateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,13 +30,15 @@ Route::post("login",[AuthController::class,'login']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::post("profile",[AuthController::class,'profile']);
     Route::post("logout",[AuthController::class,'logout']);
+    Route::delete("cancel-update",[UpdateController::class,'cancelUpdate']);
+
     Route::post("/listados-preliminares/create",[ListadosPreliminaresController::class,'create']);
     Route::put("/listados-preliminares/update",[ListadosPreliminaresController::class,'update']);
-    Route::post("/listados-preliminares/update",[ListadosPreliminaresController::class,'stateUpdate']);
-    Route::delete("/listados-preliminares/update",[ListadosPreliminaresController::class,'cancelUpdate']);
+    Route::post("/listados-preliminares/update",[ListadosPreliminaresController::class,'infoUpdate']);
     Route::delete("/listados-preliminares/delete",[ListadosPreliminaresController::class,'delete']);
     Route::get("/listados-preliminares/",[ListadosPreliminaresController::class,'getData']);
     Route::post("/listados-preliminares/",[ListadosPreliminaresController::class,'getRecord']);
+
     Route::get("/clasificacion-recursos-atractivos/sinclas",[PatrimoniosClasificacionController::class,'getDataSin']);
     Route::post("/clasificacion-recursos-atractivos/sinclas",[PatrimoniosClasificacionController::class,'getRecordSin']);
     Route::get("/clasificacion-recursos-atractivos/clas",[PatrimoniosClasificacionController::class,'getDataCon']);

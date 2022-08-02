@@ -25,6 +25,6 @@ class SitiosNaturales extends Model
         'ID_RED_SOCIAL',
         'REF_BIBLIOGRAFICA',
         'OBSERVACIONES',
-        'EXISTS'
+        'EXIST'
     ];
 }

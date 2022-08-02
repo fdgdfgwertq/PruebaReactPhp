@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import TableClasificacionAtractivosTuristicos from './TableClasificacionAtractivosTuristicos'
 
-const TemplateGet = ({children}) => {
+const TemplateGet = ({children,who}) => {
   return (
     <div className="TemplateGet">
       <h2>Clasificacion de recursos y atractivos</h2>
@@ -25,12 +25,12 @@ const TemplateGet = ({children}) => {
             Clasificado
           </NavLink>
         </div>
-        <TableClasificacionAtractivosTuristicos>
-          {children}  
+        <TableClasificacionAtractivosTuristicos who={who}>
+          {children}
         </TableClasificacionAtractivosTuristicos>
       </div>
     </div>
-  )
+  );
 }
 
 export default TemplateGet

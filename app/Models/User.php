@@ -22,6 +22,6 @@ class User extends Authenticatable
         'USUARIO',
         'CORREO',
         'CLAVE',
-        'EXISTS'
+        'EXIST'
     ];
 }
