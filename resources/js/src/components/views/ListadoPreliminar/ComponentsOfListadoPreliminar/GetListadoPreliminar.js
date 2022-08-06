@@ -6,8 +6,8 @@ import PaginationSection from "../../ComponentsOfViews/Pagination/PaginationSect
 import RowTableListadoPreliminar from "./RowTableListadoPreliminar";
 import Filter from "../../ComponentsOfViews/Filter/Filter";
 import LabelFilter from "../../ComponentsOfViews/Filter/LabelFilter";
-import GeneralHeader from "../../ComponentsOfViews/GeneralHeader/GeneralHeader";
 import { useSelector } from "react-redux";
+import GeneralHeader from "../../ComponentsOfViews/GeneralHeader";
 
 const GetListadoPreliminar = () => {
   const { response, data } = useDataListadoPreliminar();

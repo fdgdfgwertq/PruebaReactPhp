@@ -46,6 +46,11 @@ const MenuNavbar = () => {
         linkName="Sitios naturales"
         srcImg="IconSitiosNaturales"
       />
+      <OptionMenuNavbar
+        linkDirection="/usuarios"
+        linkName="Usuarios"
+        srcImg="IconUsuarios"
+      />
     </MenuStyle>
   );
 }

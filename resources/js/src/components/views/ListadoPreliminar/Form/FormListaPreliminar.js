@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Fuentes from './DataJson/DataFuentes.json';
 import { handleFunctionsLP } from "./handleFunctionsLP";
 import { initialErrors } from './initialValuesFormListaPreliminar';
-import { StyleFormListaPreliminar } from './StyleFormListaPreliminar';
 import ButtonPage from '../../../common/ButtonPage';
 import { useNavigate } from 'react-router-dom';
 import GeneralFieldsGeneralidades from '../../ComponentsOfViews/GeneralFieldsGeneralidades';
@@ -23,10 +22,11 @@ const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
   );
 
   return (
-    <StyleFormListaPreliminar
+    <form
+      className="FormStyleL"
       onSubmit={(e) => {
         e.preventDefault();
-        handleSubmit(e,who);
+        handleSubmit(e, who);
       }}
     >
       <div className="ContainerFields">
@@ -67,7 +67,7 @@ const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
         </label>
       </div>
       <div className="ContainerButtons">
-        <ButtonPage type="submit" colorButton={who===3 ? "blue" : "green"}>
+        <ButtonPage type="submit" colorButton={who === 3 ? "blue" : "green"}>
           {nameButton}
         </ButtonPage>
         {who === 3 && (
@@ -76,7 +76,7 @@ const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
           </ButtonPage>
         )}
       </div>
-    </StyleFormListaPreliminar>
+    </form>
   );
 };
 

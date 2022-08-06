@@ -154,4 +154,104 @@ export const GlobalStyles = createGlobalStyle`
       gap: 10px;
     }
   }
+  .StyleHeader {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    .ContainerOptions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      height: max-content;
+    }
+    .buttonNormal {
+      font-size: 1rem;
+    }
+    .buttonNormal span {
+      padding: 8px 10px;
+    }
+    .ContainerSearch {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+  .FormStyleR,.FormStyleL {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 95%;
+    margin: 0 auto;
+    .ContainerFields {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+    }
+    .NameField {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #15012e;
+    }
+    select {
+      background-color: #2c1742eb;
+      color: white;
+      padding: 8px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      width: 100%;
+      option {
+        background-color: white;
+        color: #15012e;
+      }
+      option:disabled {
+        color: #130522b3;
+      }
+    }
+    input {
+      width: 100%;
+      box-shadow: rgb(0 0 0 / 80%) 0px 1px 4px;
+      border-radius: 5px;
+      padding: 7px 15px;
+      box-sizing: border-box;
+      font-size: 1rem;
+      cursor: text;
+    }
+    input[type="text"]:focus-visible {
+      box-shadow: rgb(73 0 187) 0px 1px 4px;
+    }
+    select:disabled {
+      position: relative;
+      opacity: 0.5;
+    }
+    .errorMessage {
+      color: red;
+      text-align: center;
+    }
+    .ContainerButtons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 10px;
+    }
+    .ButtonRegistrar {
+      align-self: center;
+    }
+  }
+  .FormStyleL {
+    max-width: 740px;
+  }
+  .FormStyleR {
+    max-width: 980px;
+  }
 `;

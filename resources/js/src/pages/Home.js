@@ -11,6 +11,7 @@ import ListadoPreliminar from './ListadoPreliminar';
 import PatrimonioInmaterial from './PatrimonioInmaterial';
 import PatrimonioMaterial from './PatrimonioMaterial';
 import SitiosNaturales from './SitiosNaturales';
+import Usuarios from './Usuarios';
 
 const Home = () => {
   useTittle('Inicio');
@@ -24,23 +25,21 @@ const Home = () => {
           path="clasificacion-recursos-atractivos/*"
           element={<ClasificacionRecursosAtractivos />}
         />
-        <Route
-          path="patrimonio-material/*"
-          element={<PatrimonioMaterial/>}
-        />
+        <Route path="patrimonio-material/*" element={<PatrimonioMaterial />} />
         <Route
           path="patrimonio-inmaterial/*"
-          element={<PatrimonioInmaterial/>}
+          element={<PatrimonioInmaterial />}
         />
         <Route
           path="festividades-eventos/*"
-          element={<FestividadesEventos/>}
+          element={<FestividadesEventos />}
         />
         <Route
           path="grupos-especial-interes/*"
-          element={<GruposEspecialInteres/>}
+          element={<GruposEspecialInteres />}
         />
-        <Route path="sitios-naturales/*" element={<SitiosNaturales/>} />
+        <Route path="sitios-naturales/*" element={<SitiosNaturales />} />
+        <Route path="usuarios/*" element={<Usuarios />} />
         <Route path="*" element={<Error404 />} />
       </Route>
     </Routes>

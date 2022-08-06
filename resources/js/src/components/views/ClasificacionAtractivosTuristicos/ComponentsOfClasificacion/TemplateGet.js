@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Filter from "../../ComponentsOfViews/Filter/Filter";
 import LabelFilter from "../../ComponentsOfViews/Filter/LabelFilter";
-import GeneralHeader from "../../ComponentsOfViews/GeneralHeader/GeneralHeader";
+import GeneralHeader from "../../ComponentsOfViews/GeneralHeader";
 import PaginationSection from "../../ComponentsOfViews/Pagination/PaginationSection";
 import TableClasificacionAtractivosTuristicos from "./TableClasificacionAtractivosTuristicos";
 
