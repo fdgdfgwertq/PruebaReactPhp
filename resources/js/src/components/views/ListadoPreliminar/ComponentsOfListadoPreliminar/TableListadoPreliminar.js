@@ -1,12 +1,6 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
-import RowTableListadoPreliminar from './RowTableListadoPreliminar';
+import React from 'react';
 
-const TableListadoPreliminar = () => {
-  const data = useSelector(
-    (state) => state.dataListaPreliminarSlice.dataLista
-  );
-
+const TableListadoPreliminar = ({children}) => {
   return (
     <div className="ContainerTable">
       <table className="StyleTable">
@@ -21,20 +15,7 @@ const TableListadoPreliminar = () => {
           </tr>
         </thead>
         <tbody>
-          {data.length ? (
-            data.map((val, key) => {
-              return (
-                <RowTableListadoPreliminar
-                  key={"RowListadoPreliminar" + key}
-                  {...val}
-                />
-              );
-            })
-          ) : (
-            <tr className="NoData">
-              <td colSpan={6}>No hay datos para visualizar</td>
-            </tr>
-          )}
+          {children}
         </tbody>
       </table>
     </div>

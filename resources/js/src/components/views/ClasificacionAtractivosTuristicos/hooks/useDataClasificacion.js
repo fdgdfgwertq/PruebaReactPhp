@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 import { helpHttp } from "../../../../helpers/helpHttp";
 import { toastMs } from "../../../../helpers/helpToastMessage";
 
 const useDataClasificacion = (url) => {
   const [response, setResponse] = useState(false);
   const [data, setData] = useState([]);
+  const [params] = useSearchParams();
+  const dataFilter = useSelector((state) => state.filterSlice.dataFilter);
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -13,15 +17,24 @@ const useDataClasificacion = (url) => {
 
     (async () => {
       try {
-        const response = await helpHttp().get(
-          "clasificacion-recursos-atractivos/" + url,
+        if (isMounted) setResponse(false);
+        const body = {};
+        if (dataFilter.ID_DEPARTAMENTOS)
+          body.ID_DEPARTAMENTOS = dataFilter.ID_DEPARTAMENTOS;
+        if (dataFilter.ID_MUNICIPIOS)
+          body.ID_MUNICIPIOS = dataFilter.ID_MUNICIPIOS;
+        if (params.has("buscar")) body.BUSCAR = params.get("buscar");
+        const page = params.has("page") ? "?page=" + params.get("page") : "";
+        const response = await helpHttp().post(
+          "clasificacion-recursos-atractivos/" + url + page,
           {
             signal,
+            body,
           }
         );
         console.log(response);
         if (!response.state) throw response;
-        if (isMounted) setData(response.data);
+        if (isMounted) setData(response);
       } catch (error) {
         console.log(error);
         if (isMounted) toastMs().error(error.message);
@@ -34,7 +47,7 @@ const useDataClasificacion = (url) => {
       abortController.abort();
       isMounted = false;
     };
-  }, []);
+  }, [params, dataFilter]);
 
   return { response, data };
 };

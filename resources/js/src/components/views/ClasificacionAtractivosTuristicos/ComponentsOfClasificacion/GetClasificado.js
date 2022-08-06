@@ -5,14 +5,14 @@ import RowTableClasificacion from './RowTableClasificacion';
 import TemplateGet from './TemplateGet';
 
 const GetClasificado = () => {
-  const { response, data } = useDataClasificacion("clas");
+  const { response, data } = useDataClasificacion("clas-get");
 
   if (!response) return <GeneralLoader />;
 
   return (
-    <TemplateGet who={2}>
-      {data.length > 0 ? (
-        data.map((val, key) => {
+    <TemplateGet who={2} others={data}>
+      {data.data.length > 0 ? (
+        data.data.map((val, key) => {
           return (
             <RowTableClasificacion
               key={"RowSinClasificar" + key}
@@ -23,7 +23,7 @@ const GetClasificado = () => {
         })
       ) : (
         <tr className="NoData">
-          <td colSpan={4}>No hay datos que puedas visualizar</td>
+          <td colSpan={5}>No hay datos que puedas visualizar</td>
         </tr>
       )}
     </TemplateGet>

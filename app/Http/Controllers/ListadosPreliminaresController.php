@@ -43,7 +43,8 @@ class ListadosPreliminaresController extends Controller
             $listadosPreliminares->save();
             HistorialController::createInsertDelete($ID_USUARIO,'listados_preliminares',$listadosPreliminares->ID_LISTADO,1);
             return response()->json([
-                'state' => true
+                'state' => true,
+                'id_listado' => $listadosPreliminares->ID_LISTADO
             ]);
         } catch (\Throwable $th) {
             return response()->json([
@@ -170,7 +171,7 @@ class ListadosPreliminaresController extends Controller
         }
     }
 
-    public function getData() 
+    public function getData(Request $request) 
     {
         try {
             $queryData = ListadosPreliminares::join("codigos","codigos.ID_CODIGO","=","listados_preliminares.ID_CODIGO")
@@ -182,14 +183,17 @@ class ListadosPreliminaresController extends Controller
             });})
             ->join("departamentos","municipios.ID_DEPARTAMENTOS","=","departamentos.ID_DEPARTAMENTOS")
             ->select("listados_preliminares.ID_LISTADO","listados_preliminares.ID_FUENTE","fuentes.FUENTE","codigos.ID_MUNICIPIOS","codigos.ID_DEPARTAMENTOS","departamentos.DEPARTAMENTO","municipios.MUNICIPIO","listados_preliminares.NOMBRE","listados_preliminares.UBICACION")
-            ->where("listados_preliminares.ID_TIPO_BIEN","=",NULL)
-            ->where("listados_preliminares.EXIST","=",1)
-            ->orderBy("listados_preliminares.ID_LISTADO","DESC")
-            ->get()->toArray();
-            return response()->json([
-                "state" => true,
-                "data" => $queryData
-            ]);
+            ->whereNull("listados_preliminares.ID_TIPO_BIEN")
+            ->where("listados_preliminares.EXIST","=",1);
+            if($request->ID_DEPARTAMENTOS) $queryData = $queryData->where("codigos.ID_DEPARTAMENTOS","=",$request->ID_DEPARTAMENTOS);
+            if($request->ID_MUNICIPIOS) $queryData = $queryData->where("codigos.ID_MUNICIPIOS","=",$request->ID_MUNICIPIOS);
+            if($request->BUSCAR) $queryData = $queryData->where("listados_preliminares.NOMBRE","LIKE","%".$request->BUSCAR."%");
+            $queryData = $queryData->orderBy("listados_preliminares.ID_LISTADO","DESC")
+            ->paginate(10)->toArray();
+            return response()->json(array_merge(
+                $queryData,
+                ["state" => true]
+            ));
         } catch (\Throwable $th) {
             return response()->json([
                 "state" => false,

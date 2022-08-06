@@ -1,8 +1,15 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import TableClasificacionAtractivosTuristicos from './TableClasificacionAtractivosTuristicos'
+import React from "react";
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import Filter from "../../ComponentsOfViews/Filter/Filter";
+import LabelFilter from "../../ComponentsOfViews/Filter/LabelFilter";
+import GeneralHeader from "../../ComponentsOfViews/GeneralHeader/GeneralHeader";
+import PaginationSection from "../../ComponentsOfViews/Pagination/PaginationSection";
+import TableClasificacionAtractivosTuristicos from "./TableClasificacionAtractivosTuristicos";
 
-const TemplateGet = ({children,who}) => {
+const TemplateGet = ({ children, who, others }) => {
+  const stateFilter = useSelector((state) => state.filterSlice.stateFilter);
+
   return (
     <div className="TemplateGet">
       <h2>Clasificacion de recursos y atractivos</h2>
@@ -25,12 +32,16 @@ const TemplateGet = ({children,who}) => {
             Clasificado
           </NavLink>
         </div>
+        <GeneralHeader linkOptions="/clasificacion-recursos-atractivos/opciones" />
+        {stateFilter && <Filter />}
+        <LabelFilter />
         <TableClasificacionAtractivosTuristicos who={who}>
           {children}
         </TableClasificacionAtractivosTuristicos>
+        <PaginationSection others={others} />
       </div>
     </div>
   );
-}
+};
 
-export default TemplateGet
+export default TemplateGet;

@@ -48,6 +48,9 @@ const StyleFormListaPreliminar = styled.form`
     font-size: 1rem;
     cursor: text;
   }
+  input[type="text"]:focus-visible {
+    box-shadow: rgb(73 0 187) 0px 1px 4px;
+  }
   select:disabled {
     position: relative;
     opacity: 0.5;
@@ -55,6 +58,12 @@ const StyleFormListaPreliminar = styled.form`
   .errorMessage {
     color: red;
     text-align: center;
+  }
+  .ContainerButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
   }
   button,
   .LoaderForm {

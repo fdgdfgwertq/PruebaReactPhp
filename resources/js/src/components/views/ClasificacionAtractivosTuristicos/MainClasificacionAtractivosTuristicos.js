@@ -10,12 +10,18 @@ const MainClasificacionAtractivosTuristicos = ({who}) => {
     <StyleMainClasificacionAtractivosTuristicos>
       {who === 1 && <GetSinClasificar />}
       {who === 2 && <GetClasificado />}
-      {who === 3 && <GetRecordClasificacionAtractivosTuristicos url="sinclas" />}
+      {who === 3 && (
+        <GetRecordClasificacionAtractivosTuristicos
+          url="sinclas"
+          back="sin-clasificar"
+        />
+      )}
       {who === 4 && <GetRecordClasificado />}
       {who === 5 && (
         <GetRecordClasificacionAtractivosTuristicos
           actualizando={true}
           url="clas"
+          back="clasificado"
         />
       )}
     </StyleMainClasificacionAtractivosTuristicos>

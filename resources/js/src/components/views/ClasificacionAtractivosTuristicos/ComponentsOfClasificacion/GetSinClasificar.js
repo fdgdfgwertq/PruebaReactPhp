@@ -5,19 +5,21 @@ import RowTableClasificacion from './RowTableClasificacion';
 import TemplateGet from './TemplateGet';
 
 const GetSinClasificar = () => {
-  const { response, data } = useDataClasificacion("sinclas");
+  const { response, data } = useDataClasificacion("sinclas-get");
 
   if (!response) return <GeneralLoader />;
 
   return (
-    <TemplateGet who={1}>
-      {data.length > 0 ? (
-        data.map((val,key) => {
-          return <RowTableClasificacion
-            key={'RowSinClasificar'+key}
-            who={1}
-            {...val}
-          />;
+    <TemplateGet who={1} others={data}>
+      {data.data.length > 0 ? (
+        data.data.map((val, key) => {
+          return (
+            <RowTableClasificacion
+              key={"RowSinClasificar" + key}
+              who={1}
+              {...val}
+            />
+          );
         })
       ) : (
         <tr className="NoData">

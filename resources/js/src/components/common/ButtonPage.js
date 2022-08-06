@@ -21,9 +21,9 @@ const ButtonStyle = styled.button`
   }
 `;
 
-const ButtonPage = ({ children,colorButton, type }) => {
+const ButtonPage = ({ children,colorButton, type, ...props }) => {
   return (
-    <ButtonStyle type={type || null} color-button={colorButton}>
+    <ButtonStyle type={type || null} color-button={colorButton} {...props}>
       {children}
     </ButtonStyle>
   );

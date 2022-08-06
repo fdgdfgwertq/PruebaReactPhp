@@ -4,15 +4,20 @@ import SearchBar from './SearchBar';
 
 const StyleHeaderDesktop = styled.header`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 10px;
-  box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-color: #220646;
+    z-index: -1;
+    clip-path: ellipse(73% 76% at 30% 0%);
+  }
   .ContainerSearchBar {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
+    flex-grow: 1;
   }
 `;
 

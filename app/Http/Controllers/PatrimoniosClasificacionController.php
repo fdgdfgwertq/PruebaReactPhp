@@ -94,7 +94,7 @@ class PatrimoniosClasificacionController extends Controller
         }
     }
 
-    public function getDataSin()
+    public function getDataSin(Request $request)
     {
         try {
             $queryData = ListadosPreliminares::join("codigos","codigos.ID_CODIGO","=","listados_preliminares.ID_CODIGO")
@@ -105,14 +105,17 @@ class PatrimoniosClasificacionController extends Controller
             });})
             ->join("departamentos","municipios.ID_DEPARTAMENTOS","=","departamentos.ID_DEPARTAMENTOS")
             ->select("listados_preliminares.ID_LISTADO","codigos.ID_MUNICIPIOS","codigos.ID_DEPARTAMENTOS","departamentos.DEPARTAMENTO","municipios.MUNICIPIO","listados_preliminares.NOMBRE")
-            ->where("listados_preliminares.ID_TIPO_BIEN","=",NULL)
-            ->where("listados_preliminares.EXIST","=",1)
-            ->orderBy("listados_preliminares.ID_LISTADO","DESC")
-            ->get()->toArray();
-            return response()->json([
-                "state" => true,
-                "data" => $queryData
-            ]);
+            ->whereNull("listados_preliminares.ID_TIPO_BIEN")
+            ->where("listados_preliminares.EXIST","=",1);
+            if($request->ID_DEPARTAMENTOS) $queryData = $queryData->where("codigos.ID_DEPARTAMENTOS","=",$request->ID_DEPARTAMENTOS);
+            if($request->ID_MUNICIPIOS) $queryData = $queryData->where("codigos.ID_MUNICIPIOS","=",$request->ID_MUNICIPIOS);
+            if($request->BUSCAR) $queryData = $queryData->where("listados_preliminares.NOMBRE","LIKE","%".$request->BUSCAR."%");
+            $queryData = $queryData->orderBy("listados_preliminares.ID_LISTADO","DESC")
+            ->paginate(10)->toArray();
+            return response()->json(array_merge(
+                $queryData,
+                ["state" => true]
+            ));
         } catch (\Throwable $th) {
             return response()->json([
                 "state" => false,
@@ -162,7 +165,7 @@ class PatrimoniosClasificacionController extends Controller
         }
     }
 
-    public function getDataCon()
+    public function getDataCon(Request $request)
     {
         try {
             $queryData = ListadosPreliminares::join("codigos","codigos.ID_CODIGO","=","listados_preliminares.ID_CODIGO")
@@ -176,13 +179,16 @@ class PatrimoniosClasificacionController extends Controller
             ->select("listados_preliminares.ID_LISTADO","codigos.ID_MUNICIPIOS","codigos.ID_DEPARTAMENTOS","departamentos.DEPARTAMENTO","municipios.MUNICIPIO","listados_preliminares.NOMBRE","tipos_bien.ID_TIPO_BIEN","tipos_bien.TIPO_BIEN")
             ->whereNotNull("listados_preliminares.ID_TIPO_BIEN")
             ->whereNull("codigos.ID_TIPO_PATRIMONIO")
-            ->where("listados_preliminares.EXIST","=",1)
-            ->orderBy("listados_preliminares.ID_LISTADO","DESC")
-            ->get()->toArray();
-            return response()->json([
-                "state" => true,
-                "data" => $queryData
-            ]);
+            ->where("listados_preliminares.EXIST","=",1);
+            if($request->ID_DEPARTAMENTOS) $queryData = $queryData->where("codigos.ID_DEPARTAMENTOS","=",$request->ID_DEPARTAMENTOS);
+            if($request->ID_MUNICIPIOS) $queryData = $queryData->where("codigos.ID_MUNICIPIOS","=",$request->ID_MUNICIPIOS);
+            if($request->BUSCAR) $queryData = $queryData->where("listados_preliminares.NOMBRE","LIKE","%".$request->BUSCAR."%");
+            $queryData = $queryData->orderBy("listados_preliminares.ID_LISTADO","DESC")
+            ->paginate(10)->toArray();
+            return response()->json(array_merge(
+                $queryData,
+                ["state" => true]
+            ));
         } catch (\Throwable $th) {
             return response()->json([
                 "state" => false,

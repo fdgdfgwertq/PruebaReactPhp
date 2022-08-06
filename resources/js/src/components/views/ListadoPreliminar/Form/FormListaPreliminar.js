@@ -26,7 +26,7 @@ const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
     <StyleFormListaPreliminar
       onSubmit={(e) => {
         e.preventDefault();
-        handleSubmit(who);
+        handleSubmit(e,who);
       }}
     >
       <div className="ContainerFields">
@@ -66,9 +66,16 @@ const FormListaPreliminar = ({ initialValues, nameButton, who }) => {
           )}
         </label>
       </div>
-      <ButtonPage type="submit" colorButton="green">
-        {nameButton}
-      </ButtonPage>
+      <div className="ContainerButtons">
+        <ButtonPage type="submit" colorButton={who===3 ? "blue" : "green"}>
+          {nameButton}
+        </ButtonPage>
+        {who === 3 && (
+          <ButtonPage type="submit" colorButton="green" id="buttonNext">
+            Siguiente
+          </ButtonPage>
+        )}
+      </div>
     </StyleFormListaPreliminar>
   );
 };

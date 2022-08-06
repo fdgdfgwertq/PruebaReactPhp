@@ -33,7 +33,7 @@ export const handleFunctionsLP = (
     if (response.state) setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  const handleSubmit = async (who) => {
+  const handleSubmit = async (e,who) => {
     dispatch(openLoaderForm());
     const response = await ValidationsFormListaPreliminar(values);
     if (!response.state) {
@@ -55,6 +55,10 @@ export const handleFunctionsLP = (
     dispatch(closeLoaderForm());
     if (who === 3) {
       setValues({ ...initialValues });
+      if (e.nativeEvent.submitter.id === "buttonNext")
+        navigate(
+          `/clasificacion-recursos-atractivos/sin-clasificar/${responseServe.id_listado}`
+        );
       toastMs().success("El resgistro se almaceno correctamente");
     } else {
       toastMs().success("El resgistro se actualizo correctamente");

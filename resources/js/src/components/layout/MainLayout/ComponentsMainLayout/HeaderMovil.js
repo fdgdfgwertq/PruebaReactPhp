@@ -11,15 +11,12 @@ const StyleHeaderMovil = styled.header`
   display: flex;
   padding: 15px;
   background-color: #220646;
-  .ContainerSearchBar {
+  gap: 10px;
+  .ContainerSearchBar{
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 0 10px;
+    justify-content: center;
     flex-grow: 1;
-  }
-  .FormSearchBar {
-    max-width: 320px;
   }
   .ContainerButtonMenu,
   .ContainerButtonSesion {
@@ -38,13 +35,15 @@ const HeaderMovil = () => {
     <StyleHeaderMovil>
       <div className="ContainerButtonMenu">
         <button onClick={() => dispatch(openMenu())}>
-          <SvgHamburgerMenu size={40}/>
+          <SvgHamburgerMenu size={40} />
         </button>
       </div>
-      <SearchBar movile={true}/>
+      <div className="ContainerSearchBar">
+        <SearchBar movile={true} />
+      </div>
       <div className="ContainerButtonSesion">
         <button onClick={() => dispatch(openModalLayoutState())}>
-          <SvgLogout size={40}/>
+          <SvgLogout size={40} />
         </button>
       </div>
     </StyleHeaderMovil>

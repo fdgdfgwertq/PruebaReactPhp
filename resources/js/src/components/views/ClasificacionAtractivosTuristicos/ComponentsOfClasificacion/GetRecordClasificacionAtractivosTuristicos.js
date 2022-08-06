@@ -7,7 +7,7 @@ import useRecordClasificacion from "../hooks/useRecordClasificacion";
 import GeneralLoader from "../../../common/GeneralLoader";
 import useCancelUpdate from "../../../../hooks/useCancelUpdate";
 
-const GetRecordClasificacionAtractivosTuristicos = ({ actualizando,url }) => {
+const GetRecordClasificacionAtractivosTuristicos = ({ actualizando,url,back }) => {
   const { idRecursoAtractivo } = useParams();
   const response = useRecordClasificacion(
     idRecursoAtractivo,
@@ -22,7 +22,12 @@ const GetRecordClasificacionAtractivosTuristicos = ({ actualizando,url }) => {
 
   return (
     <div className="GetRecordClasificacionAtractivosTuristicos">
-      <ActionBack to="/clasificacion-recursos-atractivos/sin-clasificar" />
+      <ActionBack
+        to={"/clasificacion-recursos-atractivos/".concat(
+          back,
+          actualizando ? `/${response.data.ID_LISTADO}` : ""
+        )}
+      />
       <h2>{response.data.NOMBRE}</h2>
       <FormClasificacionAtractivosTuristicos
         initialValues={{
@@ -31,7 +36,7 @@ const GetRecordClasificacionAtractivosTuristicos = ({ actualizando,url }) => {
             : "",
           ID_LISTADO: response.data.ID_LISTADO,
         }}
-        actualizando={actualizando||null}
+        actualizando={actualizando || null}
         {...response.data}
       />
     </div>
