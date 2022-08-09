@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { helpCapitalize } from '../../../../helpers/helpCapitalize';
 
 const RowUsuarios = ({
@@ -7,7 +8,11 @@ const RowUsuarios = ({
   PRIMER_APELLIDO,
   USUARIO,
 }) => {
-  const handleClick = () => console.log("Click");
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`./${ID_USUARIO}`, { replace: true });
+  };
 
   return (
     <tr onClick={handleClick}>

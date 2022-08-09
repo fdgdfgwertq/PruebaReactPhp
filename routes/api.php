@@ -24,10 +24,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post("register",[AuthController::class,'register']);
 Route::post("login",[AuthController::class,'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
+    Route::post("register",[AuthController::class,'register']);
+    Route::post("user-get",[AuthController::class,'getData']);
+    Route::post("user",[AuthController::class,'getRecord']);
+    Route::post("user-update",[AuthController::class,'infoUpdate']);
+    Route::put("user-update",[AuthController::class,'update']);
+    Route::put("reset-password",[AuthController::class,'resetPassword']);
     Route::post("profile",[AuthController::class,'profile']);
     Route::post("logout",[AuthController::class,'logout']);
     Route::delete("cancel-update",[UpdateController::class,'cancelUpdate']);

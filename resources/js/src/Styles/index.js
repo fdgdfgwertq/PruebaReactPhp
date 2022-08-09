@@ -218,7 +218,7 @@ export const GlobalStyles = createGlobalStyle`
         color: #130522b3;
       }
     }
-    input {
+    input:not(.notInput),.ContainerInput {
       width: 100%;
       box-shadow: rgb(0 0 0 / 80%) 0px 1px 4px;
       border-radius: 5px;
@@ -227,8 +227,25 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 1rem;
       cursor: text;
     }
-    input[type="text"]:focus-visible {
+    input:focus-visible:not(.notInput),.FocusPassword {
       box-shadow: rgb(73 0 187) 0px 1px 4px;
+    }
+    .ContainerInput {
+      display: flex;
+      align-items: center;
+    }
+    .ContainerInput img {
+      width: 15px;
+      height: 15px;
+    }
+    .ContainerInput input {
+      width: 100%;
+      flex-grow: 1;
+    }
+    .ContainerInput span {
+      cursor: pointer;
+      display: grid;
+      place-items: center center;
     }
     select:disabled {
       position: relative;
@@ -244,7 +261,7 @@ export const GlobalStyles = createGlobalStyle`
       justify-content: space-around;
       gap: 10px;
     }
-    .ButtonRegistrar {
+    .ButtonRegistrar,.ButtonActualizar {
       align-self: center;
     }
   }

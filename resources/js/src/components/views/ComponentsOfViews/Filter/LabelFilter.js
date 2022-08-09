@@ -29,11 +29,15 @@ const LabelFilter = () => {
     console.log(id);
     const ID_MUNICIPIOS = cookies.get("id_municipios");
     if (id === "ID_DEPARTAMENTOS" && ID_MUNICIPIOS) {
-      return toastMs().error("Primero debes quitar el municipio");
+      cookies.remove("id_departamentos", { path: "/" });
+      cookies.remove("id_municipios", { path: "/" });
+      return dispatch(
+        setDataFilter({ ID_DEPARTAMENTOS: "", ID_MUNICIPIOS: "" })
+      );
     }
-    if (id === "ID_DEPARTAMENTOS") cookies.remove("id_departamentos");
-    if (id === "ID_MUNICIPIOS") cookies.remove("id_municipios");
-    dispatch(setDataFilter({[id] : ""}));
+    if (id === "ID_DEPARTAMENTOS") cookies.remove("id_departamentos", { path: "/" });
+    if (id === "ID_MUNICIPIOS") cookies.remove("id_municipios", { path: "/" });
+    dispatch(setDataFilter({ [id]: "" }));
   };
 
   return (

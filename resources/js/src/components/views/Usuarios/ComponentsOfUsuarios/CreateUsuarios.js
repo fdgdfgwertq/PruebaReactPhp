@@ -7,7 +7,7 @@ const CreateUsuarios = () => {
     <div className="CreateUsuarios">
       <ActionBack to="/usuarios" />
       <h2>Registrar un usuario</h2>
-      <RegistrationForm />
+      <RegistrationForm who={1}/>
     </div>
   );
 }

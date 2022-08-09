@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import styled from 'styled-components';
 import { helpCapitalize } from '../../../../helpers/helpCapitalize';
 import ButtonPage from '../../../common/ButtonPage';
 import ErrorComponent from '../../../common/ErrorComponent';

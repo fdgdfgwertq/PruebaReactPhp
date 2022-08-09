@@ -3,28 +3,52 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ButtonPage from "../../../common/ButtonPage";
 import { handleFunctionsUsuarios } from "./handleFunctionsUsuarios";
-import { initialValuesUsuarios } from "./initialValuesUsuarios";
+import {
+  initialErrorsUsuarios,
+  initialValuesUsuarios,
+} from "./initialValuesUsuarios";
 import TipoUsuario from "./DataJson/DataTipoUsuario.json";
+import FieldsPassword from "./ComponentsOfFormUsuarios/FieldsPassword";
 
-const RegistrationForm = () => {
-  const [values, setValues] = useState(initialValuesUsuarios);
-  const [errors, setErrors] = useState(initialValuesUsuarios);
+const dataPassword = {
+  CONFIRMAR_CLAVE: false,
+  CLAVE: false,
+};
+
+const RegistrationForm = ({ initialValuesUpdate,who }) => {
+  const [values, setValues] = useState(
+    initialValuesUpdate || initialValuesUsuarios
+  );
+  const [errors, setErrors] = useState(initialErrorsUsuarios);
+  const [viewPassword, setViewPassword] = useState(dataPassword);
+  const [focus, setFocus] = useState(dataPassword);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { handleBlur, handleChange, handleSubmit } = handleFunctionsUsuarios({
+  const {
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    handleFocus,
+    handleClickView,
+  } = handleFunctionsUsuarios({
     dispatch,
     errors,
     navigate,
     setErrors,
     setValues,
     values,
+    viewPassword,
+    setViewPassword,
+    focus,
+    setFocus,
+    who
   });
 
   return (
     <form className="FormStyleR" onSubmit={(e) => handleSubmit(e)}>
       <div className="ContainerFields">
-        <label htmlFor="PRIMER_NOMBRE" >
+        <label htmlFor="PRIMER_NOMBRE">
           <span className="NameField">Primer nombre</span>
           <input
             type="text"
@@ -39,7 +63,7 @@ const RegistrationForm = () => {
             <small className="errorMessage">{errors.PRIMER_NOMBRE}</small>
           )}
         </label>
-        <label htmlFor="SEGUNDO_NOMBRE" >
+        <label htmlFor="SEGUNDO_NOMBRE">
           <span className="NameField">Segundo nombre</span>
           <input
             type="text"
@@ -54,7 +78,7 @@ const RegistrationForm = () => {
             <small className="errorMessage">{errors.SEGUNDO_NOMBRE}</small>
           )}
         </label>
-        <label htmlFor="PRIMER_APELLIDO" >
+        <label htmlFor="PRIMER_APELLIDO">
           <span className="NameField">Primer apellido</span>
           <input
             type="text"
@@ -69,7 +93,7 @@ const RegistrationForm = () => {
             <small className="errorMessage">{errors.PRIMER_APELLIDO}</small>
           )}
         </label>
-        <label htmlFor="SEGUNDO_APELLIDO" >
+        <label htmlFor="SEGUNDO_APELLIDO">
           <span className="NameField">Segundo apellido</span>
           <input
             type="text"
@@ -84,7 +108,7 @@ const RegistrationForm = () => {
             <small className="errorMessage">{errors.SEGUNDO_APELLIDO}</small>
           )}
         </label>
-        <label htmlFor="USUARIO" >
+        <label htmlFor="USUARIO">
           <span className="NameField">Usuario</span>
           <input
             type="text"
@@ -99,7 +123,7 @@ const RegistrationForm = () => {
             <small className="errorMessage">{errors.USUARIO}</small>
           )}
         </label>
-        <label htmlFor="CORREO" >
+        <label htmlFor="CORREO">
           <span className="NameField">Correo</span>
           <input
             type="email"
@@ -114,34 +138,18 @@ const RegistrationForm = () => {
             <small className="errorMessage">{errors.CORREO}</small>
           )}
         </label>
-        <label htmlFor="CLAVE" >
-          <span className="NameField">Contraseña</span>
-          <input
-            type="password"
-            name="CLAVE"
-            id="CLAVE"
-            onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
-            value={values.CLAVE}
+        {who === 1 && (
+          <FieldsPassword
+            errors={errors}
+            focus={focus}
+            handleBlur={handleBlur}
+            handleChange={handleChange}
+            handleClickView={handleClickView}
+            handleFocus={handleFocus}
+            values={values}
+            viewPassword={viewPassword}
           />
-          {errors.CLAVE && (
-            <small className="errorMessage">{errors.CLAVE}</small>
-          )}
-        </label>
-        <label htmlFor="CONFIRM_CLAVE" >
-          <span className="NameField">Confimar contraseña</span>
-          <input
-            type="password"
-            name="CONFIRM_CLAVE"
-            id="CONFIRM_CLAVE"
-            onChange={(e) => handleChange(e)}
-            onBlur={(e) => handleBlur(e)}
-            value={values.CONFIRM_CLAVE}
-          />
-          {errors.CONFIRM_CLAVE && (
-            <small className="errorMessage">{errors.CONFIRM_CLAVE}</small>
-          )}
-        </label>
+        )}
         <label htmlFor="ID_TIPO_USUARIO">
           <span className="NameField">Tipo de usuario</span>
           <select
@@ -171,7 +179,7 @@ const RegistrationForm = () => {
         </label>
       </div>
       <ButtonPage type="submit" colorButton="green" className="ButtonRegistrar">
-        Registrar
+        {who===1 ? 'Registrar' : 'Actualizar'}
       </ButtonPage>
     </form>
   );

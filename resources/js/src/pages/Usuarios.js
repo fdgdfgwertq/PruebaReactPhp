@@ -9,11 +9,17 @@ const Usuarios = () => {
   return (
     <Routes>
       <Route path="/">
+        <Route index element={<MainUsuarios who={1} />} />
+        <Route path="registrar" element={<MainUsuarios who={2} />} />
+        <Route path=":idUsuario" element={<MainUsuarios who={3} />} />
         <Route
-          index
-          element={<MainUsuarios who={1}/>}
+          path="actualizar/:idUsuario"
+          element={<MainUsuarios who={4} />}
         />
-        <Route path='registrar' element={<MainUsuarios who={2}/>}/>
+        <Route
+          path="cambiar-clave/:idUsuario"
+          element={<MainUsuarios who={5} />}
+        />
       </Route>
       <Route path="*" element={<Error404 />} />
     </Routes>
