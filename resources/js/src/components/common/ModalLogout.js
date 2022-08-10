@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -43,6 +43,13 @@ const MainModalLogout = styled(motion.div)`
 const ModalLogout = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
+
+  useEffect(() => {  
+    return () => {
+      dispatch(closeModalLayoutState());
+    }
+  }, []);
+  
 
   const handleClickLogout = async () => {
     await helpLogout();

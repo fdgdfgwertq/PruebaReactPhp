@@ -17,6 +17,10 @@ use App\Http\Controllers\UpdateController;
 class AuthController extends Controller
 {
     public function register(Request $request) {
+        if(Auth::user()->ID_TIPO_USUARIO != 1) return response()->json([
+            'state' => false,
+            'message' => 'No es posible el acceso'
+        ]);
         $rules = [
             'ID_TIPO_USUARIO'=>'required|numeric',
             'PRIMER_NOMBRE'=>'required|max:50',
@@ -64,6 +68,10 @@ class AuthController extends Controller
 
     public function update(Request $request)
     {
+        if(Auth::user()->ID_TIPO_USUARIO != 1) return response()->json([
+            'state' => false,
+            'message' => 'No es posible el acceso'
+        ]);
         $rules = [
             'ID_USUARIO'=>'required|numeric',
             'ID_TIPO_USUARIO'=>'required|numeric',
@@ -122,6 +130,10 @@ class AuthController extends Controller
 
     public function getData(Request $request)
     {
+        if(Auth::user()->ID_TIPO_USUARIO != 1) return response()->json([
+            'state' => false,
+            'message' => 'No es posible el acceso'
+        ]);
         try {
             $queryData = User::select('ID_USUARIO','ID_TIPO_USUARIO','PRIMER_NOMBRE','SEGUNDO_NOMBRE','PRIMER_APELLIDO','SEGUNDO_APELLIDO','USUARIO','CORREO')
             ->where('EXIST','=',true);
@@ -147,7 +159,11 @@ class AuthController extends Controller
     }
 
     public function getRecord(Request $request)
-    {
+    {  
+        if(Auth::user()->ID_TIPO_USUARIO != 1) return response()->json([
+            'state' => false,
+            'message' => 'No es posible el acceso'
+        ]);
         try {
             $queryData = User::select('ID_USUARIO','ID_TIPO_USUARIO','PRIMER_NOMBRE','SEGUNDO_NOMBRE','PRIMER_APELLIDO','SEGUNDO_APELLIDO','USUARIO','CORREO')
             ->where('EXIST','=',true)
@@ -171,6 +187,10 @@ class AuthController extends Controller
 
     public function infoUpdate(Request $request)
     {
+        if(Auth::user()->ID_TIPO_USUARIO != 1) return response()->json([
+            'state' => false,
+            'message' => 'No es posible el acceso'
+        ]);
         try {
             $queryData = User::select('ID_USUARIO','ID_TIPO_USUARIO','PRIMER_NOMBRE','SEGUNDO_NOMBRE','PRIMER_APELLIDO','SEGUNDO_APELLIDO','USUARIO','CORREO')
             ->where('EXIST','=',true)
@@ -201,6 +221,10 @@ class AuthController extends Controller
 
     public function resetPassword(Request $request)
     {
+        if(Auth::user()->ID_TIPO_USUARIO != 1) return response()->json([
+            'state' => false,
+            'message' => 'No es posible el acceso'
+        ]);
         $rules = [
             'ID_USUARIO'=>'required|numeric',
             'CLAVE'=>['required',new ValidatePasswordRegex()],

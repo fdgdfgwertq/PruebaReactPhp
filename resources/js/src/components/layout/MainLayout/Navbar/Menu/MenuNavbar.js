@@ -1,6 +1,8 @@
 import React from 'react';
 import OptionMenuNavbar from './OptionMenuNavbar';
 import styled from "styled-components";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 const MenuStyle = styled.ul`
   display: flex;
@@ -9,6 +11,7 @@ const MenuStyle = styled.ul`
 `;
 
 const MenuNavbar = () => {
+  const userRole = cookies.get("user_role");
   return (
     <MenuStyle>
       <OptionMenuNavbar
@@ -46,11 +49,13 @@ const MenuNavbar = () => {
         linkName="Sitios naturales"
         srcImg="IconSitiosNaturales"
       />
-      <OptionMenuNavbar
-        linkDirection="/usuarios"
-        linkName="Usuarios"
-        srcImg="IconUsuarios"
-      />
+      { userRole == 1 &&
+        <OptionMenuNavbar
+          linkDirection="/usuarios"
+          linkName="Usuarios"
+          srcImg="IconUsuarios"
+        />
+      }
     </MenuStyle>
   );
 }

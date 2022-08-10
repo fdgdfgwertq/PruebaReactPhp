@@ -19,9 +19,12 @@ const UpdateUsuarios = () => {
 
   return (
     <div className="UpdateUsuarios">
-      <ActionBack to="/usuarios" />
+      <ActionBack to={`/usuarios/${response.data.ID_USUARIO}`} />
       <h2>Actualizar un usuario</h2>
-      <RegistrationForm who={2} initialValuesUpdate={helpDropNull(response.data)}/>
+      <RegistrationForm
+        who={2}
+        initialValuesUpdate={helpDropNull(response.data)}
+      />
     </div>
   );
 }

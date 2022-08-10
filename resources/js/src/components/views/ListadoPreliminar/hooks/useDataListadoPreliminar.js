@@ -25,16 +25,16 @@ const useDataListadoPreliminar = () => {
           body.ID_MUNICIPIOS = dataFilter.ID_MUNICIPIOS;
         if (params.has("buscar")) body.BUSCAR = params.get("buscar");
         const page = params.has("page") ? "?page=" + params.get("page") : "";
-        const response = await helpHttp().post(
+        const responseServe = await helpHttp().post(
           "listados-preliminares-get" + page,
           {
             signal,
             body,
           }
         );
-        console.log(response);
-        if (!response.state) throw response;
-        if (isMounted) setData(response);
+        console.log(responseServe);
+        if (!responseServe.state) throw responseServe;
+        if (isMounted) setData(responseServe);
       } catch (error) {
         console.log(error);
         if (isMounted) toastMs().error(error.message);

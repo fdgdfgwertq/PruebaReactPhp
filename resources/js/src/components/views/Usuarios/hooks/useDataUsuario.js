@@ -5,7 +5,7 @@ import { toastMs } from '../../../../helpers/helpToastMessage';
 
 const useDataUsuario = () => {
   const [response, setResponse] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [params] = useSearchParams();
 
   useEffect(() => {
@@ -19,16 +19,17 @@ const useDataUsuario = () => {
         const body = {};
         if (params.has("buscar")) body.BUSCAR = params.get("buscar");
         const page = params.has("page") ? "?page=" + params.get("page") : "";
-        const response = await helpHttp().post("user-get" + page, {
+        const responseServe = await helpHttp().post("user-get" + page, {
           signal,
           body,
         });
-        console.log(response);
-        if (!response.state) throw response;
-        if (isMounted) setData(response);
+        console.log(responseServe);
+        if (!responseServe.state) throw responseServe;
+        if (isMounted) setData(responseServe);
       } catch (error) {
         console.log(error);
         if (isMounted) toastMs().error(error.message);
+        if (isMounted) setData(error);
       } finally {
         if (isMounted) setResponse(true);
       }

@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorComponent from '../../../common/ErrorComponent';
 import GeneralLoader from '../../../common/GeneralLoader';
 import PaginationSection from '../../ComponentsOfViews/Pagination/PaginationSection';
 import useDataUsuario from '../hooks/useDataUsuario';
@@ -10,6 +11,8 @@ const GetUsuarios = () => {
   const {response, data} = useDataUsuario();
 
   if (!response) return <GeneralLoader />;
+  
+  if (!data.state) return <ErrorComponent message={data.message} />;
 
   return (
     <div className="GeneralGet">
