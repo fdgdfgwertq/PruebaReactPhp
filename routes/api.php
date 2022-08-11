@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ListadosPreliminaresController;
 use App\Http\Controllers\PatrimoniosClasificacionController;
 use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\ExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post("profile",[AuthController::class,'profile']);
     Route::post("logout",[AuthController::class,'logout']);
     Route::delete("cancel-update",[UpdateController::class,'cancelUpdate']);
+
+    Route::post("/export/listado-preliminar",[ExportController::class,'ExportListadosPreliminares']);
 
     Route::post("/listados-preliminares/create",[ListadosPreliminaresController::class,'create']);
     Route::put("/listados-preliminares/update",[ListadosPreliminaresController::class,'update']);

@@ -6,6 +6,7 @@ import { initialValues } from './Form/initialValuesFormListaPreliminar';
 import GetRecordListadoPreliminar from './ComponentsOfListadoPreliminar/GetRecordListadoPreliminar';
 import UpdateListadoPreliminar from './ComponentsOfListadoPreliminar/UpdateListadoPreliminar';
 import ActionBack from '../ComponentsOfViews/ActionBack';
+import OptionsListadoPreliminar from "./ComponentsOfListadoPreliminar/OptionsListadoPreliminar";
 
 const CreateListadoPreliminar = () => {
   return (
@@ -28,6 +29,7 @@ const MainListadoPreliminar = ({who}) => {
       {who === 2 && <GetRecordListadoPreliminar />}
       {who === 3 && <CreateListadoPreliminar />}
       {who === 4 && <UpdateListadoPreliminar />}
+      {who === 5 && <OptionsListadoPreliminar />}
     </StyleMainListadoPreliminar>
   );
 }

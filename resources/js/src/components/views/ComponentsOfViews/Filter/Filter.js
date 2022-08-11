@@ -8,6 +8,8 @@ import { closeFilter, setDataFilter } from "../../../../features/filterSlice";
 import { StyleFilter } from "./StyleFilter";
 import ButtonHeader from "../../../common/ButtonHeader";
 import { useSearchParams } from "react-router-dom";
+import SelectDepartamentos from "../Selects/SelectDepartamentos";
+import SelectMunicipio from "../Selects/SelectMunicipio";
 const cookies = new Cookies();
 
 const initialValues = {
@@ -58,50 +60,8 @@ const Filter = () => {
     <StyleFilter>
       <form onSubmit={handleSubmit}>
         <div className="Options">
-          <select
-            name="ID_DEPARTAMENTOS"
-            id="ID_DEPARTAMENTOS"
-            value={values.ID_DEPARTAMENTOS}
-            onChange={(e) => handleChange(e)}
-          >
-            <option value="" disabled>
-              Departamento
-            </option>
-            {Departamentos.map((val) => {
-              return (
-                <option
-                  value={val["Código"]}
-                  key={val["Código"] + val["Nombre"]}
-                >
-                  {val["Nombre"][0].toUpperCase() +
-                    val["Nombre"].slice(1).toLocaleLowerCase()}
-                </option>
-              );
-            })}
-          </select>
-          <select
-            name="ID_MUNICIPIOS"
-            id="ID_MUNICIPIOS"
-            value={values.ID_MUNICIPIOS}
-            onChange={(e) => handleChange(e)}
-            disabled={values.ID_DEPARTAMENTOS ? false : true}
-          >
-            <option value="" disabled>
-              Municipio
-            </option>
-            {values.ID_DEPARTAMENTOS &&
-              Municipios[values.ID_DEPARTAMENTOS].map((val) => {
-                return (
-                  <option
-                    value={val["Id_Municipio"]}
-                    key={val["Id_Municipio"] + val["Nombre"]}
-                  >
-                    {val["Nombre"][0].toUpperCase() +
-                      val["Nombre"].slice(1).toLocaleLowerCase()}
-                  </option>
-                );
-              })}
-          </select>
+          <SelectDepartamentos handleChange={handleChange} values={values} />
+          <SelectMunicipio handleChange={handleChange} values={values} />
         </div>
         <ButtonHeader
           type="Submit"

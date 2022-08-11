@@ -18,7 +18,8 @@ const StyleMainListadoPreliminar = styled.div`
   .CreateListadoPreliminar,
   .UpdateListadoPreliminar,
   .GetListadoPreliminar,
-  .GetRecordListadoPreliminar {
+  .GetRecordListadoPreliminar,
+  .OptionsListadoPreliminar {
     display: flex;
     flex-direction: column;
     gap: 20px;

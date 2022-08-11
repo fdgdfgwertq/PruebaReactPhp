@@ -16,6 +16,7 @@ const ListadoPreliminar = () => {
           path="actualizar/:idListado"
           element={<MainListadoPreliminar who={4} />}
         />
+        <Route path="opciones" element={<MainListadoPreliminar who={5} />} />
       </Route>
       <Route path="*" element={<Error404 />} />
     </Routes>
